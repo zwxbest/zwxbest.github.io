@@ -42,8 +42,6 @@
 
 
 
-<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
-
 </head>
 <div style="display: none">
   <input class="theme_disqus_on" value="false">
@@ -199,23 +197,19 @@
         
         
     <div id="comments"></div>
-<link rel="stylesheet" href="/css/gitalk.css">
-
-<script type="text/javascript">
-    $.getScript('/js/gitalk.js', function () {
-        var gitalk = new Gitalk({
-            clientID: '08a4fc548786922c47c8',
-            clientSecret: 'a005fc7864f6cb57c300e714338037e3a335c1c3',
-            repo: 'zwxbest.github.io',
-            owner: 'zwxbest',
-            admin: ['zwxbest'],
-            id: location.pathname,
-            distractionFreeMode: 'true',
-            language: 'zh-CN',
-            perPage: parseInt('10',10)
-        })
-        gitalk.render('comments')
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'http://nizouba.com/', // 可选。默认为 location.href
+        owner: 'zwxbest',
+        repo: 'zwxbest.github.io',
+        oauth: {
+            client_id: '08a4fc548786922c47c8',
+            client_secret: 'a005fc7864f6cb57c300e714338037e3a335c1c3',
+        },
     })
+    gitment.render('comments')
 </script>
 
     </div>
