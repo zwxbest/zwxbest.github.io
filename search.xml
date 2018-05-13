@@ -3,15 +3,95 @@
   
     
     <entry>
-      <title>通过文本为pdf添加书签</title>
-      <link href="/2018/05/09/%E9%80%9A%E8%BF%87%E6%96%87%E6%9C%AC%E4%B8%BApdf%E6%B7%BB%E5%8A%A0%E4%B9%A6%E7%AD%BE/"/>
-      <url>/2018/05/09/%E9%80%9A%E8%BF%87%E6%96%87%E6%9C%AC%E4%B8%BApdf%E6%B7%BB%E5%8A%A0%E4%B9%A6%E7%AD%BE/</url>
-      <content type="html"><![CDATA[]]></content>
+      <title>hexo常用操作大全</title>
+      <link href="/2018/05/12/hexo%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8/"/>
+      <url>/2018/05/12/hexo%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8/</url>
+      <content type="html"><![CDATA[<h3 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h3><p>好像需要hexo3以上,hexo -v查看。</p><ol><li><p>post_asset_folder: true</p></li><li><p>hexo new post “hexo常用操作大全” ,和之前创建文章一样,不过之后会在同级目录下创建一个”hexo常用操作大全”的目录,用来存放图片.</p></li><li><blockquote></blockquote><blockquote><p><code></code></p></blockquote></li></ol>]]></content>
       
       
         <tags>
             
+            <tag> hexo </tag>
+            
+            <tag> [object Object] </tag>
+            
             <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>编程语言和工具的吉祥物们</title>
+      <link href="/2018/05/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7%E7%9A%84%E5%90%89%E7%A5%A5%E7%89%A9%E4%BB%AC/"/>
+      <url>/2018/05/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B7%A5%E5%85%B7%E7%9A%84%E5%90%89%E7%A5%A5%E7%89%A9%E4%BB%AC/</url>
+      <content type="html"><![CDATA[<p>觉得go的吉祥物很可爱,所以搜集了一下常用的编程语言和软件工具的吉祥物和logo,有些比较大众的就不放上来了。</p><p>如果还有其他有趣的吉祥物或者logo,可以留言。</p><p>不定时更新。</p><h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><h3 id="php"><a href="#php" class="headerlink" title="php"></a>php</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/php.jpg" title="php"><h3 id="go"><a href="#go" class="headerlink" title="go"></a>go</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/go.jpg" title="go"><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/python.jpg" title="python"><h3 id="java"><a href="#java" class="headerlink" title="java"></a>java</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/java.jpg" title="java"><h3 id="lisp"><a href="#lisp" class="headerlink" title="lisp"></a>lisp</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/lisp.jpg" title="lisp"><h3 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/node.js.jpg" title="node.js"><h3 id="perl"><a href="#perl" class="headerlink" title="perl"></a>perl</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/perl.jpg" title="perl"><h3 id="ruby"><a href="#ruby" class="headerlink" title="ruby"></a>ruby</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/ruby.jpg" title="ruby"><h3 id="rust"><a href="#rust" class="headerlink" title="rust"></a>rust</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/rust.jpg" title="rust"><h3 id="ada"><a href="#ada" class="headerlink" title="ada"></a>ada</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/ada.jpg" title="ada"><h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/tomcat.jpg" title="tomat"><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/github.jpg" title="github"><h3 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/docker.jpg" title="docker"><h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/mysql.jpg" title="mysql"><h3 id="postgresql"><a href="#postgresql" class="headerlink" title="postgresql"></a>postgresql</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/postgresql.jpg" title="postgresql"><h3 id="llvm"><a href="#llvm" class="headerlink" title="llvm"></a>llvm</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/llvm.jpg" title="llvm"><h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><img src="/2018/05/12/编程语言和工具的吉祥物们/redis.jpg" title="redis">]]></content>
+      
+      
+        <tags>
+            
+            <tag> 有趣 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>设计一个有getMain功能的栈</title>
+      <link href="/2018/05/11/%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%9C%89getMain%E5%8A%9F%E8%83%BD%E7%9A%84%E6%A0%88/"/>
+      <url>/2018/05/11/%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%9C%89getMain%E5%8A%9F%E8%83%BD%E7%9A%84%E6%A0%88/</url>
+      <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>实现一个栈,有压入、弹出功能,还要有返回当前最小值的功能。</p><h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>1.pop、push、getMain时间复杂度均为O（1）</p><p>2.可以使用现成的栈结构</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><a href="https://github.com/zwxbest/algorithm/tree/master/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97-%E7%AE%97%E6%B3%95/%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%9C%89getMin%E5%8A%9F%E8%83%BD%E7%9A%84%E6%A0%88/src/GetMinStack" title="设计一个有getMain功能的栈" target="_blank" rel="noopener">设计一个有getMain功能的栈</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>vim常用操作大全</title>
+      <link href="/2018/05/11/vim%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8/"/>
+      <url>/2018/05/11/vim%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8/</url>
+      <content type="html"><![CDATA[<h3 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h3><pre><code>&quot;+d --剪切&quot;+p --粘贴&quot;+y --复制</code></pre><p>“（引号）用来选择寄存器,+代表系统剪贴板</p><pre><code>yh --复制左边的一个字符yj --复制下一行yk --复制上一行yl --复制当前字符</code></pre><h3 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h3><pre><code>w --向右跳转一个单词b --向左跳转一个单词</code></pre><h3 id="撤销和反撤销"><a href="#撤销和反撤销" class="headerlink" title="撤销和反撤销"></a>撤销和反撤销</h3><pre><code>u 撤销ctrl+r 反撤销</code></pre>]]></content>
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>通过文本为pdf添加书签</title>
+      <link href="/2018/05/09/%E9%80%9A%E8%BF%87%E6%96%87%E6%9C%AC%E4%B8%BApdf%E6%B7%BB%E5%8A%A0%E4%B9%A6%E7%AD%BE/"/>
+      <url>/2018/05/09/%E9%80%9A%E8%BF%87%E6%96%87%E6%9C%AC%E4%B8%BApdf%E6%B7%BB%E5%8A%A0%E4%B9%A6%E7%AD%BE/</url>
+      <content type="html"><![CDATA[<h2 id="操作界面"><a href="#操作界面" class="headerlink" title="操作界面"></a>操作界面</h2>]]></content>
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> iText </tag>
             
