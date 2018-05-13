@@ -147,15 +147,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">栈</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color1">iText</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color2">PDFBox</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">栈</a>
     </li>
     
     <div class="clearfix"></div>
@@ -192,20 +192,20 @@
             <span class="post-date" title="2018-05-12 21:25:46">2018/05/12</span>
         </a>
         
-        <a  class="工具 "
-           href="/2018/05/09/通过文本为pdf添加书签/"
-           data-tag="iText,PDFBox"
-           data-author="" >
-            <span class="post-title" title="通过文本为pdf添加书签">通过文本为pdf添加书签</span>
-            <span class="post-date" title="2018-05-09 01:48:30">2018/05/09</span>
-        </a>
-        
         <a  class="算法 "
            href="/2018/05/11/设计一个有getMain功能的栈/"
            data-tag="栈"
            data-author="" >
             <span class="post-title" title="设计一个有getMain功能的栈">设计一个有getMain功能的栈</span>
             <span class="post-date" title="2018-05-11 21:14:14">2018/05/11</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/05/09/通过文本为pdf添加书签/"
+           data-tag="iText,PDFBox"
+           data-author="" >
+            <span class="post-title" title="通过文本为pdf添加书签">通过文本为pdf添加书签</span>
+            <span class="post-date" title="2018-05-09 01:48:30">2018/05/09</span>
         </a>
         
     </nav>
@@ -403,7 +403,7 @@ ctrl+r 反撤销
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#hexo','#[object Object]','#工具','#vim','#有趣','#iText','#PDFBox','#栈',],
+            'data': ['#hexo','#[object Object]','#工具','#vim','#有趣','#栈','#iText','#PDFBox',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
