@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>apply用法</title>
+      <link href="/2018/05/15/apply%E7%94%A8%E6%B3%95/"/>
+      <url>/2018/05/15/apply%E7%94%A8%E6%B3%95/</url>
+      <content type="html"><![CDATA[<pre><code>/** * Created by zhangweixiao on 2018/5/14. */// 1.改变this指向    var obj1={        name:&#39;seven&#39;    };    var obj2={        name:&#39;anne&#39;    };global.name=&#39;global&#39;;var getName=function () {    console.log(this.name);};getName();//globalgetName.call(obj1);//sevengetName.call(obj2);//anne//function.prototype.bindFunction.prototype.bind=function (context) {//context表示obj    var self=this;//保存this引用，否则就变成去全局了。    return function () {        console.log(this);        return self.apply(context,arguments);//self指向=function () {console.log(this.name);}    }};var obj={name:&#39;seven&#39;};var func=function () {    console.log(this.name);    console.log(arguments);}.bind(obj);func(11,22);Function.prototype.bind=function () {    var self=this,//保存原函数        context=[].shift.call(arguments),//获取第一个参数        args=[].slice.call(arguments);//剩余参数转换成数组    return function () {        //组合两次的参数作为新参数        return self.apply(context,[].concat.call(args,[].slice.call(arguments)));    }};var obj={    name:&#39;svene&#39;};var func=function (a,b,c,d) {    console.log(this.name);    console.log([a,b,c,d]);}.bind(obj,1,2);func(3,4);//3 借用其他对象的方法var A=function (name) {    this.name=name;};var B=function () {    A.apply(this,arguments);};B.prototype.getName=function () {    return this.name;};var b=new B(&#39;seven&#39;);console.log(b.getName());(function () {        Array.prototype.push.call(arguments,3);        console.log(arguments);    })(1,2);var a={};Array.prototype.push.call(a,&#39;first&#39;);console.log(a.length);console.log(a[0]);</code></pre>]]></content>
+      
+      <categories>
+          
+          <category> Javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> apply </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>js中的this</title>
       <link href="/2018/05/14/js%E4%B8%AD%E7%9A%84this/"/>
       <url>/2018/05/14/js%E4%B8%AD%E7%9A%84this/</url>
@@ -91,7 +112,7 @@
       <title>通过文本为pdf添加书签</title>
       <link href="/2018/05/09/%E9%80%9A%E8%BF%87%E6%96%87%E6%9C%AC%E4%B8%BApdf%E6%B7%BB%E5%8A%A0%E4%B9%A6%E7%AD%BE/"/>
       <url>/2018/05/09/%E9%80%9A%E8%BF%87%E6%96%87%E6%9C%AC%E4%B8%BApdf%E6%B7%BB%E5%8A%A0%E4%B9%A6%E7%AD%BE/</url>
-      <content type="html"><![CDATA[<h1 id="pmark"><a href="#pmark" class="headerlink" title="pmark"></a>pmark</h1><p>pdf书签生成工具和编辑工具。</p><p><a href="https://github.com/zwxbest/pmark" target="_blank" rel="noopener">github地址</a></p><p>个人收集了不少pdf，有的没有书签，不能跳页不方便。<br>有的书签每次跳页会把缩放页面。</p><p>针对这两个最常用的需求，实现一个简单的功能。</p><p>不想学javaFx，不喜欢 .net, (从wpf一路被微软坑的过来人)。考虑之后用springboot做一个内嵌tomcat的web页面。</p><p>复制当当或者亚马逊或者京东或者豆瓣的书签内容到txt中，即可为pdf生成书签。书签有层级，可跳转页码。<br>编辑全部书签可让书签跳转时不会缩放，即按照档当前的缩放比例。</p><p>此操作会删除已存在的书签，并新增书签，但不会对pdf中的文字和图形注释以及其他的产生影响。</p><p>提交后会在pdf同级目录生成一个XX-带书签.pdf的文件，为处理完成后的pdf文件。</p><h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>如图</p><img src="/2018/05/09/通过文本为pdf添加书签/web.jpg" title="pmarker"><p>处理之后</p><ol><li>页码偏移：pdf文件从封面就开始计算页码，而目录页码是书上标的页码。偏移即差值</li><li>路径：pdf的绝对路径</li><li>书签文本：从上面说的网站粘贴过来</li><li>书签格式：{no}-数字序号，{content}- 内容,{page}-页码,不需要指定空格，每行代表一个层级，制作折叠书签。<br>注意{no}和{page}只包含数字，{content}表示除了no外要在书签中显示的内容<br>比如：传播过度的社会　/9 。这里没有序号，有页码，但是不希望书签中包含/，即定义格式{content}/{page}</li></ol><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><pre><code>java -jar pmark-0.0.1-SNAPSHOT.jar</code></pre><h2 id="待改进"><a href="#待改进" class="headerlink" title="待改进"></a>待改进</h2><ul><li style="list-style: none"><input type="checkbox"> 页面，要美，可是，好累。</li><li style="list-style: none"><input type="checkbox"> 整理出大量pdf书签格式表达式，先是自动识别格式位符定义格式。</li><li style="list-style: none"><input type="checkbox"> 爬虫抓取以上网站并让用户选择正确或者详细的那个，使用语言初步定为node.js。</li></ul>]]></content>
+      <content type="html"><![CDATA[<h1 id="pmark"><a href="#pmark" class="headerlink" title="pmark"></a>pmark</h1><p>pdf书签生成工具和编辑工具。</p><p><a href="https://github.com/zwxbest/pmark" target="_blank" rel="noopener">github地址</a></p><p>个人收集了不少pdf，有的没有书签，不能跳页不方便。<br>有的书签每次跳页会把缩放页面。</p><p>针对这两个最常用的需求，实现一个简单的功能。</p><p>不想学javaFx，不喜欢 .net, (从wpf一路被微软坑的过来人)。考虑之后用springboot做一个内嵌tomcat的web页面。</p><p>复制当当或者亚马逊或者京东或者豆瓣的书签内容到txt中，即可为pdf生成书签。书签有层级，可跳转页码。<br>编辑全部书签可让书签跳转时不会缩放，即按照档当前的缩放比例。</p><p>此操作会删除已存在的书签，并新增书签，但不会对pdf中的文字和图形注释以及其他的产生影响。</p><p>提交后会在pdf同级目录生成一个XX-带书签.pdf的文件，为处理完成后的pdf文件。</p><h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>如图</p><img src="/2018/05/09/通过文本为pdf添加书签/web.jpg" title="pmarker"><p>处理之后</p><img src="/2018/05/09/通过文本为pdf添加书签/pdf.jpg" title="pdf"><ol><li>页码偏移：pdf文件从封面就开始计算页码，而目录页码是书上标的页码。偏移即差值</li><li>路径：pdf的绝对路径</li><li>书签文本：从上面说的网站粘贴过来</li><li>书签格式：{no}-数字序号，{content}- 内容,{page}-页码,不需要指定空格，每行代表一个层级，制作折叠书签。<br>注意{no}和{page}只包含数字，{content}表示除了no外要在书签中显示的内容<br>比如：传播过度的社会　/9 。这里没有序号，有页码，但是不希望书签中包含/，即定义格式{content}/{page}</li></ol><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><pre><code>java -jar pmark-0.0.1-SNAPSHOT.jar</code></pre><h2 id="待改进"><a href="#待改进" class="headerlink" title="待改进"></a>待改进</h2><ul><li style="list-style: none"><input type="checkbox"> 页面，要美，可是，好累。</li><li style="list-style: none"><input type="checkbox"> 整理出大量pdf书签格式表达式，先是自动识别格式位符定义格式。</li><li style="list-style: none"><input type="checkbox"> 爬虫抓取以上网站并让用户选择正确或者详细的那个，使用语言初步定为node.js。</li></ul>]]></content>
       
       <categories>
           
