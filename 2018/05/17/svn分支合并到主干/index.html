@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>hexo常用操作大全 | 你走吧</title>
-  <meta name="keywords" content=" hexo , [object Object] , 工具 ">
-  <meta name="description" content="hexo常用操作大全 | 你走吧">
+  <title>svn分支合并到主干 | 你走吧</title>
+  <meta name="keywords" content=" svn ">
+  <meta name="description" content="svn分支合并到主干 | 你走吧">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介 张为晓 毕业于山科大，目前从事后端开发工作。 喜欢研究基础-算法、数据结构、设计模式等。 对于轮子,够用就好。 下班或者加班前会去健身。 不喜欢社交网络-QQ、微信等，崇尚简单高效生活。 愿景是30岁时能够衣锦还乡">
 <meta property="og:type" content="website">
@@ -256,34 +256,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hexo常用操作大全" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-svn分支合并到主干" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo常用操作大全</h1>
+        <h1 class="article-title">svn分支合并到主干</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+            <a href="javascript:" data-rel="版本控制">版本控制</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">hexo</a>
-            
-            <a href="javascript:" class="color1">[object Object]</a>
-            
-            <a href="javascript:" class="color3">工具</a>
+            <a href="javascript:" class="color4">svn</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-05-12 23:00:04'>2018-05-12 22:28</time>
+        创建时间:<time class="date" title='更新时间: 2018-05-17 23:40:28'>2018-05-17 23:29</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:70</span>
+        <span>字数:164</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -313,7 +315,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#添加图片"><span class="toc-text">添加图片</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#需求"><span class="toc-text">需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考来源"><span class="toc-text">参考来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作"><span class="toc-text">操作</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -328,20 +330,13 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h3><p>好像需要hexo3以上,hexo -v查看。</p>
-<ol>
-<li><p>post_asset_folder: true</p>
-</li>
-<li><p>hexo new post “hexo常用操作大全” ,和之前创建文章一样,不过之后会在同级目录下创建一个”hexo常用操作大全”的目录,用来存放图片.</p>
-</li>
-<li><blockquote>
-
-</blockquote>
-<blockquote>
-<p><code></code></p>
-</blockquote>
-</li>
-</ol>
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>有时会在分支做一些实验性或者重构性的工作。<br>百度了，写的乱七八糟，svn右键我就没找到reintegrate这个功能选项。<br>百度第一页没搞定就直接谷歌了，通常前三条，基本上第一条就搞定。</p>
+<h3 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h3><p><a href="https://stackoverflow.com/questions/7563693/merge-a-branch-into-trunk" target="_blank" rel="noopener">Merge a Branch into Trunk</a></p>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>svn merge –reintegrate ^/project/branches/branch_1</p>
+<p>一行搞定，冲突放到小乌龟或者idea中处理，处理完成运行一遍项目没问题提交到主干。</p>
+<p>关于那个^(caret)，因为是特殊符号，应该用caret查。</p>
+<p><a href="http://svnbook.red-bean.com/en/1.6/svn.basic.in-action.html" target="_blank" rel="noopener">http://svnbook.red-bean.com/en/1.6/svn.basic.in-action.html</a></p>
+<p>代表svn仓库的根目录</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至zhangweixiao@live.com </span>
@@ -355,12 +350,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>hexo常用操作大全</p>
-    <p><span>文章字数:</span><span class="post-count">70</span></p>
+    <p><span>文章标题:</span>svn分支合并到主干</p>
+    <p><span>文章字数:</span><span class="post-count">164</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="张为晓">张为晓</a></p>
-    <p><span>发布时间:</span>2018-05-12, 22:28:00</p>
-    <p><span>最后更新:</span>2018-05-12, 23:00:04</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/05/12/hexo常用操作大全/" title="hexo常用操作大全">http://nizouba.com/2018/05/12/hexo常用操作大全/</a>
+    <p><span>发布时间:</span>2018-05-17, 23:29:34</p>
+    <p><span>最后更新:</span>2018-05-17, 23:40:28</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/05/17/svn分支合并到主干/" title="svn分支合并到主干">http://nizouba.com/2018/05/17/svn分支合并到主干/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -378,7 +373,7 @@
             repo: 'zwxbest.github.io',
             owner: 'zwxbest',
             admin: ['zwxbest'],
-            id:'Sat May 12 2018 22:28:00 GMT+0800',
+            id:'Thu May 17 2018 23:29:34 GMT+0800',
             distractionFreeMode: 'true',
             language: 'zh-CN',
             perPage: parseInt('10',10)
