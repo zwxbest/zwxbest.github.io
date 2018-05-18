@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>通过文本为pdf添加书签 | 你走吧</title>
-  <meta name="keywords" content=" iText , PDFBox ">
-  <meta name="description" content="通过文本为pdf添加书签 | 你走吧">
+  <title>shiro运作活动图 | 你走吧</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="shiro运作活动图 | 你走吧">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="个人简介 张为晓 毕业于山科大，目前从事后端开发工作。 喜欢研究基础-算法、数据结构、设计模式等。 对于轮子,够用就好。 下班或者加班前会去健身。 不喜欢社交网络-QQ、微信等，崇尚简单高效生活。 愿景是30岁时能够衣锦还乡">
 <meta property="og:type" content="website">
@@ -264,38 +264,24 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-通过文本为pdf添加书签" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-shiro运作活动图" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">通过文本为pdf添加书签</h1>
+        <h1 class="article-title">shiro运作活动图</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-            <a href="javascript:" data-rel="工具">工具</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color1">iText</a>
-            
-            <a href="javascript:" class="color2">PDFBox</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-05-15 00:25:40'>2018-05-09 01:48</time>
+        创建时间:<time class="date" title='更新时间: 2018-05-18 23:44:03'>2018-05-18 21:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:498</span>
+        <span>字数:79</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -325,7 +311,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pmark"><span class="toc-text">pmark</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#操作方法"><span class="toc-text">操作方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行"><span class="toc-text">运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#待改进"><span class="toc-text">待改进</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -340,31 +326,38 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="pmark"><a href="#pmark" class="headerlink" title="pmark"></a>pmark</h1><p>pdf书签生成工具和编辑工具。</p>
-<p><a href="https://github.com/zwxbest/pmark" target="_blank" rel="noopener">github地址</a></p>
-<p>个人收集了不少pdf，有的没有书签，不能跳页不方便。<br>有的书签每次跳页会把缩放页面。</p>
-<p>针对这两个最常用的需求，实现一个简单的功能。</p>
-<p>不想学javaFx，不喜欢 .net, (从wpf一路被微软坑的过来人)。考虑之后用springboot做一个内嵌tomcat的web页面。</p>
-<p>复制当当或者亚马逊或者京东或者豆瓣的书签内容到txt中，即可为pdf生成书签。书签有层级，可跳转页码。<br>编辑全部书签可让书签跳转时不会缩放，即按照档当前的缩放比例。</p>
-<p>此操作会删除已存在的书签，并新增书签，但不会对pdf中的文字和图形注释以及其他的产生影响。</p>
-<p>提交后会在pdf同级目录生成一个XX-带书签.pdf的文件，为处理完成后的pdf文件。</p>
-<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>如图</p>
-<img src="/2018/05/09/通过文本为pdf添加书签/web.jpg" title="pmarker">
-<p>处理之后</p>
-<img src="/2018/05/09/通过文本为pdf添加书签/pdf.jpg" title="pdf">
-<ol>
-<li>页码偏移：pdf文件从封面就开始计算页码，而目录页码是书上标的页码。偏移即差值</li>
-<li>路径：pdf的绝对路径</li>
-<li>书签文本：从上面说的网站粘贴过来</li>
-<li>书签格式：{no}-数字序号，{content}- 内容,{page}-页码,不需要指定空格，每行代表一个层级，制作折叠书签。<br>注意{no}和{page}只包含数字，{content}表示除了no外要在书签中显示的内容<br>比如：传播过度的社会　/9 。这里没有序号，有页码，但是不希望书签中包含/，即定义格式{content}/{page}</li>
-</ol>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><pre><code>java -jar pmark-0.0.1-SNAPSHOT.jar
-</code></pre><h2 id="待改进"><a href="#待改进" class="headerlink" title="待改进"></a>待改进</h2><ul>
-<li style="list-style: none"><input type="checkbox"> 页面，要美，可是，好累。</li>
-<li style="list-style: none"><input type="checkbox"> 整理出大量pdf书签格式表达式，先是自动识别格式位符定义格式。</li>
-<li style="list-style: none"><input type="checkbox"> 爬虫抓取以上网站并让用户选择正确或者详细的那个，使用语言初步定为node.js。</li>
-</ul>
-
+        <img src="/2018/05/18/shiro运作活动图/shiro.jpg" title="shiro">
+<pre><code>@startuml
+start
+partition login{
+:token=new UsernamePasswordToken(loginId, password,rememberMe);
+:SecurityUtils.setSecurityManager(securityManager);
+note right
+@Autowired
+end note
+:SecurityUtils.getSubject().login(token);
+}
+partition shiro{
+:login(AuthenticationToken token);
+:securityManager.login();
+}
+partition 项目{
+:doGetAuthenticationInfo(token);
+note right
+继承接口，验证密码是否匹配数据库
+end note
+}
+:onSuccessfulLogin(token, info, loggedIn);
+:rememberMeSuccessfulLogin();
+: forgetIdentity(subject);
+: rememberIdentity(subject, token, info);
+: rememberIdentity(subject, principals);
+note right
+remember存储principals并加密
+end note
+stop
+@enduml
+</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至zhangweixiao@live.com </span>
     </div>
@@ -377,12 +370,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>通过文本为pdf添加书签</p>
-    <p><span>文章字数:</span><span class="post-count">498</span></p>
+    <p><span>文章标题:</span>shiro运作活动图</p>
+    <p><span>文章字数:</span><span class="post-count">79</span></p>
     <p><span>本文作者:</span><a href="javascript:void(0)" title="张为晓">张为晓</a></p>
-    <p><span>发布时间:</span>2018-05-09, 01:48:30</p>
-    <p><span>最后更新:</span>2018-05-15, 00:25:40</p>
-    <span>原始链接:</span><a class="post-url" href="/2018/05/09/通过文本为pdf添加书签/" title="通过文本为pdf添加书签">http://nizouba.com/2018/05/09/通过文本为pdf添加书签/</a>
+    <p><span>发布时间:</span>2018-05-18, 21:24:10</p>
+    <p><span>最后更新:</span>2018-05-18, 23:44:03</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/05/18/shiro运作活动图/" title="shiro运作活动图">http://nizouba.com/2018/05/18/shiro运作活动图/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -400,7 +393,7 @@
             repo: 'zwxbest.github.io',
             owner: 'zwxbest',
             admin: ['zwxbest'],
-            id:'Wed May 09 2018 01:48:30 GMT+0800',
+            id:'Fri May 18 2018 21:24:10 GMT+0800',
             distractionFreeMode: 'true',
             language: 'zh-CN',
             perPage: parseInt('10',10)
