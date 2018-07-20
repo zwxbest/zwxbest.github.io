@@ -1,0 +1,6 @@
+@startuml spring-dao
+UserService--left--->UserDao
+JdbcUserDao--up--|>UserDao
+MybatisUserDao-up-|>UserDao
+HibernateUserDao-up-|>UserDao
+@endum

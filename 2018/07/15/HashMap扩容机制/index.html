@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HashMap扩容机制 | 你走吧</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="HashMap扩容机制 | 你走吧">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介 工作：Java后端开发 爱好：健身、学习技术 不爱：社交网络 正在坚持：早睡早起、简化生活、戒掉智能机 愿景：30岁时衣锦还乡">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于&amp;留言板">
+<meta property="og:url" content="http://nizouba.com/about/index.html">
+<meta property="og:site_name" content="你走吧">
+<meta property="og:description" content="个人简介 工作：Java后端开发 爱好：健身、学习技术 不爱：社交网络 正在坚持：早睡早起、简化生活、戒掉智能机 愿景：30岁时衣锦还乡">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-26T11:56:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于&amp;留言板">
+<meta name="twitter:description" content="个人简介 工作：Java后端开发 爱好：健身、学习技术 不爱：社交网络 正在坚持：早睡早起、简化生活、戒掉智能机 愿景：30岁时衣锦还乡">
+
+
+<link rel="icon" href="/img/avatar.png">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="/css/hl_theme/atom-light.css">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+</div>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>zwxbest</span>
+</div>
+
+<div class="icon">
+    
+    
+    <a class="github" title="github" href="https://github.com/zwxbest" target="_blank"></a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="email" title="email" href="mailto:zhangweixiao@live.com"></a>
+    
+</div>
+
+
+
+<ul>
+    <li class="all active">全部文章</li>
+    
+    <li data-rel="工具"> 工具 </li>
+    
+    <li data-rel="Java"> Java </li>
+    
+    <li data-rel="MySQL"> MySQL </li>
+    
+    <li data-rel="Spring"> Spring </li>
+    
+    <li data-rel="Javascript"> Javascript </li>
+    
+    <li data-rel="Linux"> Linux </li>
+    
+    <li data-rel="版本控制"> 版本控制 </li>
+    
+    <li data-rel="java"> java </li>
+    
+    <li data-rel="数据库"> 数据库 </li>
+    
+    <li data-rel="Node.Js"> Node.Js </li>
+    
+    <li data-rel="设计模式"> 设计模式 </li>
+    
+    <li data-rel="SQL"> SQL </li>
+    
+    <li data-rel="算法"> 算法 </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="130">
+<input type="hidden" id="yelog_site_word_count" value="47.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://www.bt8.club">BT俱乐部</a></li>
+            
+            <li><a target="_blank" href="http://www.bt8.club/mi/mj">美剧天堂</a></li>
+            
+            <li><a target="_blank" href="http://www.bt8.club/mi/dy">电影天堂</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+        <label for="tagswitch">Tags:</label>
+        <input id="tagswitch" type="checkbox">
+    </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">并发</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">ES</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Hibernate</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">事务</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">uml</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">apply</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">bash</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">Jvm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">jvm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">JVM</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">springmvc</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Socket</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">Shiro</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">svn</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">vim</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">java建议</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">栈</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">队列</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">排序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">索引</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">有趣</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">iText</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2018/06/25/ElasticSearch基本用法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ElasticSearch基本用法">ElasticSearch基本用法</span>
+            <span class="post-date" title="2018-06-25 17:16:07">2018/06/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/12/BlockingQueue/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="BlockingQueue">BlockingQueue</span>
+            <span class="post-date" title="2018-07-12 22:26:33">2018/07/12</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/06/20/Chrome网页关键词屏蔽插件/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Chrome网页关键词屏蔽插件">Chrome网页关键词屏蔽插件</span>
+            <span class="post-date" title="2018-06-20 16:15:11">2018/06/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/11/ElasticSearch面试/"
+           data-tag="ES"
+           data-author="" >
+            <span class="post-title" title="ElasticSearch面试">ElasticSearch面试</span>
+            <span class="post-date" title="2018-07-11 21:06:49">2018/07/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/15/HashMap扩容机制/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HashMap扩容机制">HashMap扩容机制</span>
+            <span class="post-date" title="2018-07-15 10:15:00">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/16/Elasticsearch索引的创建、数据的增删该查操作/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Elasticsearch索引的创建、数据的增删该查操作">Elasticsearch索引的创建、数据的增删该查操作</span>
+            <span class="post-date" title="2018-07-16 21:23:03">2018/07/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/16/HashSet、TreeSet和LinkedHashSet的区别/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HashSet、TreeSet和LinkedHashSet的区别">HashSet、TreeSet和LinkedHashSet的区别</span>
+            <span class="post-date" title="2018-07-16 19:24:04">2018/07/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/27/Hibernate中的悲观锁和乐观锁/"
+           data-tag="Hibernate"
+           data-author="" >
+            <span class="post-title" title="Hibernate中的悲观锁和乐观锁">Hibernate中的悲观锁和乐观锁</span>
+            <span class="post-date" title="2018-06-27 17:35:31">2018/06/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/27/Hibernate的一级缓存和二级缓存/"
+           data-tag="Hibernate"
+           data-author="" >
+            <span class="post-title" title="Hibernate的一级缓存和二级缓存">Hibernate的一级缓存和二级缓存</span>
+            <span class="post-date" title="2018-06-27 17:12:38">2018/06/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/Hashmap/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hashmap">Hashmap</span>
+            <span class="post-date" title="2018-07-06 01:34:04">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/09/IOC的流水线/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IOC的流水线">IOC的流水线</span>
+            <span class="post-date" title="2018-07-09 08:24:59">2018/07/09</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/08/IP地址分类/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IP地址分类">IP地址分类</span>
+            <span class="post-date" title="2018-07-08 20:25:45">2018/07/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/17/JDK的并发容器/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JDK的并发容器">JDK的并发容器</span>
+            <span class="post-date" title="2018-07-17 09:39:45">2018/07/17</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2018/07/15/Java-ArrayList工作原理及实现/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java ArrayList工作原理及实现">Java ArrayList工作原理及实现</span>
+            <span class="post-date" title="2018-07-15 16:00:59">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/16/Java-GC工作原理以及Minor-GC、Major-GC、Full-GC简单总结/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java GC工作原理以及Minor GC、Major GC、Full GC简单总结">Java GC工作原理以及Minor GC、Major GC、Full GC简单总结</span>
+            <span class="post-date" title="2018-07-16 12:01:50">2018/07/16</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2018/07/07/Java-IO知识点/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java IO知识点">Java IO知识点</span>
+            <span class="post-date" title="2018-07-07 23:20:33">2018/07/07</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/JavaScript中数组slice和splice的对比/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript中数组slice和splice的对比">JavaScript中数组slice和splice的对比</span>
+            <span class="post-date" title="2018-07-06 22:23:26">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/Java实现多线程的方式/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="Java实现多线程的方式">Java实现多线程的方式</span>
+            <span class="post-date" title="2018-07-06 02:20:42">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/17/Java并发之volatile/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Java并发之volatile">Java并发之volatile</span>
+            <span class="post-date" title="2018-07-17 09:34:51">2018/07/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/19/Java并发优化方案/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="Java并发优化方案">Java并发优化方案</span>
+            <span class="post-date" title="2018-06-19 01:09:21">2018/06/19</span>
+        </a>
+        
+        <a  class="MySQL "
+           href="/2018/07/15/MySQL-InnoDB锁类型及幻象读问题/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL InnoDB锁类型及幻象读问题">MySQL InnoDB锁类型及幻象读问题</span>
+            <span class="post-date" title="2018-07-15 11:27:14">2018/07/15</span>
+        </a>
+        
+        <a  class="MySQL "
+           href="/2018/07/15/MySQL-binlog-format-Mixed-Statement-Row/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL binlog_format (Mixed,Statement,Row)">MySQL binlog_format (Mixed,Statement,Row)</span>
+            <span class="post-date" title="2018-07-15 13:15:30">2018/07/15</span>
+        </a>
+        
+        <a  class="MySQL "
+           href="/2018/07/15/MySQL使用可重复读作为默认隔离级别的原因之一/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL使用可重复读作为默认隔离级别的原因之一">MySQL使用可重复读作为默认隔离级别的原因之一</span>
+            <span class="post-date" title="2018-07-15 11:28:53">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/MySQL创建索引方法：ALTER-TABLE和CREATE-INDEX的区别/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL创建索引方法：ALTER TABLE和CREATE INDEX的区别">MySQL创建索引方法：ALTER TABLE和CREATE INDEX的区别</span>
+            <span class="post-date" title="2018-07-06 23:17:13">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/15/MySQL的X锁和S锁/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL的X锁和S锁">MySQL的X锁和S锁</span>
+            <span class="post-date" title="2018-07-15 14:44:29">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/11/MySQL组合索引的注意点/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL组合索引的注意点">MySQL组合索引的注意点</span>
+            <span class="post-date" title="2018-07-11 22:17:27">2018/07/11</span>
+        </a>
+        
+        <a  class="MySQL "
+           href="/2018/07/16/MySQL的热备份和冷备份/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL的热备份和冷备份">MySQL的热备份和冷备份</span>
+            <span class="post-date" title="2018-07-16 11:48:25">2018/07/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/16/NIO之缓冲区Buffer/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NIO之缓冲区Buffer">NIO之缓冲区Buffer</span>
+            <span class="post-date" title="2018-07-16 00:24:59">2018/07/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/17/PO、VO、TO、BO、POJO等解释/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PO、VO、TO、BO、POJO等解释">PO、VO、TO、BO、POJO等解释</span>
+            <span class="post-date" title="2018-06-17 17:50:53">2018/06/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/24/Springboot简单理解/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springboot简单理解">Springboot简单理解</span>
+            <span class="post-date" title="2018-06-24 21:38:17">2018/06/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/RabbitMQ的应用场景以及基本原理介绍/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RabbitMQ的应用场景以及基本原理介绍">RabbitMQ的应用场景以及基本原理介绍</span>
+            <span class="post-date" title="2018-07-06 03:50:51">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/11/Springmvc面试题/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Springmvc面试题">Springmvc面试题</span>
+            <span class="post-date" title="2018-07-11 00:24:14">2018/07/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/SpringCloud分布式事务管理/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SpringCloud分布式事务管理">SpringCloud分布式事务管理</span>
+            <span class="post-date" title="2018-07-06 04:30:03">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/20/Spring中Bean的生命周期/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="Spring中Bean的生命周期">Spring中Bean的生命周期</span>
+            <span class="post-date" title="2018-06-20 19:58:33">2018/06/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/20/Spring中的父子容器/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="Spring中的父子容器">Spring中的父子容器</span>
+            <span class="post-date" title="2018-06-20 16:00:22">2018/06/20</span>
+        </a>
+        
+        <a  class="Spring "
+           href="/2018/06/20/Spring中的事务管理/"
+           data-tag="Spring,事务"
+           data-author="" >
+            <span class="post-title" title="Spring中的事务管理">Spring中的事务管理</span>
+            <span class="post-date" title="2018-06-20 00:32:52">2018/06/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/Spring之AOP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring之AOP">Spring之AOP</span>
+            <span class="post-date" title="2018-07-06 01:37:35">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/27/Spring对DAO的支持/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring对DAO的支持">Spring对DAO的支持</span>
+            <span class="post-date" title="2018-06-27 12:15:51">2018/06/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/21/Spring拦截器和过滤器的区别/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Spring拦截器、Servlet过滤器、Spring AOP、Servet监听器的区别">Spring拦截器、Servlet过滤器、Spring AOP、Servet监听器的区别</span>
+            <span class="post-date" title="2018-06-21 11:39:59">2018/06/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/08/TCP和UDP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TCP和UDP">TCP和UDP</span>
+            <span class="post-date" title="2018-07-08 20:16:19">2018/07/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/15/UML类图中的6种关系/"
+           data-tag="uml"
+           data-author="" >
+            <span class="post-title" title="UML类图中的6种关系">UML类图中的6种关系</span>
+            <span class="post-date" title="2018-06-15 21:35:12">2018/06/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/23/Web中的安全防御/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Web中的安全防御">Web中的安全防御</span>
+            <span class="post-date" title="2018-06-23 12:34:50">2018/06/23</span>
+        </a>
+        
+        <a  class="Javascript "
+           href="/2018/05/15/apply用法/"
+           data-tag="apply"
+           data-author="" >
+            <span class="post-title" title="apply用法">apply用法</span>
+            <span class="post-date" title="2018-05-15 00:42:18">2018/05/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/05/20/call和apply的区别/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="call和apply的区别">call和apply的区别</span>
+            <span class="post-date" title="2018-05-20 23:59:41">2018/05/20</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2018/05/20/bash使用技巧大全/"
+           data-tag="bash"
+           data-author="" >
+            <span class="post-title" title="bash使用技巧大全">bash使用技巧大全</span>
+            <span class="post-date" title="2018-05-20 15:04:56">2018/05/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/19/docker常用操作/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker常用操作">docker常用操作</span>
+            <span class="post-date" title="2018-06-19 20:36:52">2018/06/19</span>
+        </a>
+        
+        <a  class="版本控制 "
+           href="/2018/06/18/git状态整理/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git状态整理">git状态整理</span>
+            <span class="post-date" title="2018-06-18 12:38:18">2018/06/18</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2018/07/08/java中的finalize方法/"
+           data-tag="Jvm"
+           data-author="" >
+            <span class="post-title" title="java中的finalize方法">java中的finalize方法</span>
+            <span class="post-date" title="2018-07-08 01:29:55">2018/07/08</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2018/07/08/java中的传值和引用/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java中的传值和引用">java中的传值和引用</span>
+            <span class="post-date" title="2018-07-08 01:37:13">2018/07/08</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/05/19/hexo常用操作/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="hexo常用操作">hexo常用操作</span>
+            <span class="post-date" title="2018-05-19 12:24:35">2018/05/19</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2018/05/20/java线程基础/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="java线程基础">java线程基础</span>
+            <span class="post-date" title="2018-05-20 11:47:28">2018/05/20</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2018/07/07/java运算符优先级知识点/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java运算符知识点">java运算符知识点</span>
+            <span class="post-date" title="2018-07-07 23:37:20">2018/07/07</span>
+        </a>
+        
+        <a  class="Javascript "
+           href="/2018/05/14/js中的this/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="js中的this">js中的this</span>
+            <span class="post-date" title="2018-05-14 22:51:48">2018/05/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/05/19/java线程状态转换图/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="java线程状态转换图">java线程状态转换图</span>
+            <span class="post-date" title="2018-05-19 22:16:45">2018/05/19</span>
+        </a>
+        
+        <a  class="java "
+           href="/2018/05/30/jdk和jvm/"
+           data-tag="jvm"
+           data-author="" >
+            <span class="post-title" title="jdk和jvm">jdk和jvm</span>
+            <span class="post-date" title="2018-05-30 22:49:40">2018/05/30</span>
+        </a>
+        
+        <a  class="Javascript "
+           href="/2018/05/21/js的类数组对象/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="js的类数组对象">js的类数组对象</span>
+            <span class="post-date" title="2018-05-21 01:01:05">2018/05/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/15/jvm之老年代/"
+           data-tag="JVM"
+           data-author="" >
+            <span class="post-title" title="java堆">java堆</span>
+            <span class="post-date" title="2018-07-15 23:15:05">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/jvm基本结构/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jvm基本结构">jvm基本结构</span>
+            <span class="post-date" title="2018-07-06 02:12:50">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/08/jvm垃圾回收之判断可触及性/"
+           data-tag="jvm"
+           data-author="" >
+            <span class="post-title" title="jvm垃圾回收之判断可触及性">jvm垃圾回收之判断可触及性</span>
+            <span class="post-date" title="2018-07-08 02:22:19">2018/07/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/07/jvm知识点总结/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="jvm知识点总结">jvm知识点总结</span>
+            <span class="post-date" title="2018-07-07 20:53:15">2018/07/07</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2018/05/20/linux常用命令/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux常用命令">linux常用命令</span>
+            <span class="post-date" title="2018-05-20 15:23:14">2018/05/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/29/mock-server简介/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="mock server简介">mock server简介</span>
+            <span class="post-date" title="2018-06-29 23:46:52">2018/06/29</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/01/lombok的-RequiredArgsConstructor/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="lombok的@RequiredArgsConstructor">lombok的@RequiredArgsConstructor</span>
+            <span class="post-date" title="2018-06-01 10:52:39">2018/06/01</span>
+        </a>
+        
+        <a  class="MySQL "
+           href="/2018/07/11/mySQL索引/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="mySQL索引">mySQL索引</span>
+            <span class="post-date" title="2018-07-11 21:22:03">2018/07/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/27/mybatis中的二级缓存/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="mybatis中的二级缓存">mybatis中的二级缓存</span>
+            <span class="post-date" title="2018-06-27 21:28:10">2018/06/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/11/mysql的聚集索引和非聚集索引/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="mysql的聚集索引和非聚集索引">mysql的聚集索引和非聚集索引</span>
+            <span class="post-date" title="2018-07-11 21:39:35">2018/07/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/10/mybatis相关知识点/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="mybatis相关知识点">mybatis相关知识点</span>
+            <span class="post-date" title="2018-07-10 22:58:24">2018/07/10</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2018/06/19/mysql中的MyISAM和InnoDb存储引擎对比/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql中的MyISAM和InnoDb存储引擎对比">mysql中的MyISAM和InnoDb存储引擎对比</span>
+            <span class="post-date" title="2018-06-19 23:43:13">2018/06/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/20/new-test/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="new test">new test</span>
+            <span class="post-date" title="2018-07-20 10:45:43">2018/07/20</span>
+        </a>
+        
+        <a  class="Node.Js "
+           href="/2018/06/23/npm常用操作/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="npm常用操作">npm常用操作</span>
+            <span class="post-date" title="2018-06-23 12:07:14">2018/06/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/17/redis数据结构整理/"
+           data-tag="redis"
+           data-author="" >
+            <span class="post-title" title="redis数据结构整理">redis数据结构整理</span>
+            <span class="post-date" title="2018-06-17 21:19:44">2018/06/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/14/oauth2协议/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="oauth2协议">oauth2协议</span>
+            <span class="post-date" title="2018-07-14 18:19:03">2018/07/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/14/oauth学习/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="oauth学习">oauth学习</span>
+            <span class="post-date" title="2018-07-14 15:09:12">2018/07/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/redis的内存淘汰机制/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="redis的内存淘汰机制">redis的内存淘汰机制</span>
+            <span class="post-date" title="2018-07-06 03:40:51">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/22/redis的持久化策略/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="redis的持久化策略">redis的持久化策略</span>
+            <span class="post-date" title="2018-06-22 23:31:02">2018/06/22</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/11/redis面试题/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="redis面试题">redis面试题</span>
+            <span class="post-date" title="2018-07-11 20:43:40">2018/07/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/12/springmvc工作原理/"
+           data-tag="springmvc"
+           data-author="" >
+            <span class="post-title" title="springmvc工作原理">springmvc工作原理</span>
+            <span class="post-date" title="2018-06-12 17:59:59">2018/06/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/13/socket/"
+           data-tag="Socket"
+           data-author="" >
+            <span class="post-title" title="socket">socket</span>
+            <span class="post-date" title="2018-07-13 20:12:20">2018/07/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/05/18/shiro运作活动图/"
+           data-tag="Shiro"
+           data-author="" >
+            <span class="post-title" title="shiro运作活动图">shiro运作活动图</span>
+            <span class="post-date" title="2018-05-18 21:24:10">2018/05/18</span>
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2018/06/18/spring中的设计模式/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="spring中的设计模式">spring中的设计模式</span>
+            <span class="post-date" title="2018-06-18 06:55:20">2018/06/18</span>
+        </a>
+        
+        <a  class="SQL "
+           href="/2018/07/05/sql面试题之学生教师课程分数/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="sql面试题之学生教师课程分数">sql面试题之学生教师课程分数</span>
+            <span class="post-date" title="2018-07-05 23:37:44">2018/07/05</span>
+        </a>
+        
+        <a  class="版本控制 "
+           href="/2018/05/17/svn分支合并到主干/"
+           data-tag="svn"
+           data-author="" >
+            <span class="post-title" title="svn分支合并到主干">svn分支合并到主干</span>
+            <span class="post-date" title="2018-05-17 23:29:34">2018/05/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/17/synchronized与线程安全/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="synchronized与线程安全">synchronized与线程安全</span>
+            <span class="post-date" title="2018-07-17 09:23:04">2018/07/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/07/utf-8和unicode/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="utf-8和unicode">utf-8和unicode</span>
+            <span class="post-date" title="2018-07-07 22:26:26">2018/07/07</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/18/test/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="test">test</span>
+            <span class="post-date" title="2018-07-18 19:04:47">2018/07/18</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/05/11/vim常用操作大全/"
+           data-tag="vim"
+           data-author="" >
+            <span class="post-title" title="vim常用操作大全">vim常用操作大全</span>
+            <span class="post-date" title="2018-05-11 20:30:12">2018/05/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/19/《MySQL技术内幕：InnoDB存储引擎》读书笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="《MySQL技术内幕：InnoDB存储引擎》读书笔记">《MySQL技术内幕：InnoDB存储引擎》读书笔记</span>
+            <span class="post-date" title="2018-07-19 12:34:53">2018/07/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/19/《高性能MySQL》读书笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="《高性能MySQL》读书笔记">《高性能MySQL》读书笔记</span>
+            <span class="post-date" title="2018-07-19 12:42:29">2018/07/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/05/19/不要在finally中处理返回值/"
+           data-tag="java建议"
+           data-author="" >
+            <span class="post-title" title="不要在finally中处理返回值">不要在finally中处理返回值</span>
+            <span class="post-date" title="2018-05-19 12:04:56">2018/05/19</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2018/07/06/一致性哈希算法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="一致性哈希算法">一致性哈希算法</span>
+            <span class="post-date" title="2018-07-06 03:23:59">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/14/二叉排序树/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二叉排序树">二叉排序树</span>
+            <span class="post-date" title="2018-07-14 20:02:18">2018/07/14</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2018/05/20/两个栈组成队列/"
+           data-tag="栈,队列"
+           data-author="" >
+            <span class="post-title" title="两个栈组成队列">两个栈组成队列</span>
+            <span class="post-date" title="2018-05-20 23:36:45">2018/05/20</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2018/07/06/交换两个变量的值，不使用第3个变量/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="交换两个变量的值，不使用第3个变量">交换两个变量的值，不使用第3个变量</span>
+            <span class="post-date" title="2018-07-06 03:06:18">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/29/使用python豆瓣自动顶贴以及识别验证码/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用python豆瓣自动顶贴以及识别验证码">使用python豆瓣自动顶贴以及识别验证码</span>
+            <span class="post-date" title="2018-06-29 22:38:11">2018/06/29</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/29/使用swagger自动生成文档/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用swagger自动生成文档">使用swagger自动生成文档</span>
+            <span class="post-date" title="2018-06-29 23:30:07">2018/06/29</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/关于volatile/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于volatile">关于volatile</span>
+            <span class="post-date" title="2018-07-06 02:32:34">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/12/信号量/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="信号量">信号量</span>
+            <span class="post-date" title="2018-07-12 21:52:42">2018/07/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/08/内部类知识点/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="内部类知识点">内部类知识点</span>
+            <span class="post-date" title="2018-07-08 03:43:30">2018/07/08</span>
+        </a>
+        
+        <a  class="java "
+           href="/2018/05/19/匿名类的构造函数/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="匿名类的构造函数">匿名类的构造函数</span>
+            <span class="post-date" title="2018-05-19 11:30:52">2018/05/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/15/前序、中序、后序遍历/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="前序、中序、后序遍历">前序、中序、后序遍历</span>
+            <span class="post-date" title="2018-07-15 00:03:11">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/29/单元测试实战/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="单元测试实战">单元测试实战</span>
+            <span class="post-date" title="2018-06-29 23:00:54">2018/06/29</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/只用2GB内存在20亿个数中找出现次数最多的/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="只用2GB内存在20亿个数中找出现次数最多的">只用2GB内存在20亿个数中找出现次数最多的</span>
+            <span class="post-date" title="2018-07-06 20:49:57">2018/07/06</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2018/07/06/布隆过滤器/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="布隆过滤器">布隆过滤器</span>
+            <span class="post-date" title="2018-07-06 20:29:24">2018/07/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/14/常用加密算法简单整理/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="常用加密算法简单整理">常用加密算法简单整理</span>
+            <span class="post-date" title="2018-07-14 18:41:38">2018/07/14</span>
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2018/05/20/常用设计模式整理/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="常用设计模式整理">常用设计模式整理</span>
+            <span class="post-date" title="2018-05-20 14:37:53">2018/05/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/14/平衡树/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="平衡树">平衡树</span>
+            <span class="post-date" title="2018-07-14 20:00:28">2018/07/14</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2018/07/07/异常分类/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="异常分类">异常分类</span>
+            <span class="post-date" title="2018-07-07 00:05:29">2018/07/07</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/10/微信公众号相关/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="微信公众号相关">微信公众号相关</span>
+            <span class="post-date" title="2018-07-10 21:45:44">2018/07/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/06/快速排序算法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="快速排序算法">快速排序算法</span>
+            <span class="post-date" title="2018-07-06 21:18:04">2018/07/06</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2018/07/15/排序算法/"
+           data-tag="排序"
+           data-author="" >
+            <span class="post-title" title="排序算法">排序算法</span>
+            <span class="post-date" title="2018-07-15 19:50:22">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/16/支付宝——开放平台第三方应用安全开发指南/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="支付宝——开放平台第三方应用安全开发指南">支付宝——开放平台第三方应用安全开发指南</span>
+            <span class="post-date" title="2018-07-16 10:59:28">2018/07/16</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2018/06/19/数据库事务基础知识/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数据库事务基础知识">数据库事务基础知识</span>
+            <span class="post-date" title="2018-06-19 23:13:54">2018/06/19</span>
+        </a>
+        
+        <a  class="SQL "
+           href="/2018/07/06/正确建立索引以及最左前缀原则/"
+           data-tag="索引"
+           data-author="" >
+            <span class="post-title" title="正确建立索引以及最左前缀原则">正确建立索引以及最左前缀原则</span>
+            <span class="post-date" title="2018-07-06 23:08:03">2018/07/06</span>
+        </a>
+        
+        <a  class="Spring "
+           href="/2018/07/08/方法注入和方法替换/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="方法注入和方法替换">方法注入和方法替换</span>
+            <span class="post-date" title="2018-07-08 20:34:18">2018/07/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/18/框架中常用的设计模式以及如何判断/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="框架中常用的设计模式以及如何判断">框架中常用的设计模式以及如何判断</span>
+            <span class="post-date" title="2018-06-18 06:56:06">2018/06/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/06/03/程序员的出路在哪里/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="程序员的出路在哪里">程序员的出路在哪里</span>
+            <span class="post-date" title="2018-06-03 01:02:52">2018/06/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/15/红黑树/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="红黑树">红黑树</span>
+            <span class="post-date" title="2018-07-15 02:22:20">2018/07/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/07/线索二叉树/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="线索二叉树">线索二叉树</span>
+            <span class="post-date" title="2018-07-07 17:40:43">2018/07/07</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/08/线程安全的单例模式/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="线程安全的单例模式">线程安全的单例模式</span>
+            <span class="post-date" title="2018-07-08 03:34:27">2018/07/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/12/线程池/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="线程池">线程池</span>
+            <span class="post-date" title="2018-07-12 22:02:10">2018/07/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/05/12/编程语言和工具的吉祥物们/"
+           data-tag="有趣"
+           data-author="" >
+            <span class="post-title" title="编程语言和工具的吉祥物们">编程语言和工具的吉祥物们</span>
+            <span class="post-date" title="2018-05-12 21:25:46">2018/05/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/08/网络地址转换NAT/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络地址转换NAT">网络地址转换NAT</span>
+            <span class="post-date" title="2018-07-08 19:07:01">2018/07/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/11/聚簇索引和非聚簇索引原理/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="聚簇索引和非聚簇索引原理">聚簇索引和非聚簇索引原理</span>
+            <span class="post-date" title="2018-07-11 21:50:35">2018/07/11</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2018/05/11/设计一个有getMain功能的栈/"
+           data-tag="栈"
+           data-author="" >
+            <span class="post-title" title="设计一个有getMain功能的栈">设计一个有getMain功能的栈</span>
+            <span class="post-date" title="2018-05-11 21:14:14">2018/05/11</span>
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2018/06/15/设计模式六大原则/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式六大原则">设计模式六大原则</span>
+            <span class="post-date" title="2018-06-15 20:57:51">2018/06/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/12/读写锁/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="读写锁">读写锁</span>
+            <span class="post-date" title="2018-07-12 21:56:52">2018/07/12</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/05/09/通过文本为pdf添加书签/"
+           data-tag="iText"
+           data-author="" >
+            <span class="post-title" title="通过文本为pdf添加书签">通过文本为pdf添加书签</span>
+            <span class="post-date" title="2018-05-09 01:48:30">2018/05/09</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/12/重入锁/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="重入锁">重入锁</span>
+            <span class="post-date" title="2018-07-12 21:31:53">2018/07/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/17/锁优化/"
+           data-tag="并发"
+           data-author="" >
+            <span class="post-title" title="锁优化">锁优化</span>
+            <span class="post-date" title="2018-07-17 12:09:14">2018/07/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/07/14/非对称加密算法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="非对称加密算法">非对称加密算法</span>
+            <span class="post-date" title="2018-07-14 18:56:14">2018/07/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-HashMap扩容机制" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">HashMap扩容机制</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-07-15 10:15:00'>2018-07-15 10:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:0</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至zhangweixiao@live.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>HashMap扩容机制</p>
+    <p><span>文章字数:</span><span class="post-count">0</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="zwxbest">zwxbest</a></p>
+    <p><span>发布时间:</span>2018-07-15, 10:15:00</p>
+    <p><span>最后更新:</span>2018-07-15, 10:15:00</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/07/15/HashMap扩容机制/" title="HashMap扩容机制">http://nizouba.com/2018/07/15/HashMap扩容机制/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="/css/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '08a4fc548786922c47c8',
+            clientSecret: 'a005fc7864f6cb57c300e714338037e3a335c1c3',
+            repo: 'zwxbest.github.io',
+            owner: 'zwxbest',
+            admin: ['zwxbest'],
+            id:'Sun Jul 15 2018 10:15:00 GMT+0800',
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+    
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2018 nizouba-你走吧</p>
+<p class="footer-entry">Buit with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#并发','#ES','#Hibernate','#多线程','#Spring','#事务','#uml','#apply','#bash','#docker','#git','#Jvm','#hexo','#jvm','#JVM','#MyBatis','#mysql','#redis','#springmvc','#Socket','#Shiro','#svn','#vim','#java建议','#栈','#队列','#算法','#排序','#索引','#有趣','#iText',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1;
+            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
+            $(this).addClass('has-numbering')
+                    .parent()
+                    .append($numbering);
+            for(i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 2px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 2px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("/img/bg.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+</html>

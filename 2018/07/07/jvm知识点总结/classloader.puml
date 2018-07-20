@@ -1,0 +1,14 @@
+@startuml
+partition ClassLoader {
+:bootstrapclassloader;
+:extclassloader;
+:appclassloader;
+:自定义classloader;
+}
+note left
+自底向上检查类是否加载
+end note
+note right
+自顶向下尝试加载类
+end note
+@enduml
