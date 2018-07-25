@@ -3,19 +3,70 @@
   
     
     <entry>
-      <title>new</title>
-      <link href="/2018/07/20/new/"/>
-      <url>/2018/07/20/new/</url>
+      <title>Dockerfile指令</title>
+      <link href="/2018/07/25/Dockerfile%E6%8C%87%E4%BB%A4/"/>
+      <url>/2018/07/25/Dockerfile%E6%8C%87%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h1 id="cmd"><a href="#cmd" class="headerlink" title="cmd"></a>cmd</h1><p>容器启动时要运行的命令，和docker run nginx /bin/bash差不多，cmd[“/bin/bash”]，只能指定一条cmd指令，如果指定多条，只有最后一条会生效</p><h2 id="传参数"><a href="#传参数" class="headerlink" title="传参数"></a>传参数</h2><p>cmd [“/bin/bash”,”-l”]</p><h2 id="和run的区别"><a href="#和run的区别" class="headerlink" title="和run的区别"></a>和run的区别</h2><p>run是镜像构建时要运行的命令</p><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>docker run后跟命令会覆盖cmd的命令</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Shiro活动图2</title>
+      <link href="/2018/07/24/Shiro%E6%B4%BB%E5%8A%A8%E5%9B%BE2/"/>
+      <url>/2018/07/24/Shiro%E6%B4%BB%E5%8A%A8%E5%9B%BE2/</url>
       <content type="html"><![CDATA[]]></content>
       
       
     </entry>
     
     <entry>
-      <title>new test</title>
-      <link href="/2018/07/20/new-test/"/>
-      <url>/2018/07/20/new-test/</url>
+      <title>git常用命令整理</title>
+      <link href="/2018/07/24/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+      <url>/2018/07/24/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/</url>
+      <content type="html"><![CDATA[<ul><li>切换分支 git checkout dev 切换到dev分支</li><li>新建分支并切换 git checkout -b dev 新建dev分支并切换</li><li>查看远程仓库名字 git remote </li><li>查看版本库信息 git remote show origin </li><li>查看远程分支 git branch -a</li><li>查看本地分支 git branch</li><li>从远程更新下来branch和tag等 git fetch </li><li>git commit -m 将暂存区的放到head中</li><li>git commit -a -m 相当于git add .和git commit -m</li></ul>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>jenkins实现测试环境的自动化部署</title>
+      <link href="/2018/07/23/jenkins%E5%AE%9E%E7%8E%B0%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+      <url>/2018/07/23/jenkins%E5%AE%9E%E7%8E%B0%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
       <content type="html"><![CDATA[]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>mysql left join中where和on条件的区别</title>
+      <link href="/2018/07/21/mysql-left-join%E4%B8%ADwhere%E5%92%8Con%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2018/07/21/mysql-left-join%E4%B8%ADwhere%E5%92%8Con%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>left join中关于where和on条件的几个知识点：</p><ol><li>多表left join是会生成一张临时表，并返回给用户</li><li>where条件是针对最后生成的这张临时表进行过滤，过滤掉不符合where条件的记录，是真正的不符合就过滤掉。</li><li>on条件是对left join的右表进行条件过滤，但依然返回左表的所有行，右表中没有的补为NULL</li><li>on条件中如果有对左表的限制条件，无论条件真假，依然返回左表的所有行,但是会影响右表的匹配值。也就是说on中左表的限制条件只影响右表的匹配内容，不影响返回行数。<br>结论：</li><li>where条件中对左表限制，不能放到on后面</li><li>where条件中对右表限制，放到on后面，会有数据行数差异，比原来行数要多</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>MySQL开发技巧</title>
+      <link href="/2018/07/21/MySQL%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7/"/>
+      <url>/2018/07/21/MySQL%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7/</url>
+      <content type="html"><![CDATA[<h2 id="SQL语句分类"><a href="#SQL语句分类" class="headerlink" title="SQL语句分类"></a>SQL语句分类</h2><ol><li>DDL</li><li>TPL 事务处理语言</li><li>DCL 数据控制语言</li><li>DML select insert update delete</li></ol><h2 id="join语句优化"><a href="#join语句优化" class="headerlink" title="join语句优化"></a>join语句优化</h2><ol><li>inner</li><li>full  left和right的结合，whrer a.key is null or b.key is null,a is null是B的独占部分，b is null是a的独占部分，mysql不支持full join，使用union all左连接和右连接</li><li>left a left join b where b.key is null,只包含A的部分，不包含中间部分和B，中间部分是b.key is not null</li><li>right </li><li>cross 笛卡儿积查询，a表和b表的交叉连接，5X4=20</li></ol><h2 id="join更新表"><a href="#join更新表" class="headerlink" title="join更新表"></a>join更新表</h2><p>join更新的表不能出现在from从句中。比如update user set a=1 where a in (select * from user)</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>使用join，update user join （select ）</p><h2 id="join优化子查询"><a href="#join优化子查询" class="headerlink" title="join优化子查询"></a>join优化子查询</h2><h2 id="join优化聚合查询"><a href="#join优化聚合查询" class="headerlink" title="join优化聚合查询"></a>join优化聚合查询</h2><p>select a.user_name,b.timestr,b.kills,c.kills<br>from user1 a<br>join user_kills b on a.id=b.user_id<br>join user_kills c on c.user_id=b.user_id<br>GROUP BY a.user_name,b.timestr,b.kills<br>having b.kills=max(c.kills)</p><h2 id="join分组选择"><a href="#join分组选择" class="headerlink" title="join分组选择"></a>join分组选择</h2><p>每一系列文章最多的前几条文章</p><pre><code>SELECTd.user_name,c.timestr,killsFROM    (        SELECT            user_id,            timestr,            kills,            (                SELECT                    count(*)                FROM                    user_kills b                WHERE                    b.user_id = a.user_id                AND a.kills &lt;= b.kills            ) AS cnt        FROM            user_kills a            ) cJOIN user1 d ON c.user_id = d.idWHERE    cnt &lt;= 2</code></pre><h1 id="行转列"><a href="#行转列" class="headerlink" title="行转列"></a>行转列</h1><h2 id="使用自连接-同一个表进行连接-的方法实现"><a href="#使用自连接-同一个表进行连接-的方法实现" class="headerlink" title="使用自连接(同一个表进行连接)的方法实现"></a>使用自连接(同一个表进行连接)的方法实现</h2><pre><code>select *from (select SUM(kills) as &#39;沙僧&#39;from user1 a join user_kills  b on a.id=b.user_idand a.user_name=&#39;沙僧&#39;) a cross JOIN(select SUM(kills) as &#39;猪八戒&#39;from user1 a join user_kills  b on a.id=b.user_idand a.user_name=&#39;猪八戒&#39;) b cross join (select SUM(kills) as &#39;孙悟空&#39;from user1 a join user_kills  b on a.id=b.user_idand a.user_name=&#39;孙悟空&#39;) c</code></pre><h2 id="使用case方法实现行列转换"><a href="#使用case方法实现行列转换" class="headerlink" title="使用case方法实现行列转换"></a>使用case方法实现行列转换</h2><pre><code>select sum(case when user_name=&#39;孙悟空&#39; then kills end)as &#39;孙悟空&#39;,sum(case when user_name=&#39;猪八戒&#39; then kills end)as &#39;猪八戒&#39;,sum(case when user_name=&#39;沙僧&#39; then kills end)as &#39;沙僧&#39;from user1 a join user_kills b on a.id=b.user_id;</code></pre><h2 id="属性拆分，ETL数据处理（和属性拆分一个意思）"><a href="#属性拆分，ETL数据处理（和属性拆分一个意思）" class="headerlink" title="属性拆分，ETL数据处理（和属性拆分一个意思）"></a>属性拆分，ETL数据处理（和属性拆分一个意思）</h2><h3 id="比如一个属性是用，组合成的"><a href="#比如一个属性是用，组合成的" class="headerlink" title="比如一个属性是用，组合成的"></a>比如一个属性是用，组合成的</h3><h1 id="唯一序列号"><a href="#唯一序列号" class="headerlink" title="唯一序列号"></a>唯一序列号</h1>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>MySQL性能优化</title>
+      <link href="/2018/07/21/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <url>/2018/07/21/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
+      <content type="html"><![CDATA[<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><ol><li>解决数据库连接造成的timeout的5XX错误</li><li>慢查询</li><li>阻塞</li></ol><h1 id="方面"><a href="#方面" class="headerlink" title="方面"></a>方面</h1><ol><li>SQL以及索引</li><li>数据库表结构</li><li>系统配置</li><li>硬件</li></ol><h1 id="SQL索引以及优化"><a href="#SQL索引以及优化" class="headerlink" title="SQL索引以及优化"></a>SQL索引以及优化</h1><h2 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h2><h3 id="开启慢查询日志"><a href="#开启慢查询日志" class="headerlink" title="开启慢查询日志"></a>开启慢查询日志</h3><p>show variables like ‘%quer%’</p><p>set gloabl log_queries_not_using_indexes=on;<br>记录未使用索引的查询</p><p>set global slow_query_log=on;<br>打开慢查询日志</p><p>set global long_query_time 1;<br>慢查询时间设置为1s</p><h3 id="慢查询日志分析"><a href="#慢查询日志分析" class="headerlink" title="慢查询日志分析"></a>慢查询日志分析</h3><h4 id="mysqldumpslow"><a href="#mysqldumpslow" class="headerlink" title="mysqldumpslow"></a>mysqldumpslow</h4><p>-s 排序慢查询日志<br>-t 查看前多少条</p><h4 id="pt-query——digest"><a href="#pt-query——digest" class="headerlink" title="pt-query——digest"></a>pt-query——digest</h4><p>-limit 分析多少条</p><ol><li>注意次数多且每次查询占用时间长的SQL</li><li>注意Rows examine项，扫描行数，IO</li><li>Rows examine远远大于Rows send，表示未命中索引的SQL多</li></ol><h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2><ul><li>table 那张表</li><li>type 好到差 const 主键唯一索引，eq_reg,主键或者唯一索引的范围查找，ref 连接查询，一个表是基于某个索引的，range基于索引的范围查找，index索引扫描，all表扫描。</li><li>possible—_keys 用到的索引有哪些，为空表示没用到</li><li>keys 实际用到的索引</li><li>key——len 索引长度，越短越好</li><li>ref 哪一列索引被使用了</li><li>rows 检查用来返回的请求数据的行数</li><li>extra filesort，文件排序了，temporary 使用了临时表</li></ul><h3 id="对max和count优化"><a href="#对max和count优化" class="headerlink" title="对max和count优化"></a>对max和count优化</h3><pre><code>select  count(release_year=&#39;2006&#39; or null) as &#39;2006年的电影数量&#39;,count(release_year=&#39;2007&#39; or null) as &#39;2007年的电影数量&#39;,from film</code></pre><p>注意or null，因为count不计算null，如果不写or null，那即使count条件不成立，相当于1，也包含在内</p><h3 id="子查询优化"><a href="#子查询优化" class="headerlink" title="子查询优化"></a>子查询优化</h3><ol><li>in改成join，注意可能会出现重复</li></ol><h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h2><pre><code>select actor.first_name,actor.last_name,COUNT(*)from film_actorINNER JOIN actor using(actor_id)GROUP BY actor.actor_idselect actor.first_name,actor.last_name,COUNT(*)from actorINNER JOIN (select actor_id,count(*) as cnt from film_actor GROUP BY actor_id) as c using(actor_id)</code></pre><h1 id="lmit优化"><a href="#lmit优化" class="headerlink" title="lmit优化"></a>lmit优化</h1><p>select .. where id &gt; 50 and id &lt;60 limit 1,5<br>比select … limit 50,55的row要好<br>但是要保证id是连续的，不能中断，可以加一个index字段</p><h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><ol><li>在group by 从句，where，order by，on</li><li>索引字段越小越好</li><li>离散度越大（不同的数目越多），的放在联合索引前面</li><li>减小重复索引，primary key和unique（id）</li><li>多余索引，联合索引包含了主键的列。</li><li>有查找重复索引和冗余索引的sql</li><li>pt-duplicate-key-checker工具检查重复以及冗余索引</li><li>mysql中只能通过慢日志配合pt-index-usage根据进行使用情况的分析。</li></ol><h1 id="数据库结构优化"><a href="#数据库结构优化" class="headerlink" title="数据库结构优化"></a>数据库结构优化</h1><ol><li>最小的数据类型</li><li>简单的数据类型，时间上int比varchar简单</li><li>尽量使用not null</li><li>尽量少用text类型，非用不可考虑分表</li><li>int来存储时间</li><li>bigint来存储inet_aton() ip地址</li></ol><h1 id="范式优化"><a href="#范式优化" class="headerlink" title="范式优化"></a>范式优化</h1><p>目前遵循第三范式</p><p>数据表中不存在非关键字字段对任意候选关键字字段的传递函数依赖</p><h2 id="不符合第三范式的表的问题"><a href="#不符合第三范式的表的问题" class="headerlink" title="不符合第三范式的表的问题"></a>不符合第三范式的表的问题</h2><ol><li>冗余</li><li>更新，删除，插入异常</li></ol><h2 id="反范式化"><a href="#反范式化" class="headerlink" title="反范式化"></a>反范式化</h2><p>增加冗余</p><h2 id="表的垂直拆分"><a href="#表的垂直拆分" class="headerlink" title="表的垂直拆分"></a>表的垂直拆分</h2><p>很多列拆分成</p><ol><li>把不常用的放一个表中，常用的放在一起</li><li>大字段放在一个表中</li></ol><h2 id="水平拆分"><a href="#水平拆分" class="headerlink" title="水平拆分"></a>水平拆分</h2><ol><li>进行hash运算，取余拆分</li><li>针对不同的hashid放到不同表中</li></ol><h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><ol><li>跨分区表进行汇总统计</li></ol><h2 id="配置优化"><a href="#配置优化" class="headerlink" title="配置优化"></a>配置优化</h2><ol><li>net—.tcp_max 增加tcp支持的队列数</li><li>资源回收 tw_buckets  加快回收</li><li>打开文件数限制</li><li>关闭selinux，iptables，使用硬件防火墙</li><li>配置文件多个后面的会覆盖前面的</li><li>innbodb——buffer_pool_size innodb缓冲池大小</li><li>pool——instances 缓冲池的个数</li><li>log——buffer—size 日志缓冲区</li><li>flush——log——at——trx——commit 数据安全质较高设置为2</li><li>read——io——threads write 读写进程</li><li>file——per——table 共享表空间，默认为off，所有的</li><li>stats——on——meta 决定mysql在什么情况下刷新innodb表的统计信息。</li></ol><h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><ol><li>raid 多个磁盘组成一个磁盘</li><li>raid 要求至少两个磁盘</li></ol>]]></content>
       
       
     </entry>
@@ -25,6 +76,12 @@
       <link href="/2018/07/19/%E3%80%8A%E9%AB%98%E6%80%A7%E8%83%BDMySQL%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
       <url>/2018/07/19/%E3%80%8A%E9%AB%98%E6%80%A7%E8%83%BDMySQL%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
       
       
     </entry>
@@ -1175,7 +1232,7 @@
       <title>docker常用操作</title>
       <link href="/2018/06/19/docker%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/"/>
       <url>/2018/06/19/docker%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</url>
-      <content type="html"><![CDATA[<p>容器=镜像+可读层</p><h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><ul><li>删除 docker rmi</li><li>当前所有镜像 docker images</li><li>新增镜像 docerk commit container-id 将读写层转换为只读层，将容器转换为镜像</li><li>docker build 根据Dockerfile文件，from-&gt;run-&gt;commit,创建新镜像</li><li>查看元数据 docker inspect</li><li>历史镜像 docker history</li><li>导出镜像 docker save </li><li>导入镜像 docker import<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3></li><li>删除 docker rm </li><li>重命名 docker rename </li><li>创建 docker create image-id</li><li>启动 docker start </li><li>一步启动 docker run=docker create+docker start,如果不存在镜像，则下载镜像后启动，如果存在则直接启动</li><li>当前启动容器 docker ps</li><li>当前所有容器 docker ps -a</li><li>停止容器 docker stop 发送sigterm停止容器</li><li>杀死容器 docker kill 发送sigkill杀死容器</li><li>暂停容器 docker pause 发送sigstp</li><li>查看元数据 docker inspect</li><li>进入容器 docker exec runnig-container-id</li><li>导出容器 docker export</li><li>导入容器 docker import</li></ul><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h3><p>docker run -p 7004:6379 -v E:\Docker\ps1\redis/conf/redis2.conf:/usr/local/etc/redis/redis.conf –name myredis1 -d redis redis-server /usr/local/etc/redis/redis.conf</p><p>-d： 后台运行容器，并返回容器ID；</p><p>-p： 端口映射</p><p>-v： 文件映射</p><p>–name： 容器名字</p><p>redis  镜像名字</p><p>redis-server /usr/local/etc/redis/redis.conf 启动容器后要执行的操作</p>]]></content>
+      <content type="html"><![CDATA[<p>容器=镜像+可读层</p><h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><ul><li>删除 docker rmi</li><li>当前所有镜像 docker images</li><li>新增镜像 docerk commit container-id 将读写层转换为只读层，将容器转换为镜像</li><li>docker build 根据Dockerfile文件，from-&gt;run-&gt;commit,创建新镜像</li><li>查看元数据 docker inspect</li><li>历史镜像 docker history</li><li>导出镜像 docker save </li><li>导入镜像 docker import<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3></li><li>删除 docker rm </li><li>重命名 docker rename </li><li>创建 docker create image-id</li><li>启动 docker start </li><li>一步启动 docker run=docker create+docker start,如果不存在镜像，则下载镜像后启动，如果存在则直接启动</li><li>当前启动容器 docker ps</li><li>当前所有容器 docker ps -a</li><li>停止容器 docker stop 发送sigterm停止容器</li><li>杀死容器 docker kill 发送sigkill杀死容器</li><li>暂停容器 docker pause 发送sigstp</li><li>查看元数据 docker inspect</li><li>进入容器 docker exec runnig-container-id</li><li>导出容器 docker export</li><li>导入容器 docker import</li></ul><h1 id="进入内部"><a href="#进入内部" class="headerlink" title="进入内部"></a>进入内部</h1><ul><li>docker cp index.html d8e306c6d8a8://usr/share/nginx/html 复制文件到nginx目录</li></ul><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h3><p>docker run -p 7004:6379 -v E:\Docker\ps1\redis/conf/redis2.conf:/usr/local/etc/redis/redis.conf –name myredis1 -d redis redis-server /usr/local/etc/redis/redis.conf</p><p>-d： 后台运行容器，并返回容器ID；</p><p>-p： 端口映射</p><p>-v： 文件映射</p><p>–name： 容器名字</p><p>redis  镜像名字</p><p>redis-server /usr/local/etc/redis/redis.conf 启动容器后要执行的操作</p><h1 id="保存"><a href="#保存" class="headerlink" title="保存"></a>保存</h1><ul><li>docker commit -m “fun” d8e306c6d8a8 nginx-test 保存修改过的d8e306c6d8a8容器为一个新的镜像，-m为提交说明，nginx-test为名字</li></ul><h1 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h1><pre><code>from alpine:latestmaintainer xbfcmd echo &#39;hello docker&#39;</code></pre><p>docker build -t hello-docker .</p><p>-t 表示镜像的名字，.点在当前目录下找dockerfile文件</p><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul><li>from 表示哪个从哪个镜像作为基础</li><li>maintainer 表示</li></ul><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="docker-cp之后再docker-run一个新的容器，是否是新的index-html页面？"><a href="#docker-cp之后再docker-run一个新的容器，是否是新的index-html页面？" class="headerlink" title="docker cp之后再docker run一个新的容器，是否是新的index.html页面？"></a>docker cp之后再docker run一个新的容器，是否是新的index.html页面？</h2><p> 否，docker容器内的改动都是暂时的。</p>]]></content>
       
       
         <tags>
