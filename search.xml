@@ -3,6 +3,594 @@
   
     
     <entry>
+      <title>自创面试题之设计模式</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之软件工程与架构</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E6%9E%B6%E6%9E%84/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E6%9E%B6%E6%9E%84/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Git</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BGit/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BGit/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之ES</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BES/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BES/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之ZK</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BZK/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BZK/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之SpringMVC</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringMVC/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringMVC/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Maven</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMaven/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMaven/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之消息中间件</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之安全</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%AE%89%E5%85%A8/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%AE%89%E5%85%A8/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之类与接口</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之异常</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%BC%82%E5%B8%B8/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%BC%82%E5%B8%B8/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之泛型</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B3%9B%E5%9E%8B/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B3%9B%E5%9E%8B/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之集合</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E9%9B%86%E5%90%88/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E9%9B%86%E5%90%88/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之SpringBoot</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringBoot/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringBoot/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之SpringCloud</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringCloud/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringCloud/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Spring</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpring/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpring/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Linux</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BLinux/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BLinux/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Netty</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BNetty/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BNetty/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Mybatis</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMybatis/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMybatis/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之算法</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%AE%97%E6%B3%95/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%AE%97%E6%B3%95/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之MySQL</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMySQL/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMySQL/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Redis</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BRedis/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BRedis/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Java调优</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E8%B0%83%E4%BC%98/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E8%B0%83%E4%BC%98/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之线程与并发</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/2018/09/22/%E4%BD%BF%E7%94%A8maven%E6%9F%A5%E6%89%BE%E4%BE%9D%E8%B5%96%E7%B1%BB%E6%89%80%E5%9C%A8jar%E5%8C%85%E7%9A%84%E7%9A%84%E5%AE%9A%E4%B9%89/"/>
+      <url>/2018/09/22/%E4%BD%BF%E7%94%A8maven%E6%9F%A5%E6%89%BE%E4%BE%9D%E8%B5%96%E7%B1%BB%E6%89%80%E5%9C%A8jar%E5%8C%85%E7%9A%84%E7%9A%84%E5%AE%9A%E4%B9%89/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>阿里云ads和oracle的区别</title>
+      <link href="/2018/09/17/%E9%98%BF%E9%87%8C%E4%BA%91ads%E5%92%8Coracle%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2018/09/17/%E9%98%BF%E9%87%8C%E4%BA%91ads%E5%92%8Coracle%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<img src="/2018/09/17/阿里云ads和oracle的区别/ads_vs_oracle.jpg" title="ads_vs_oracle"><p>目前看来，oracle支持的，ADS不一定支持。如果ADS支持，使用时一般会有一些限制条件。</p><p>从功能上看，可以看出ADS和传统关系型数据库的定位不一样，ADS不是为了取代传统型关系数据库。相比传统关系型数据库Oracle, ADS有一个非常大优点：在非常大量的数据情况下，能够在秒级时间内相响应。</p><p>而且ADS是阿里云大数据平台中的一个组件，和其它组件，比如maxComputer(ODPS)等配合，能发挥更加强大的作用。对于oracle支持而ADS不支持的功能，可以使用其它的组件来实现，比如ODPS支持分析函数。</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>grep查看附近几行</title>
+      <link href="/2018/09/15/grep%E6%9F%A5%E7%9C%8B%E9%99%84%E8%BF%91%E5%87%A0%E8%A1%8C/"/>
+      <url>/2018/09/15/grep%E6%9F%A5%E7%9C%8B%E9%99%84%E8%BF%91%E5%87%A0%E8%A1%8C/</url>
+      <content type="html"><![CDATA[<p>如果在只是想匹配模式的上下几行，grep可以实现。</p><p>$grep -5 ‘parttern’ inputfile //打印匹配行的前后5行</p><p>$grep -C 5 ‘parttern’ inputfile //打印匹配行的前后5行</p><p>$grep -A 5 ‘parttern’ inputfile //打印匹配行的后5行</p><p>$grep -B 5 ‘parttern’ inputfile //打印匹配行的前5行</p><p>查看mysql慢日志中ip地址为192.168.0.10发送过来的SQL语句的后面三行</p><p>tail -50 /usr/local/mysql/data/sql-slow.log |grep -3 ‘192.168.0.10’  </p><p>查看某一个文件第5行和第10行</p><p> sed -n ‘5,10p’ filename 这样你就可以只查看文件的第5行到第10行。</p><p> tac a.log|grep ‘txt’</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>grep</title>
+      <link href="/2018/09/13/grep/"/>
+      <url>/2018/09/13/grep/</url>
+      <content type="html"><![CDATA[]]></content>
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>时间管理</title>
+      <link href="/2018/09/08/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"/>
+      <url>/2018/09/08/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</url>
+      <content type="html"><![CDATA[<p>平衡好时间和收益，是时间管理的目标。</p><p>如果时间分的太紧，导致学习走马观花，工作上好多bug，学不到东西，改bug耗费更多时间金钱。</p><p>如果时间分的太松甚至不分，任务没有时间没有日期，很容易形成拖延症或者强迫症，觉得自己不搞定不睡觉的偏执狂。</p><p>首先要做好下面几个方面</p><ol><li>添加任务时的时间安排和优先级</li></ol><p>需要时间的，比如下班去拿快递，或者开会的就直接加上</p><p>不明确的，比如解决补码历史和原理，无日期</p><p>一般情况下不手动指明优先级，太麻烦，如果优先级特别高的，比如抢火车票，过了这村就没这店这种，那要写上。</p><ol start="2"><li>任务的粒度</li></ol><p>马上要做的几分钟就做完的，比如擦桌子，泡咖啡就不必写了</p><p>其他的写上，一些常识性的，比如地铁看kindle，就算了。</p><ol start="3"><li>任务的分配时间</li></ol><p>每天睡前拿出10分钟处理明天的任务</p><p>如果有临时任务，加进去。</p><p>提前做完了也可以找一些任务加进去</p><p>每周统计一下自己的每天平均任务数量作为参考</p><ol><li>每天的任务数量</li></ol><p>如果有临时任务，加进去。</p><p>提前做完了也可以找一些任务加进去</p><p>每周统计一下自己的每天平均任务数量作为参考</p><ol><li>超时任务如何处理</li></ol><p>超时的任务，及时标记为下一天。</p><p>如果多次超时，反思一下是不是时间分配的不合理。</p><ol start="2"><li>提高执行力</li></ol><p>并不需要完全想好了才开始行动。</p><p>只要觉得应该就去做</p><p>比如做了一天累了，纠结要不要去跑步，要不放松一下？</p><p>这是身体累导致的心理懈怠，趁着奋斗的想法还残留，二话不说直接做，做了的话执行力和信心就上去了。</p>]]></content>
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>git merge和git checkout</title>
+      <link href="/2018/09/04/git-merge%E5%92%8Cgit-checkout/"/>
+      <url>/2018/09/04/git-merge%E5%92%8Cgit-checkout/</url>
+      <content type="html"><![CDATA[<h1 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h1><p>现在的分支是dev3，git merge dev4,dev4内容不变，dev3加入了dev4的内容。</p><h1 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h1><p>不管是不是checkout -b</p><p>未跟踪的和等待git commit的，不管checkout还是checkout -b到哪个分支都存在</p><p>commit的，checkout -b 会在，</p><p>checkout不会</p><p>stash在特定分支上</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>@JsonFormat的时区</title>
+      <link href="/2018/09/02/JsonFormat%E7%9A%84%E6%97%B6%E5%8C%BA/"/>
+      <url>/2018/09/02/JsonFormat%E7%9A%84%E6%97%B6%E5%8C%BA/</url>
+      <content type="html"><![CDATA[<p>@JsonFormat，默认情况下timeZone为GMT（即标准时区），所以会造成输出少8小时。</p><p>改为北京时间，方式如下：<br>@JsonFormat(pattern = “yyyy-MM-dd HH:mm:ss”,timezone=”GMT+8”)</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>idea的jclasslib插件使用</title>
+      <link href="/2018/08/30/idea%E7%9A%84jclasslib%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+      <url>/2018/08/30/idea%E7%9A%84jclasslib%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>jclasslib展示的你当前active的java文件，不是选中的class或者java文件</p>]]></content>
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>gitignore忽略idea文件夹但是不要忽略文件夹下的workspace.xml</title>
+      <link href="/2018/08/29/gitignore%E5%BF%BD%E7%95%A5idea%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BD%86%E6%98%AF%E4%B8%8D%E8%A6%81%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84workspace-xml/"/>
+      <url>/2018/08/29/gitignore%E5%BF%BD%E7%95%A5idea%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BD%86%E6%98%AF%E4%B8%8D%E8%A6%81%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84workspace-xml/</url>
+      <content type="html"><![CDATA[<pre><code>.idea/*!.idea/workspace.xml</code></pre><p>我要学习jvm调优写点代码，参数都是放在workspace.xml中的</p><p>妈蛋这样弄竟然不行</p><p>最后强制用git add -f .idea/workspace.xml</p><p>我用普通文件夹加上这个规则是管用的，可能是.的问题。</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Java泛型</title>
+      <link href="/2018/08/29/Java%E6%B3%9B%E5%9E%8B/"/>
+      <url>/2018/08/29/Java%E6%B3%9B%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<h1 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h1><pre><code>Map&lt;String, Long&gt; itemIdMap = inventoryItems.stream()        .collect(Collectors.toMap(inventoryItem -&gt;                inventoryItem.getStoreId() + MAP_KEY_SEPARATOR + inventoryItem                    .getEqAssetId() + MAP_KEY_SEPARATOR + inventoryItem.getRackId()            , InventoryItem::getItemId));public interface Stream&lt;T&gt; extends BaseStream&lt;T, Stream&lt;T&gt;&gt; {&lt;R, A&gt; R collect(Collector&lt;? super T, A, R&gt; collector);T已经在接口定义时声明了，R，A没有声明，需要写在方法头部，用&lt;R,A&gt;上面的collect需要? super T, A, R三个泛型声明，toMap的返回值T, ?, Map&lt;K,U&gt;符合public static &lt;T, K, U&gt;Collector&lt;T, ?, Map&lt;K,U&gt;&gt; toMap(Function&lt;? super T, ? extends K&gt; keyMapper,                                Function&lt;? super T, ? extends U&gt; valueMapper) {    return toMap(keyMapper, valueMapper, throwingMerger(), HashMap::new);}返回值的Collector&lt;T, ?, Map&lt;K,U&gt;&gt;和toMap中的问号不同，只是一个通配符，这样就不需要再在&lt;T, K, U&gt;中多写一个了。public interface Function&lt;T, R&gt; {Function接口是 R apply(T t);T和R均来自于接口定义toMap的第一个Function&lt;? super T, ? extends K&gt; keyMapper由inventoryItem -&gt;                inventoryItem.getStoreId() + MAP_KEY_SEPARATOR + inventoryItem                    .getEqAssetId() + MAP_KEY_SEPARATOR + inventoryItem.getRackId()</code></pre><h1 id="现在开始来推断各个字母的类型"><a href="#现在开始来推断各个字母的类型" class="headerlink" title="现在开始来推断各个字母的类型"></a>现在开始来推断各个字母的类型</h1><p> &lt;R, A&gt; R collect(Collector&lt;? super T, A, R&gt; collector);中的第一个T来自于接口定义，Stream<t>,Stream<t>是由stream()返回的，stream（）定义在Collection<e>，List<inventoryitem>继承Collection<e>，所以T是InventoryItem</e></inventoryitem></e></t></t></p><p> &lt;R,A&gt;由Collector&lt;? super T, A, R&gt; collector传过来，toMap返回Collector&lt;T, ?, Map&lt;K,U&gt;&gt;，toMap的T是InventoryItem的父类或者自己<br> Collector&lt;? super T, A, R&gt;中的A是？，R是Map&lt;K,U&gt;.</p><p> 先看Map&lt;K,U&gt;，K是由Function&lt;? super T, ? extends K&gt; keyMapper过来的，T是InventoryItem的父类或者自己，Function接口定义  R apply(T t);<br> R是nventoryItem.getStoreId() + MAP_KEY_SEPARATOR + inventoryItem<br>                        .getEqAssetId() + MAP_KEY_SEPARATOR + inventoryItem.getRackId()</p><p>是String类型，所以? extends K是String类型，K是String或者String的父类，</p><p>然后U就是private Long itemId，Long了。</p><p>&lt;R, A&gt; R collect(Collector&lt;? super T, A, R&gt; collector);的返回值R也就是Map&lt;K,U&gt;，K是String的父类，U是Long的父类。</p><p>最后再看一下？这个鬼东西，<br>Collector&lt;T, ?, M&gt;和new CollectorImpl&lt;&gt;(mapSupplier, accumulator, mapMerger(mergeFunction), CH_ID);</p><p> static class CollectorImpl&lt;T, A, R&gt; implements Collector&lt;T, A, R&gt; {</p><p>new CollectorImpl&lt;&gt;并没有显示指定参数类型，由new的参数推断，<br>第二个参数是 BiConsumer&lt;A, T&gt; accumulator,也就是</p><p>  BiConsumer&lt;M, T&gt; accumulator<br>                = (map, element) -&gt; map.merge(keyMapper.apply(element),<br>                                              valueMapper.apply(element), mergeFunction);</p><pre><code>                                        也就是？相当于M，那M是map，                                        M来自与HashMap::new-Supplier&lt;M&gt; mapSupplier                                        所以M就是HashMap，？就是HashMap</code></pre>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>ES、Kafka安装使用</title>
+      <link href="/2018/08/26/ES%E3%80%81Kafka%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/"/>
+      <url>/2018/08/26/ES%E3%80%81Kafka%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h1 id="ES"><a href="#ES" class="headerlink" title="ES"></a>ES</h1><p>如果看一些书或者教程，index为alalyzed，说明用的是老版本。<br><a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.3/mapping-index.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/5.3/mapping-index.html</a><br>5.3.2会报错，5.1.2可行，但是从描述上看没看出区别<br>5.1.1运行elasticsearch.bat,直接输出了java命令的内容，日了狗了。</p><p>运行 elasticsearch.bat</p><h1 id="elasticsearch-head"><a href="#elasticsearch-head" class="headerlink" title="elasticsearch-head"></a>elasticsearch-head</h1><p>在es的elasticsearch.yml最后加上</p><p>http.cors.enabled: true<br>http.cors.allow-origin: “*”</p><p>因为head访问elasticsearch是跨域。</p><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>npm run start</p><h1 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h1><p>zookeeper-server-start.bat ../config/zookeeper.properties</p><p>kafka-server.bat ../../config/server.properties</p><p>如果需要的话改一下</p><p> log.dirs=../../logs/kafka-lo</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> ES </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>url编码</title>
+      <link href="/2018/08/26/url%E7%BC%96%E7%A0%81/"/>
+      <url>/2018/08/26/url%E7%BC%96%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.ruanyifeng.com/blog/2010/02/url_encoding.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2010/02/url_encoding.html</a></p><p>通常如果一样东西需要编码，说明这样东西并不适合传输。原因多种多样，如Size过大，包含隐私数据，对于Url来说，之所以要进行编码，是因为Url中有些字符会引起歧义。</p><p>　　例如，Url参数字符串中使用key=value键值对这样的形式来传参，键值对之间以&amp;符号分隔，如/s?q=abc&amp; ie=utf-8。如果你的value字符串中包含了=或者&amp;，那么势必会造成接收Url的服务器解析错误，因此必须将引起歧义的&amp;和= 符号进行转义，也就是对其进行编码。</p><p>　　又如，Url的编码格式采用的是ASCII码，而不是Unicode，这也就是说你不能在Url中包含任何非ASCII字符，例如中文。否则如果客户端浏览器和服务端浏览器支持的字符集不同的情况下，中文可能会造成问题。</p><p>Url编码的原则就是使用安全的字符（没有特殊用途或者特殊意义的可打印字符）去表示那些不安全的字符。</p><h1 id="form有2中方法把数据提交给服务器，get和post-分别说下吧。"><a href="#form有2中方法把数据提交给服务器，get和post-分别说下吧。" class="headerlink" title="form有2中方法把数据提交给服务器，get和post,分别说下吧。"></a>form有2中方法把数据提交给服务器，get和post,分别说下吧。</h1><h2 id="get提交"><a href="#get提交" class="headerlink" title="get提交"></a>get提交</h2><h3 id="首先说下客户端（浏览器）的form表单用get方法是如何将数据编码后提交给服务器端的吧。"><a href="#首先说下客户端（浏览器）的form表单用get方法是如何将数据编码后提交给服务器端的吧。" class="headerlink" title="首先说下客户端（浏览器）的form表单用get方法是如何将数据编码后提交给服务器端的吧。"></a>首先说下客户端（浏览器）的form表单用get方法是如何将数据编码后提交给服务器端的吧。</h3><pre><code>对于get方法来说，都是把数据串联在请求的url后面作为参数，如：http://localhost:8080/servlet?msg=abc </code></pre><p>（很常见的一个乱码问题就要出现了，如果url中出现中文或其它特殊字符的话，如：<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> /servlet?msg=杭州，服务器端容易得到乱码），url拼接完成后，浏览器会对url进行URL encode，然后发送给服务器，URL encode的过程就是把部分url做为字符，按照某种编码方式（如：utf-8,gbk等）编码成二进制的字节码，然后每个字节用一个包含3个字符的字符串 “%xy” 表示，其中xy为该字节的两位十六进制表示形式。我这里说的可能不清楚，</p><p>具体介绍可以看下java.net.URLEncoder类的介绍在这里。了解了 URL encode的过程，我们能看到2个很重要的问题，第一：需要URL encode的字符一般都是非ASCII的字符（笼统的讲），再通俗的讲就是除了英文字母以外的文字（如：中文，日文等）都要进行URL encode，所以对于我们来说，都是英文字母的url不会出现服务器得到乱码问题，出现乱码都是url里面带了中文或特殊字符造成的；第二：URL encode到底按照那种编码方式对字符编码？这里就是浏览器的事情了，而且不同的浏览器有不同的做法，中文版的浏览器一般会默认的使用GBK，通过设置浏览器也可以使用UTF-8，可能不同的用户就有不同的浏览器设置，也就造成不同的编码方式，所以很多网站的做法都是先把url里面的中文或特殊字符用 javascript做URL encode，然后再拼接url提交数据，也就是替浏览器做了URL encode，好处就是网站可以统一get方法提交数据的编码方式。 完成了URL encode，那么现在的url就成了ASCII范围内的字符了，然后以iso-8859-1的编码方式转换成二进制随着请求头一起发送出去。这里想多说几句的是，对于get方法来说，没有请求实体，含有数据的url都在请求头里面，之所以用URL encode，我个人觉的原因是：对于请求头来说最终都是要用iso-8859-1编码方式编码成二进制的101010…..的纯数据在互联网上传送，如果直接将含有中文等特殊字符做iso-8859-1编码会丢失信息，所以先做URL encode是有必要的。 </p><h3 id="服务器端（tomcat）是如何将数据获取到进行解码的。"><a href="#服务器端（tomcat）是如何将数据获取到进行解码的。" class="headerlink" title="服务器端（tomcat）是如何将数据获取到进行解码的。"></a>服务器端（tomcat）是如何将数据获取到进行解码的。</h3><p>   第一步是先把数据用iso-8859-1进行解码，对于get方法来说，tomcat获取数据的是ASCII范围内的请求头字符，其中的请求url里面带有参数数据，如果参数中有中文等特殊字符，那么目前还是URL encode后的%XY状态，先停下，我们先说下开发人员一般获取数据的过程。通常大家都是request.getParameter(“name”)获取参数数据，我们在request对象或得的数据都是经过解码过的，而解码过程中程序里是无法指定，这里要说下，有很多新手说用 request.setCharacterEncoding(“字符集”)可以指定解码方式，其实是不可以的，看servlet的官方API说明有对此方法的解释：Overrides the name of the character encoding used in the body of this request. This method must be called prior to reading request parameters or reading input using getReader().可以看出对于get方法他是无能为力的。那么到底用什么编码方式解码数据的呢，这是tomcat的事情了，默认缺省用的是 iso-8859-1,这样我们就能找到为什么get请求带中文参数为什么在服务器端得到乱码了，原因是在客户端一般都是用UTF-8或GBK对数据 URL encode，这里用iso-8859-1方式URL decoder显然不行，在程序里我们可以直接<br>Java代码<br>\1. new String(request.getParameter(“name”).getBytes(“iso-8859-1”),”客户端指定的URL encode编码方式”)<br>还原回字节码，然后用正确的方式解码数据，网上的文章通常是在tomcat里面做个配置<br>Xml代码<br>\1. <connector port="8080" protocol="HTTP/1.1" maxthreads="150" connectiontimeout="20000" redirectport="8443" uriencoding="GBK"><br>这样是让tomcat在获取数据后用指定的方式URL decoder，URL decoder的介绍在这里</connector></p><p><a href="http://blog.csdn.net/vickyway/article/details/46375971" target="_blank" rel="noopener">http://blog.csdn.net/vickyway/article/details/46375971</a></p><p><a href="http://www.jb51.net/article/80181.htm" target="_blank" rel="noopener">http://www.jb51.net/article/80181.htm</a></p><h1 id="post提交"><a href="#post提交" class="headerlink" title="post提交"></a>post提交</h1><h2 id="客户端（浏览器）的form表单用post方法是如何将数据编码后提交给服务器端的。"><a href="#客户端（浏览器）的form表单用post方法是如何将数据编码后提交给服务器端的。" class="headerlink" title="客户端（浏览器）的form表单用post方法是如何将数据编码后提交给服务器端的。"></a>客户端（浏览器）的form表单用post方法是如何将数据编码后提交给服务器端的。</h2><p>  在post方法里所要传送的数据也要URL encode，那么他是用什么编码方式的呢？<br>   在form所在的html文件里如果有段<meta http-equiv="Content-Type" content="text/html; charset=字符集（GBK，utf-8等）">，那么post就会用此处指定的编码方式编码。一般大家都认为这段代码是为了让浏览器知道用什么字符集来对网页解释，所以网站都会把它放在html代码的最前端，尽量不出现乱码，其实它还有个作用就是指定form表单的post方法提交数据的 URL encode编码方式。从这里可以看出对于get方法来数，浏览器对数据的URL encode的编码方式是有浏览器设置来决定，（可以用js做统一指定），而post方法，开发人员可以指定。 </p><h2 id="服务器端（tomcat）是如何将数据获取到进行解码的。-1"><a href="#服务器端（tomcat）是如何将数据获取到进行解码的。-1" class="headerlink" title="服务器端（tomcat）是如何将数据获取到进行解码的。"></a>服务器端（tomcat）是如何将数据获取到进行解码的。</h2><p>如果用tomcat默认缺省设置，也没做过滤器等编码设置，那么他也是用iso-8859-1解码的，但是request.setCharacterEncoding(“字符集”)可以派上用场。</p><p>我发现上面说的tomcat所做的事情前提都是在请求头里没有指定编码方式，如果请求头里指定了编码方式将按照这种方式编码。<br>   有2篇文章推荐下，地址分别是<br>深入浅出URL编码：<a href="http://www.cnblogs.com/yencain/articles/1321386.html；" target="_blank" rel="noopener">http://www.cnblogs.com/yencain/articles/1321386.html；</a><br>表单用post方法提交数据时乱码问题：<a href="http://wanghuan8086.javaeye.com/blog/173869" target="_blank" rel="noopener">http://wanghuan8086.javaeye.com/blog/173869</a></p><p>用post很重要的在form所在的html文件里如果有段<meta http-equiv="Content-Type" content="text/html; charset=字符集（GBK，utf-8等）"><br>强烈建议使用post提交</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 编码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>MySQL中的select_type</title>
+      <link href="/2018/08/24/MySQL%E4%B8%AD%E7%9A%84select-type/"/>
+      <url>/2018/08/24/MySQL%E4%B8%AD%E7%9A%84select-type/</url>
+      <content type="html"><![CDATA[<ol><li><p>simple<br>进行不需要Union操作或不含子查询的简单select查询时，响应查询语句的select_type 即为simple（查询中包含连接的情形也一样）。无论查询语句是多么复杂，执行计划中select_type为simple的单位查询一定只有一个。最外侧的select查询的select_type通过为simple</p><p> select</p><pre><code> cat.id as category_id,cat.name,count(user_noti.notification_id) as unread_count from  rmb_notification_category cat </code></pre><p> left join rmb_notification noti  on cat.id=noti.category_id<br> left join rmb_user_notification user_noti on noti.id=user_noti.notification_id<br> where  cat.parent_id=0<br> GROUP BY cat.id<br> ORDER BY cat.id </p></li></ol><ol start="2"><li>primary</li><li></li></ol>]]></content>
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>@ApiParam和@ApiImplictParms的关系</title>
+      <link href="/2018/08/22/ApiParam%E5%92%8C-ApiImplictParms%E7%9A%84%E5%85%B3%E7%B3%BB/"/>
+      <url>/2018/08/22/ApiParam%E5%92%8C-ApiImplictParms%E7%9A%84%E5%85%B3%E7%B3%BB/</url>
+      <content type="html"><![CDATA[<p> ApiParam的可提供参数没有@Implict丰富，<br>   @ApiImplicitParams({<br>            @ApiImplicitParam(name = “startDate”, value = “查询日期，格式2017-01-01”, required = false, paramType = “query”, dataType = “LocalDate”, defaultValue = “2017-01-01”),<br>            @ApiImplicitParam(name = “endDate”, value = “查询日期，格式2017-01-01”, required = false, paramType = “query”, dataType = “LocalDate”, defaultValue = “2018-12-01”)<br>    })</p><p>@ApiImplicitParam可配置paramType,dataType之类的内容。</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>mysql中日期类型DATETIME和TIMESTAMP的区别</title>
+      <link href="/2018/08/22/mysql%E4%B8%AD%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8BDATETIME%E5%92%8CTIMESTAMP%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2018/08/22/mysql%E4%B8%AD%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8BDATETIME%E5%92%8CTIMESTAMP%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<p>1.DATETIME的日期范围是1001——9999年，TIMESTAMP的时间范围是1970——2038年。</p><p>2.DATETIME存储时间与时区无关，TIMESTAMP存储时间与时区有关，显示的值也依赖于时区。在mysql服务器，操作系统以及客户端连接都有时区的设置。</p><p>3.DATETIME使用8字节的存储空间，TIMESTAMP的存储空间为4字节。因此，TIMESTAMP比DATETIME的空间利用率更高。</p><p>4.DATETIME的默认值为null；TIMESTAMP的字段默认不为空（not null）,默认值为当前时间（CURRENT_TIMESTAMP），如果不做特殊处理，并且update语句中没有指定该列的更新值，则默认更新为当前时间。</p>]]></content>
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>区分一下dpkg,rpm和yum以及apt-get</title>
+      <link href="/2018/08/22/%E5%8C%BA%E5%88%86%E4%B8%80%E4%B8%8Bdpkg-rpm%E5%92%8Cyum%E4%BB%A5%E5%8F%8Aapt-get/"/>
+      <url>/2018/08/22/%E5%8C%BA%E5%88%86%E4%B8%80%E4%B8%8Bdpkg-rpm%E5%92%8Cyum%E4%BB%A5%E5%8F%8Aapt-get/</url>
+      <content type="html"><![CDATA[<p>一般来说著名的 Linux 系统基本上分两大类：</p><p>RedHat 系列：Redhat、Centos、Fedora 等<br>Debian 系列：Debian、Ubuntu 等<br>Dpkg (Debian系)：Ubuntu<br>RPM (Red Hat系)：CentOS、Fedora</p><p>RedHat 系列</p><p>常见的安装包格式 rpm 包，安装rpm包的命令是“rpm -参数”<br>包管理工具 yum<br>支持 tar 包<br>Debian系列</p><p>常见的安装包格式 deb 包，安装 deb 包的命令是“dpkg -参数”<br>包管理工具 apt-get<br>支持 tar 包<br>tar 只是一种压缩文件格式，所以，它只是把文件压缩打包而已。</p><p>rpm 相当于windows中的安装文件，它会自动处理软件包之间的依赖关系。优缺点来说，rpm一般都是预先编译好的文件，它可能已经绑定到某种CPU或者发行版上面了。</p><p>列出系统中已安装的所有套件：</p><p>下面是其他博客的摘录</p><p>以下整理列表来自Jamyy’s Weblog ：</p><p>安装</p><p>目的    rpm 用法    dpkg 用法<br>安装指定套件    rpm -i pkgfile.rpm    dpkg -i pkgfile.deb<br>查询</p><p>目的    rpm 用法    dpkg 用法<br>显示所有已安装的套件名称    rpm -qa    dpkg -l (小写L)<br>显示套件包含的所有档案    rpm -ql softwarename (小写L)    dpkg -L softwarename<br>显示特定档案所属套件名称    rpm -qf /path/to/file    dpkg -S /path/to/file<br>查询套件档案资讯    rpm -qip pkgfile.rpm (显示套件资讯)<br>rpm -qlp pkgfile.rpm (小写L,显示套件内所有档案)    dpkg -I pkgfile.deb (大写I )<br>dpkg -c pkgfile.deb<br>显示指定套件是否安装    rpm -q softwarename (只显示套件名称)<br>rpm -qi softwarename (显示套件资讯)    dpkg -l softwarename (小写L,只列出简洁资讯)<br>dpkg -s softwarename (显示详细资讯)<br>dpkg -p softwarename (显示详细资讯)<br>移除</p><p>目的    rpm 用法    dpkg 用法<br>移除指定套件    rpm -e softwarename    dpkg -r softwarename (会留下套件设定档)<br>dpkg -P softwarename (完全移除)<br>在Debian使用alien处理RPM套件</p><p>alien 可处理.deb、.rpm、.slp、.tgz 等档案格式, 进行转档或安装.<br>于Debian安装非Debian套件时,可使用alien进行安装.<br>安装alien套件: apt-get install alien</p><p>在Debian安装RPM套件: alien -i quota-3.12-7.i386.rpm<br>制作成deb的套件格式: alien -d quota-3.12-7.i386.rpm<br>制作成rpm的套件格式: alien -r quota_3.12-6_i386.deb</p><p>APT与YUM</p><p>虽然RPM与DPKG有效的解决的软体的安装，移除与查询的需求，但是在Linux上的套件管理还有一个很大的问题必须解决，就是各软体间的相依性(dependency)。 RPM与DPKG只能做到检查相依性，在安装或移除时告知相依性的不满足，皆下来就需要使用者自行去找出所需的套件来安装。 这样的确是有点不方便，因此产生了前端工具软体- APT及YUM。</p><p>APT</p><p>Debian开发，目前也有porting到其他版本，要在Red Hat系的Fedora或CentOS使用也是可以的。</p><p>使用方法：</p><p>编辑/etc/apt/sources.list ，设定所选用的版本，如stable，testing，unstable及套件来源站台或装置。 档案详细设定请参考： 了解Debian系统的哲学<br>基本指令：<br>apt-setup    设定/etc/apt/souces.list<br>apt-get update    软体资料库同步<br>apt-get install softwarename1 [softwarename2…..]    安装软体<br>apt-get remove softwarename 1 [softwarename 2…]    移除软体(保留设定档）<br>apt-get –purge remove softwarename 1 [softwarename 2…]    移除软体(不保留设定档）<br>apt-cache search softwarename    列出所有sofrwarename的套件<br>apt-upgrade [softwarename 1 softwarename2…]    更新套件，不指定套件名则更新所有可更新的套件<br>apt-get clean(autoclean)    删除系统暂存的deb(autoclean只会将比目前系统旧版的套件删除)<br>apt-get dist-upgrade    转换系统的版本（需在/etc/apt/sources.list指定stable，testing或unstable）</p><p>YUM</p><p>YUM（Yellow dog Updater, Modified ）是Yellow Dog Linux开发的。 Yellow Dog Linux原本是一套完全源于Red Hat但运作于先前使用IBM PPC平台的MAC机器，原本以为这个版本已经消失，没想到最新消息是他们推出了在Sony PS3上面运作的版本。 CentOS及Fedora的基本预设安装中即将YUM列入其内。 如果没记错，要在Debian上使用YUM也是可以的。</p><p>使用方法：</p><p>编辑/etc/yum.conf档案详细设定请参考： 简易APT/YUM伺服器设定注1<br>基本指令： （如果yum在工作过程中需要使用者回应，可加上-y参数直接回答yes ）<br>yum install softwarename1 [softwarename2…..]    安装套件<br>yum update [softwarename 1 softwarename2…]    更新套件，不指定套件名则更新所有可更新的套件<br>yum list    列出目前在yum server 上面有的套件<br>yum info    类似rpm -qi<br>yum clean    移除下载到本机的packages 或headers<br>yum remove softwarename1 [softwarename2…..]    移除已经安装的套件<br>注1：Red Hat近年来致力于将一个设定档切割成很多小设定档。 以yum.conf为例，Red Hat将其分割成xxx.repo档放置在/etc/yum.repos.d这个目录下。 并在yum.conf档里增加一行注解： PUT YOUR REPOS HERE OR IN separate files named file.repo in /etc/yum.repos.d。 个人可视喜好决定。</p>]]></content>
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>git忽略而不提交文件的3种情形</title>
+      <link href="/2018/08/22/git%E5%BF%BD%E7%95%A5%E8%80%8C%E4%B8%8D%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6%E7%9A%843%E7%A7%8D%E6%83%85%E5%BD%A2/"/>
+      <url>/2018/08/22/git%E5%BF%BD%E7%95%A5%E8%80%8C%E4%B8%8D%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6%E7%9A%843%E7%A7%8D%E6%83%85%E5%BD%A2/</url>
+      <content type="html"><![CDATA[<p>1、从未提交过的文件可以用.gitignore 也就是添加之后从来没有提交（commit）过的文件，可以使用.gitignore忽略该文件 该文件只能作用于未跟踪的文件（Untracked Files），也就是那些从来没有被 git 记录过的文件 比如，忽略log/下的日志文件，可以在.gitignore中写 log/*</p><p>2、已经推送（push）过的文件，想从git远程库中删除，并在以后的提交中忽略，但是却还想在本地保留这个文件 执行命令</p><p>git rm –cached Xml/config.xml</p><p>后面的 Xml/config.xml 是要从远程库中删除的文件的路径，支持通配符* 比如，不小心提交到git上的一些log日志文件，想从远程库删除，可以用这个命令</p><p>3、已经推送（push）过的文件，想在以后的提交时忽略此文件，即使本地已经修改过，而且不删除git远程库中相应文件 执行命令 git update-index –assume-unchanged Xml/config.xml 后面的 Xml/config.xml 是要忽略的文件的路径。如果要忽略一个目录，打开 git bash，cd到 目标目录下，执行： git update-index –assume-unchanged $(git ls-files | tr ‘\n’ ‘ ‘) 比如有一个配置文件记录数据库的链接信息，每个人的链接信息肯定不一样，但是又要提供一个标准的模板，用来告知如何填写链接信息，那么就需要在git远程库上有一个标准配置文件，然后每个人根据自己的具体情况，修改一份链接信息自用，而且不会将该配置文件提交到库</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Ubuntu中添加应用程序快速启动器的方法</title>
+      <link href="/2018/08/22/Ubuntu%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2018/08/22/Ubuntu%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>一些应用程序（例如很多.sh程序）如果想在Ubuntu中添加到Dash home中进行快速的启动，则需要找到/usr/share/applications这个目录，其中存放的全部是dash中的启动器，将你需要的程序xxx添加其中即可。具体操作步骤为：</p><p>命令行操作内容：</p><p>cd /usr/share/applications<br>sudo gedit xxx.desktop<br>打开需要编辑的文本内容为：</p><p>[Desktop Entry]<br>Version=1.0<br>Name=xxx<br>Exec=/home/username/xxx.sh（这个是启动程序需要执行的文件路径名）<br>Terminal=false<br>Icon=/home/username/xxx.png（这个是图标）<br>Type=Application<br>Categories=Development<br>这样就可以在dash中看到xxx的启动器图标了，也可以直接将其添加锁定到launcher</p><p>这只是加到applcation，打开之后可以锁定到Launcher</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>使用vim保存没有编辑权限的文件</title>
       <link href="/2018/08/22/%E4%BD%BF%E7%94%A8vim%E4%BF%9D%E5%AD%98%E6%B2%A1%E6%9C%89%E7%BC%96%E8%BE%91%E6%9D%83%E9%99%90%E7%9A%84%E6%96%87%E4%BB%B6/"/>
       <url>/2018/08/22/%E4%BD%BF%E7%94%A8vim%E4%BF%9D%E5%AD%98%E6%B2%A1%E6%9C%89%E7%BC%96%E8%BE%91%E6%9D%83%E9%99%90%E7%9A%84%E6%96%87%E4%BB%B6/</url>
@@ -45,7 +633,7 @@
       <title>ListenableFuture in Guava</title>
       <link href="/2018/08/13/%C2%83%C2%96ListenableFuture-in-Guava/"/>
       <url>/2018/08/13/%C2%83%C2%96ListenableFuture-in-Guava/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h1 id="ListenableFuture的说明"><a href="#ListenableFuture的说明" class="headerlink" title="ListenableFuture的说明"></a>ListenableFuture的说明</h1><p>　并发编程是一个难题，但是一个强大而简单的抽象可以显著的简化并发的编写。出于这样的考虑，Guava 定义了 ListenableFuture接口并继承了JDK concurrent包下的Future 接口，ListenableFuture 允许你注册回调方法(callbacks)，在运算（多线程执行）完成的时候进行调用,  或者在运算（多线程执行）完成后立即执行。这样简单的改进，使得可以明显的支持更多的操作，这样的功能在JDK concurrent中的Future是不支持的。 在高并发并且需要大量Future对象的情况下，推荐尽量使用ListenableFuture来代替..</p><p>ListenableFuture 中的基础方法是addListener(Runnable, Executor), 该方法会在多线程运算完的时候，在Executor中执行指定的Runnable。</p><h1 id="ListenableFuture的创建和使用"><a href="#ListenableFuture的创建和使用" class="headerlink" title="ListenableFuture的创建和使用"></a>ListenableFuture的创建和使用</h1><p>　　对应JDK中的 ExecutorService.submit(Callable) 提交多线程异步运算的方式，Guava 提供了ListeningExecutorService 接口, 该接口的submit返回 ListenableFuture， 而相应的ExecutorService 返回普通的 Future。将 ExecutorService 转为 ListeningExecutorService，可以使用MoreExecutors.listeningDecorator(ExecutorService)进行装饰。举例说明：</p>]]></content>
       
       
         <tags>
@@ -69,7 +657,7 @@
       <title>Linux Source命令</title>
       <link href="/2018/08/13/Linux-Source%E5%91%BD%E4%BB%A4/"/>
       <url>/2018/08/13/Linux-Source%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<p>当我修改了/etc/profile文件，我想让它立刻生效，而不用重新登录；这时就想到用source命令，如:source /etc/profile<br>对source进行了学习，并且用它与sh 执行脚本进行了对比，现在总结一下。</p><p>source命令：<br>source命令也称为“点命令”，也就是一个点符号（.）,是bash的内部命令。<br>功能：使Shell读入指定的Shell程序文件并依次执行文件中的所有语句<br>source命令通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。<br>用法：<br>source filename 或 . filename<br>source命令(从 C Shell 而来)是bash shell的内置命令;点命令(.)，就是个点符号(从Bourne Shell而来)是source的另一名称。</p><p>source filename 与 sh filename 及./filename执行脚本的区别在那里呢？<br>1.当shell脚本具有可执行权限时，用sh filename与./filename执行脚本是没有区别得。./filename是因为当前目录没有在PATH中，所有”.”是用来表示当前目录的。<br>2.sh filename 重新建立一个子shell，在子shell中执行脚本里面的语句，该子shell继承父shell的环境变量，但子shell新建的、改变的变量不会被带回父shell，除非使用export。<br>3.source filename：这个命令其实只是简单地读取脚本里面的语句依次在当前shell里面执行，没有建立新的子shell。那么脚本里面所有新建、改变变量的语句都会保存在当前shell里面。</p><p>举例说明：<br>1.新建一个test.sh脚本，内容为:A=1<br>2.然后使其可执行chmod +x test.sh<br>3.运行sh test.sh后，echo $A，显示为空，因为A=1并未传回给当前shell<br>4.运行./test.sh后，也是一样的效果<br>5.运行source test.sh 或者 . test.sh，然后echo $A，则会显示1，说明A=1的变量在当前shell中</p><p>原文博客：<a href="http://blog.csdn.net/wangyangkobe/article/details/6595143" target="_blank" rel="noopener">http://blog.csdn.net/wangyangkobe/article/details/6595143</a></p>]]></content>
+      <content type="html"><![CDATA[<p>Linux source命令：</p><p>通常用法：source filepath 或 . filepath</p><p>功能：使当前shell读入路径为filepath的shell文件并依次执行文件中的所有语句，通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。例如，当我们修改了/etc/profile文件，并想让它立刻生效，而不用重新登录，就可以使用source命令，如source /etc/profile。</p><p>source命令(从 C Shell 而来)是bash shell的内置命令；点命令(.)，就是个点符号(从Bourne Shell而来)是source的另一名称。这从用法中也能看出来。</p><p>source filepath 与 sh filepath 、./filepath的区别：</p><p>当shell脚本具有可执行权限时，用sh filepath与./filepath是没有区别的。./filepath是因为当前目录没有在PATH中，所有”.”是用来表示当前目录的。</p><p>sh filepath 会重新建立一个子shell，在子shell中执行脚本里面的语句，该子shell继承父shell的环境变量，但子shell是新建的，其改变的变量不会被带回父shell，除非使用export。</p><p>source filename其实只是简单地读取脚本里面的语句依次在当前shell里面执行，没有建立新的子shell。那么脚本里面所有新建、改变变量的语句都会保存在当前shell里面。</p><p>举例说明：</p><p>新建一个test.sh脚本，内容为:A=1；</p><p>修改其可执行权限：chmod +x test.sh；</p><p>运行sh test.sh后，echo $A，显示为空，因为A=1并未传回给当前shell；</p><p>运行./test.sh后，也是一样的效果；</p><p>运行source test.sh 或者 . test.sh，然后echo $A，则会显示1，说明A=1的变量在当前shell中；</p>]]></content>
       
       <categories>
           
@@ -129,8 +717,20 @@
       <title>Ubuntu的ppa源是什么</title>
       <link href="/2018/08/13/Ubuntu%E7%9A%84ppa%E6%BA%90%E6%98%AF%E4%BB%80%E4%B9%88/"/>
       <url>/2018/08/13/Ubuntu%E7%9A%84ppa%E6%BA%90%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<p>以下内容转自<a href="https://imcn.me/ppa：" target="_blank" rel="noopener">https://imcn.me/ppa：</a></p><p>PPA是Personal Package Archives首字母简写。翻译为中文意思是：个人软件包文档</p><p>只有Ubuntu用户可以用，而所有的PPA都是寄存在launchpad.net网站上。</p><p>Launchpad（启动器）是Canonical公司所架设的网站，是一个提供维护、支援或连络Ubuntu开发者的平台。其中Launchpad提供了线上翻译软件的功能，你可以自由的参与Ubuntu或相关自由软件的开发或翻译工作。而你也可以利用该网站的回报机制来回报相关软件的Bug，或者进一步提供建议。</p><p>使用PPA的好处是Ubuntu系统中使用PPA源的软件可以让你在第一时间体验到最新版本的软件。</p><p>有很多PPA软件源提供多个版本，包括正式稳定版、每日创建版，开发版、测试版等等。</p><p>例如，chromium 浏览器的源：</p><p>chromium daily（每日创建版）<br>chromium dev（开发版）<br>chromium stable（稳定版）<br>chromium beta（测试版）<br>每日创建版源地址：<a href="https://launchpad.net/~chromium-daily/+archive/daily" target="_blank" rel="noopener">https://launchpad.net/~chromium-daily/+archive/daily</a></p><p>添加该源的方法，打开终端，输入下面的命令：</p><p>sudo add-apt-repository ppa:chromium-daily/stable<br>稳定版源地址：<a href="https://launchpad.net/~chromium-daily/+archive/stable" target="_blank" rel="noopener">https://launchpad.net/~chromium-daily/+archive/stable</a></p><p>添加该源的方法，打开终端，输入下面的命令：</p><p>sudo add-apt-repository ppa:chromium-daily/daily</p><p>一个完整的通过PPA源安装软件的命令，例如添加VLC播放器源并安装的命令：</p><p>sudo add-apt-repository ppa:videolan/stable-daily 【命令解释】这条命令是添加源<br>sudo apt-get update 【命令解释】更新系统源<br>sudo apt-get install vlc 【命令解释】安装VLC软件<br>不要试图去猜测PPA的地址，直接上launchpad.net搜索相关软件，比如搜索VLC，进入详情页面<a href="https://launchpad.net/~videolan/+archive/ubuntu/master-daily" target="_blank" rel="noopener">https://launchpad.net/~videolan/+archive/ubuntu/master-daily</a></p>]]></content>
       
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
       
     </entry>
     
@@ -411,7 +1011,7 @@
       <title>mysql left join中where和on条件的区别</title>
       <link href="/2018/07/21/mysql-left-join%E4%B8%ADwhere%E5%92%8Con%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
       <url>/2018/07/21/mysql-left-join%E4%B8%ADwhere%E5%92%8Con%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<p>left join中关于where和on条件的几个知识点：</p><ol><li>多表left join是会生成一张临时表，并返回给用户</li><li>where条件是针对最后生成的这张临时表进行过滤，过滤掉不符合where条件的记录，是真正的不符合就过滤掉。</li><li>on条件是对left join的右表进行条件过滤，但依然返回左表的所有行，右表中没有的补为NULL</li><li>on条件中如果有对左表的限制条件，无论条件真假，依然返回左表的所有行,但是会影响右表的匹配值。也就是说on中左表的限制条件只影响右表的匹配内容，不影响返回行数。<br>结论：</li><li>where条件中对左表限制，不能放到on后面</li><li>where条件中对右表限制，放到on后面，会有数据行数差异，比原来行数要多</li></ol>]]></content>
+      <content type="html"><![CDATA[<p>left join中关于where和on条件的几个知识点：</p><ol><li>多表left join是会生成一张临时表，并返回给用户</li><li>where条件是针对最后生成的这张临时表进行过滤，过滤掉不符合where条件的记录，是真正的不符合就过滤掉。</li><li>on条件是对left join的右表进行条件过滤，但依然返回左表的所有行，右表中没有的补为NULL</li><li>on条件中如果有对左表的限制条件，无论条件真假，依然返回左表的所有行,但是会影响右表的匹配值。也就是说on中左表的限制条件只影响右表的匹配内容，不影响返回行数。先对b表过滤on中的条件，再进行关联<br>结论：</li><li>where条件中对左表限制，不能放到on后面</li><li>where条件中对右表限制，放到on后面，会有数据行数差异，比原来行数要多</li></ol>]]></content>
       
       <categories>
           
@@ -441,7 +1041,13 @@
       <title>MySQL性能优化</title>
       <link href="/2018/07/21/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
       <url>/2018/07/21/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</url>
-      <content type="html"><![CDATA[<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><ol><li>解决数据库连接造成的timeout的5XX错误</li><li>慢查询</li><li>阻塞</li></ol><h1 id="方面"><a href="#方面" class="headerlink" title="方面"></a>方面</h1><ol><li>SQL以及索引</li><li>数据库表结构</li><li>系统配置</li><li>硬件</li></ol><h1 id="SQL索引以及优化"><a href="#SQL索引以及优化" class="headerlink" title="SQL索引以及优化"></a>SQL索引以及优化</h1><h2 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h2><h3 id="开启慢查询日志"><a href="#开启慢查询日志" class="headerlink" title="开启慢查询日志"></a>开启慢查询日志</h3><p>show variables like ‘%quer%’</p><p>set gloabl log_queries_not_using_indexes=on;<br>记录未使用索引的查询</p><p>set global slow_query_log=on;<br>打开慢查询日志</p><p>set global long_query_time 1;<br>慢查询时间设置为1s</p><h3 id="慢查询日志分析"><a href="#慢查询日志分析" class="headerlink" title="慢查询日志分析"></a>慢查询日志分析</h3><h4 id="mysqldumpslow"><a href="#mysqldumpslow" class="headerlink" title="mysqldumpslow"></a>mysqldumpslow</h4><p>-s 排序慢查询日志<br>-t 查看前多少条</p><h4 id="pt-query——digest"><a href="#pt-query——digest" class="headerlink" title="pt-query——digest"></a>pt-query——digest</h4><p>-limit 分析多少条</p><ol><li>注意次数多且每次查询占用时间长的SQL</li><li>注意Rows examine项，扫描行数，IO</li><li>Rows examine远远大于Rows send，表示未命中索引的SQL多</li></ol><h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2><ul><li>table 那张表</li><li>type 好到差 const 主键唯一索引，eq_reg,主键或者唯一索引的范围查找，ref 连接查询，一个表是基于某个索引的，range基于索引的范围查找，index索引扫描，all表扫描。</li><li>possible—_keys 用到的索引有哪些，为空表示没用到</li><li>keys 实际用到的索引</li><li>key——len 索引长度，越短越好</li><li>ref 哪一列索引被使用了</li><li>rows 检查用来返回的请求数据的行数</li><li>extra filesort，文件排序了，temporary 使用了临时表</li></ul><h3 id="对max和count优化"><a href="#对max和count优化" class="headerlink" title="对max和count优化"></a>对max和count优化</h3><pre><code>select  count(release_year=&#39;2006&#39; or null) as &#39;2006年的电影数量&#39;,count(release_year=&#39;2007&#39; or null) as &#39;2007年的电影数量&#39;,from film</code></pre><p>注意or null，因为count不计算null，如果不写or null，那即使count条件不成立，相当于1，也包含在内</p><h3 id="子查询优化"><a href="#子查询优化" class="headerlink" title="子查询优化"></a>子查询优化</h3><ol><li>in改成join，注意可能会出现重复</li></ol><h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h2><pre><code>select actor.first_name,actor.last_name,COUNT(*)from film_actorINNER JOIN actor using(actor_id)GROUP BY actor.actor_idselect actor.first_name,actor.last_name,COUNT(*)from actorINNER JOIN (select actor_id,count(*) as cnt from film_actor GROUP BY actor_id) as c using(actor_id)</code></pre><h1 id="lmit优化"><a href="#lmit优化" class="headerlink" title="lmit优化"></a>lmit优化</h1><p>select .. where id &gt; 50 and id &lt;60 limit 1,5<br>比select … limit 50,55的row要好<br>但是要保证id是连续的，不能中断，可以加一个index字段</p><h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><ol><li>在group by 从句，where，order by，on</li><li>索引字段越小越好</li><li>离散度越大（不同的数目越多），的放在联合索引前面</li><li>减小重复索引，primary key和unique（id）</li><li>多余索引，联合索引包含了主键的列。</li><li>有查找重复索引和冗余索引的sql</li><li>pt-duplicate-key-checker工具检查重复以及冗余索引</li><li>mysql中只能通过慢日志配合pt-index-usage根据进行使用情况的分析。</li></ol><h1 id="数据库结构优化"><a href="#数据库结构优化" class="headerlink" title="数据库结构优化"></a>数据库结构优化</h1><ol><li>最小的数据类型</li><li>简单的数据类型，时间上int比varchar简单</li><li>尽量使用not null</li><li>尽量少用text类型，非用不可考虑分表</li><li>int来存储时间</li><li>bigint来存储inet_aton() ip地址</li></ol><h1 id="范式优化"><a href="#范式优化" class="headerlink" title="范式优化"></a>范式优化</h1><p>目前遵循第三范式</p><p>数据表中不存在非关键字字段对任意候选关键字字段的传递函数依赖</p><h2 id="不符合第三范式的表的问题"><a href="#不符合第三范式的表的问题" class="headerlink" title="不符合第三范式的表的问题"></a>不符合第三范式的表的问题</h2><ol><li>冗余</li><li>更新，删除，插入异常</li></ol><h2 id="反范式化"><a href="#反范式化" class="headerlink" title="反范式化"></a>反范式化</h2><p>增加冗余</p><h2 id="表的垂直拆分"><a href="#表的垂直拆分" class="headerlink" title="表的垂直拆分"></a>表的垂直拆分</h2><p>很多列拆分成</p><ol><li>把不常用的放一个表中，常用的放在一起</li><li>大字段放在一个表中</li></ol><h2 id="水平拆分"><a href="#水平拆分" class="headerlink" title="水平拆分"></a>水平拆分</h2><ol><li>进行hash运算，取余拆分</li><li>针对不同的hashid放到不同表中</li></ol><h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><ol><li>跨分区表进行汇总统计</li></ol><h2 id="配置优化"><a href="#配置优化" class="headerlink" title="配置优化"></a>配置优化</h2><ol><li>net—.tcp_max 增加tcp支持的队列数</li><li>资源回收 tw_buckets  加快回收</li><li>打开文件数限制</li><li>关闭selinux，iptables，使用硬件防火墙</li><li>配置文件多个后面的会覆盖前面的</li><li>innbodb——buffer_pool_size innodb缓冲池大小</li><li>pool——instances 缓冲池的个数</li><li>log——buffer—size 日志缓冲区</li><li>flush——log——at——trx——commit 数据安全质较高设置为2</li><li>read——io——threads write 读写进程</li><li>file——per——table 共享表空间，默认为off，所有的</li><li>stats——on——meta 决定mysql在什么情况下刷新innodb表的统计信息。</li></ol><h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><ol><li>raid 多个磁盘组成一个磁盘</li><li>raid 要求至少两个磁盘</li></ol>]]></content>
+      <content type="html"><![CDATA[<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><ol><li>解决数据库连接造成的timeout的5XX错误</li><li>慢查询</li><li>阻塞</li></ol><h1 id="方面"><a href="#方面" class="headerlink" title="方面"></a>方面</h1><ol><li>SQL以及索引</li><li>数据库表结构</li><li>系统配置</li><li>硬件</li></ol><h1 id="SQL索引以及优化"><a href="#SQL索引以及优化" class="headerlink" title="SQL索引以及优化"></a>SQL索引以及优化</h1><h2 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h2><h3 id="开启慢查询日志"><a href="#开启慢查询日志" class="headerlink" title="开启慢查询日志"></a>开启慢查询日志</h3><p>show variables like ‘%quer%’</p><p>set gloabl log_queries_not_using_indexes=on;<br>记录未使用索引的查询</p><p>set global slow_query_log=on;<br>打开慢查询日志</p><p>set global long_query_time 1;<br>慢查询时间设置为1s</p><h3 id="慢查询日志分析"><a href="#慢查询日志分析" class="headerlink" title="慢查询日志分析"></a>慢查询日志分析</h3><h4 id="mysqldumpslow"><a href="#mysqldumpslow" class="headerlink" title="mysqldumpslow"></a>mysqldumpslow</h4><p>-s 排序慢查询日志<br>-t 查看前多少条</p><h4 id="pt-query——digest"><a href="#pt-query——digest" class="headerlink" title="pt-query——digest"></a>pt-query——digest</h4><p>-limit 分析多少条</p><ol><li>注意次数多且每次查询占用时间长的SQL</li><li>注意Rows examine项，扫描行数，IO</li><li>Rows examine远远大于Rows send，表示未命中索引的SQL多</li></ol><h2 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h2><h3 id="select-type"><a href="#select-type" class="headerlink" title="select_type"></a>select_type</h3><ol><li>simple<br>进行不需要union操作或不含子查询的简单select查询时，响应查询语句的select_type 即为simple（查询中包含连接的情形也一样）。无论查询语句是多么复杂，执行计划中select_type为simple的单位查询一定只有一个。最外侧的select查询的select_type为simple</li><li>primary<br>一个需要union操作或含子查询的select查询执行计划中，位于最外层的select_type即为primary。与simple一样，select_type为primary的单位select查询也只存在1个，位于查询最外侧的select单位查询的select_type为primary</li><li>union<br>由union操作联合而成的单位select查询中，除第一个外，第二个以后的所有单位select查询的select_type都为union。union的第一个单位select的select_type不是union，而是DERIVED。它是一个临时表，用于存储联合（Union）后的查询结果。</li><li><p>DEPENDENT UNION dependent<br>与UNION  select_type一样，dependent union出现在union或union all 形成的集合查询中。此处的dependent表示union或union all联合而成的单位查询受外部影响。下列查询中，两个select 查询用union联合起来，所一union出现在select_type中，从in所包含的子查询中可以看到，两个查询通过union连接在一起。MariaDB中，不会在默认优化器模式下先处理IN（subquery）查询内部的子查询，而是读取外部的employees数据表，再执行子查询时，dependent关键字就会出现在select_type中。</p><p> explain<br> select *<br> from employees e1<br> where e1.emp_no in(</p><p> select e2.emp_no from employees e2 where e2.first_name=’Matt’<br> union<br> select e3.emp_no from employees e3 where e3.first_name=’Matt’<br> );</p><p> 一个单位的select查询中还包含其他单位select时，我们将内部的select称为子查询，一个查询中含有子查询时，子查询通常会比外部查询先执行，这种处理方式的速度一般会非常快。但对于select type包含dependent关键字的子查询，由于它要依赖外部查询，所以绝对不会比外部查询先执行。因此，select_type包含dependent关键字的子查询先执行往往会比较低效。</p></li><li><p>union result<br>union result为包含union结果的数据表。MariaDB中，union all或union（DISTINCT）查询会将所有union结果创建为临时表。执行计划中，该临时表所在行为select_type为union result。由于union result在实际查询中不是单位查询，所以没有单独的id值。</p><p> explain<br> select emp_no from salaries where salary&gt;100000<br> union all<br> select emp_no from dept_emp where from_date&gt;’2001-01-01’</p><p> 上述执行计划的最后一行（union result）的table列显示为表示它是id分别为1和2的单位查询的查询结果的联合。</p></li></ol><h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><p>那张表</p><h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>好到差 const 主键唯一索引，eq_reg,主键或者唯一索引的范围查找，ref 连接查询，一个表是基于某个索引的，range基于索引的范围查找，index索引扫描，all表扫描。</p><h3 id="possible—-keys"><a href="#possible—-keys" class="headerlink" title="possible—_keys"></a>possible—_keys</h3><p>可能用到的索引有哪些，为空表示没用到</p><h3 id="keys"><a href="#keys" class="headerlink" title="keys"></a>keys</h3><p>实际用到的索引</p><h3 id="key——len"><a href="#key——len" class="headerlink" title="key——len"></a>key——len</h3><p>索引长度，越短越好</p><h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p>哪一列索引被使用了</p><h3 id="rows"><a href="#rows" class="headerlink" title="rows"></a>rows</h3><p>检查用来返回的请求数据的行数</p><p>###extra<br>filesort，文件排序了，temporary 使用了临时表</p><h3 id="对max和count优化"><a href="#对max和count优化" class="headerlink" title="对max和count优化"></a>对max和count优化</h3><pre><code>select  count(release_year=&#39;2006&#39; or null) as &#39;2006年的电影数量&#39;,count(release_year=&#39;2007&#39; or null) as &#39;2007年的电影数量&#39;,from film</code></pre><p>注意or null，因为count不计算null，如果不写or null，那即使count条件不成立，相当于1，也包含在内</p><h3 id="子查询优化"><a href="#子查询优化" class="headerlink" title="子查询优化"></a>子查询优化</h3><ol><li>in改成join，注意可能会出现重复</li></ol><h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h2><pre><code>select actor.first_name,actor.last_name,COUNT(*)from film_actorINNER JOIN actor using(actor_id)GROUP BY actor.actor_idselect actor.first_name,actor.last_name,COUNT(*)from actorINNER JOIN (select actor_id,count(*) as cnt from film_actor GROUP BY actor_id) as c using(actor_id)</code></pre><h1 id="lmit优化"><a href="#lmit优化" class="headerlink" title="lmit优化"></a>lmit优化</h1><p>select .. where id &gt; 50 and id &lt;60 limit 1,5<br>比select … limit 50,55的row要好<br>但是要保证id是连续的，不能中断，可以加一个index字段</p><h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><ol><li>在group by 从句，where，order by，on</li><li>索引字段越小越好</li><li>离散度越大（不同的数目越多），的放在联合索引前面</li><li>减小重复索引，primary key和unique（id）</li><li>多余索引，联合索引包含了主键的列。</li><li>有查找重复索引和冗余索引的sql</li><li>pt-duplicate-key-checker工具检查重复以及冗余索引</li><li>mysql中只能通过慢日志配合pt-index-usage根据进行使用情况的分析。</li></ol><h1 id="数据库结构优化"><a href="#数据库结构优化" class="headerlink" title="数据库结构优化"></a>数据库结构优化</h1><ol><li>最小的数据类型</li><li>简单的数据类型，时间上int比varchar简单</li><li>尽量使用not null</li><li>尽量少用text类型，非用不可考虑分表</li><li>int来存储时间</li><li>bigint来存储inet_aton() ip地址</li></ol><h1 id="范式优化"><a href="#范式优化" class="headerlink" title="范式优化"></a>范式优化</h1><p>目前遵循第三范式</p><p>数据表中不存在非关键字字段对任意候选关键字字段的传递函数依赖</p><h2 id="不符合第三范式的表的问题"><a href="#不符合第三范式的表的问题" class="headerlink" title="不符合第三范式的表的问题"></a>不符合第三范式的表的问题</h2><ol><li>冗余</li><li>更新，删除，插入异常</li></ol><h2 id="反范式化"><a href="#反范式化" class="headerlink" title="反范式化"></a>反范式化</h2><p>增加冗余</p><h2 id="表的垂直拆分"><a href="#表的垂直拆分" class="headerlink" title="表的垂直拆分"></a>表的垂直拆分</h2><p>很多列拆分成</p><ol><li>把不常用的放一个表中，常用的放在一起</li><li>大字段放在一个表中</li></ol><h2 id="水平拆分"><a href="#水平拆分" class="headerlink" title="水平拆分"></a>水平拆分</h2><ol><li>进行hash运算，取余拆分</li><li>针对不同的hashid放到不同表中</li></ol><h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><ol><li>跨分区表进行汇总统计</li></ol><h2 id="配置优化"><a href="#配置优化" class="headerlink" title="配置优化"></a>配置优化</h2><ol><li>net—.tcp_max 增加tcp支持的队列数</li><li>资源回收 tw_buckets  加快回收</li><li>打开文件数限制</li><li>关闭selinux，iptables，使用硬件防火墙</li><li>配置文件多个后面的会覆盖前面的</li><li>innbodb——buffer_pool_size innodb缓冲池大小</li><li>pool——instances 缓冲池的个数</li><li>log——buffer—size 日志缓冲区</li><li>flush——log——at——trx——commit 数据安全质较高设置为2</li><li>read——io——threads write 读写进程</li><li>file——per——table 共享表空间，默认为off，所有的</li><li>stats——on——meta 决定mysql在什么情况下刷新innodb表的统计信息。</li></ol><h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><ol><li>raid 多个磁盘组成一个磁盘</li><li>raid 要求至少两个磁盘</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
       
       
     </entry>
@@ -1843,7 +2449,7 @@
       <title>linux常用命令</title>
       <link href="/2018/05/20/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2018/05/20/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<h3 id="快速打开日志"><a href="#快速打开日志" class="headerlink" title="快速打开日志"></a>快速打开日志</h3><p>我们的日志是按照小时来写文件的，名字很长，比如</p><p>com.nizouba.log.2018-05-19-11<br>com.nizouba.log.2018-05-18-12<br>com.nizouba.log.2018-05-19-10</p><p>用通配符，比如vim <em>19</em>11</p><h1 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h1><h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><p>-o or的意思</p><p>-a and，默认是-a</p><p>比如find .git -name HEAD -o -name master</p><p>参考：<a href="http://man7.org/linux/man-pages/man1/find.1.html" target="_blank" rel="noopener">http://man7.org/linux/man-pages/man1/find.1.html</a></p><h1 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h1><h2 id="yum-install"><a href="#yum-install" class="headerlink" title="yum install"></a>yum install</h2><p>-y 对所有的提问都回答“yes”；</p><h1 id="系统资源查看"><a href="#系统资源查看" class="headerlink" title="系统资源查看"></a>系统资源查看</h1><h2 id="free"><a href="#free" class="headerlink" title="free"></a>free</h2><ul><li>mem物理内存</li><li>swap交换内存，放在硬盘上的，性能差，最好不要超过20%</li><li>shared 已使用中共享的内存 </li><li>buffer 已使用中缓冲量</li><li>cached 已使用中缓存量</li></ul><h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-d 更新频率-s，默认5s</li><li>-b 按照批次执行</li><li>-n 与-b配合，要执行几次top -b</li><li>-p 指定某个pid进行观察监测</li><li>-p  ：指定某些个 PID 来进行观察监测而已。 </li><li>在 top 执行过程当中可以使用的按键指令：<br>? ：显示在 top 当中可以输入的按键指令；<br>P ：以 CPU 的使用资源排序显示；<br>M ：以 Memory 的使用资源排序显示；<br>N ：以 PID 来排序喔！<br>T ：由该 Process 使用的 CPU 时间累积 (TIME+) 排序。<br>k ：给予某个 PID 一个讯号  (signal)<br>r ：给予某个 PID 重新制订一个 nice 值。 todo:这里不懂</li></ul><p>top 主要分为两个画面，上面的画面为整个系统的资源使用状态，基本上总共有六行， 显示的内容依序是：  </p><ul><li>第一行：显示系统已启动的时间、目前上线人数、系统整体的负载(load)。 比较需要注意的是系<br>统的负载，三个数据分别代表 1, 5, 10 分钟的平均负载。 一般来说，这个负载值应该不太可能<br>超过 1 才对，除非您的系统很忙碌。 如果持续高于 5 的话，那么…..仔细的看看到底是那个<br>程序在影响整体系统吧！ </li><li>第二行：显示的是目前的观察程序数量，比较需要注意的是最后的 zombie 那个数值，如果不是<br>0 ，嘿嘿！好好看看到底是那个 process 变成疆尸了吧？！ </li><li>第三行：显示的是 CPU 的整体负载，每个项目可使用 ? 查阅。需要观察的是 id (idle) 的数值，<br>一般来说，他应该要接近 100% 才好，表示系统很少资源被使用啊！ ^_^。 </li><li>第四行与第五行：表示目前的物理内存与虚拟内存 (Mem/Swap) 的使用情况。 </li><li>第六行：这个是当在 top 程序当中输入指令时，显示状态的地方。 比如输入k或者r<br>至于 top 底下的画面，则是每个 process 使用的资源情况。比较需要注意的是：  </li><li>PID ：每个 process 的 ID 啦！  </li><li>USER：该 process 所属的使用者；  </li><li>PR ：Priority 的简写，程序的优先执行顺序，越小越早被执行；  </li><li>NI ：Nice 的简写，与 Priority 有关，也是越小越早被执行；  </li><li>%CPU：CPU 的使用率；  </li><li>%MEM：内存的使用率；  </li><li>TIME+：CPU 使用时间的累加； </li></ul><h1 id="打印-1"><a href="#打印-1" class="headerlink" title="打印"></a>打印</h1><h2 id="nl（NL）"><a href="#nl（NL）" class="headerlink" title="nl（NL）"></a>nl（NL）</h2><p>添加行号打印</p><h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><ul><li>-b 空行是否列出行号</li><li>-n 行号在左边还是右边显示</li><li>-w 行号占用的位数</li></ul><h3 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h3><p>tac log.log |more </p><h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><h2 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h2><ul><li>[n1,[n2]]function,function包括 a-新增 ，c-取代，d-删除，i-插入，p-打印，s-取代<h1 id="i-直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books"><a href="#i-直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books" class="headerlink" title="i 直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books"></a>i 直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books</h1></li></ul><h3 id="仅列出5-7行"><a href="#仅列出5-7行" class="headerlink" title="仅列出5-7行"></a>仅列出5-7行</h3><p> sed -n ‘5,7p’ </p><h2 id="输入与输出"><a href="#输入与输出" class="headerlink" title="输入与输出"></a>输入与输出</h2><p>stdin 0<br>stdout 1<br>stderr 2</p><p>#内容处理</p><h1 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h1><p>  [root@linux ~]# cut -d’分隔字符’ -f fields<br>  [root@linux ~]# cut -c 字符区间<br>  参数：<br>  -d  ：后面接分隔字符。与 -f 一起使用；<br>  -f  ：依据 -d 的分隔字符将一段讯息分割成为数段，用 -f 取出第几段的意思；<br>  -c  ：以字符 (characters) 的单位取出固定字符区间；<br>  范例： </p><p>  范例一：将 PATH 变量取出，我要找出第三个路径。<br>  [root@linux ~]# echo $PATH<br>  /bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/X11R6/bin:/usr/games:<br>  [root@linux ~]# echo $PATH | cut -d ‘:’ -f 5<br>  # 嘿嘿！如此一来，就会出现 /usr/local/bin 这个目录名称！<br>  # 因为我们是以 : 作为分隔符，第五个就是 /usr/local/bin 啊！<br>  # 那么如果想要列出第 3 与第 5 呢？，就是这样：<br>  [root@linux ~]# echo $PATH | cut -d ‘:’ -f 3,5 </p><p>  范例二：将 export 输出的讯息，取得第 12 字符以后的所有字符串<br>  [root@linux ~]# export<br>  declare -x HISTSIZE=”1000”<br>  declare -x INPUTRC=”/etc/inputrc”<br>  declare -x KDEDIR=”/usr”<br>  declare -x LANG=”zh_TW.big5”<br>  ……其它省略……<br>  [root@linux ~]# export | cut -c 12-<br>  HISTSIZE=”1000”<br>  INPUTRC=”/etc/inputrc”<br>  KDEDIR=”/usr”<br>  LANG=”zh_TW.big5”<br>  ……其它省略……<br>  # 知道怎么回事了吧？用 -c 可以处理比较具有格式的输出数据！<br>  # 我们还可以指定某个范围的值，例如第 12-20 的字符，就是 cut -c 12-20 等等！ </p><p>  范例三：用 last 将这个月登入者的信息中，仅留下使用者大名<br>  [root@linux ~]# last<br>  vbird  tty1  192.168.1.28   Mon Aug 15 11:55 - 17:48  (05:53)<br>  vbird  tty1  192.168.1.28   Mon Aug 15 10:17 - 11:54  (01:37)<br>  [root@linux ~]# last | cut -d ‘ ‘ -f 1<br>  # 用 last 可以取得最近一个月登入主机的使用者信息，<br>  # 而我们可以利用空格符的间隔，取出第一个信息，就是使用者账号啰！<br>  # 但是因为 vbird tty1 之间空格有好几个，并非仅有一个，所以，如果要找出<br>  # tty1 其实不能以 cut -d ‘ ‘ -f 1,2 喔！输出的结果会不是我们想要的。</p><p>不过， cut 在处理多空格相连的数据<br>时，可能会比较吃力一点～</p><h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><p>  root@linux ~]# grep [-acinv] ‘搜寻字符串’ filename<br>  参数：<br>  -a ：将 binary 档案以 text 档案的方式搜寻数据<br>  -c ：计算找到 ‘搜寻字符串’ 的次数<br>  -i ：忽略大小写的不同，所以大小写视为相同<br>  -n ：顺便输出行号<br>  -v ：反向选择，亦即显示出没有 ‘搜寻字符串’ 内容的那一行！<br>  范例： </p><p>  范例一：将 last 当中，有出现 root 的那一行就取出来；<br>  [root@linux ~]# last | grep ‘root’ </p><p>  范例二：与范例一相反，只要没有 root 的就取出！<br>  [root@linux ~]# last | grep -v ‘root’ </p><p>  范例三：在 last 的输出讯息中，只要有 root 就取出，并且仅取第一栏<br>  [root@linux ~]# last | grep ‘root’ |cut -d ‘ ‘ -f1<br>  # 在取出 root 之后，利用上个指令 cut 的处理，就能够仅取得第一栏啰！ </p><h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>sort 是很有趣的指令，他可以帮我们进行排序，而且可以依据不同的数据型态来排序喔！ 例如数字与文<br>字的排序就不一样。此外，排序的字符与语系的编码有关，因此， 如果您需要排序时，建议使用 LC_ALL=C<br>来让语系统一，数据排序比较好一些。 </p><p>  [root@linux ~]# sort [-fbMnrtuk] [file or stdin]<br>  参数：<br>  -f  ：忽略大小写的差异，例如 A 与 a 视为编码相同；<br>  -b  ：忽略最前面的空格符部分；<br>  -M  ：以月份的名字来排序，例如 JAN, DEC 等等的排序方法；<br>  -n  ：使用『纯数字』进行排序(预设是以文字型态来排序的)；<br>  -r  ：反向排序；<br>  -u  ：就是 uniq ，相同的数据中，仅出现一行代表；<br>  -t  ：分隔符，预设是 tab 键；<br>  -k  ：以那个区间 (field) 来进行排序的意思，<br>  范例： </p><p>  范例一：个人账号都记录在 /etc/passwd 下，请将账号进行排序。<br>  [root@linux ~]# cat /etc/passwd | sort<br>  adm:x:3:4:adm:/var/adm:/sbin/nologin<br>  apache:x:48:48:Apache:/var/www:/sbin/nologin<br>  bin:x:1:1:bin:/bin:/sbin/nologin<br>  daemon:x:2:2:daemon:/sbin:/sbin/nologin </p><h1 id="我省略很多的输出～由上面的数据看起来，-sort-是预设『以第一个』数据来排序，"><a href="#我省略很多的输出～由上面的数据看起来，-sort-是预设『以第一个』数据来排序，" class="headerlink" title="我省略很多的输出～由上面的数据看起来， sort 是预设『以第一个』数据来排序，"></a>我省略很多的输出～由上面的数据看起来， sort 是预设『以第一个』数据来排序，</h1><h1 id="而且预设是以『文字』型态来排序的喔！所以由-a-开始排到最后啰！"><a href="#而且预设是以『文字』型态来排序的喔！所以由-a-开始排到最后啰！" class="headerlink" title="而且预设是以『文字』型态来排序的喔！所以由 a 开始排到最后啰！"></a>而且预设是以『文字』型态来排序的喔！所以由 a 开始排到最后啰！</h1><p>  范例二：/etc/passwd 内容是以 : 来分隔的，我想以第三栏来排序，该如何？<br>  [root@linux ~]# cat /etc/passwd | sort -t ‘:’ -k 3<br>  root:x:0:0:root:/root:/bin/bash<br>  iiimd:x:100:101:IIIMF server:/usr/lib/iiim:/sbin/nologin<br>  uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin<br>  operator:x:11:0:operator:/root:/sbin/nologin<br>  bin:x:1:1:bin:/bin:/sbin/nologin<br>  games:x:12:100:games:/usr/games:/sbin/nologin </p><h1 id="看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～"><a href="#看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～" class="headerlink" title="看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～"></a>看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～</h1><h1 id="如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序："><a href="#如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序：" class="headerlink" title="如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序："></a>如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序：</h1><h1 id="cat-etc-passwd-sort-t-‘-’-k-3-n"><a href="#cat-etc-passwd-sort-t-‘-’-k-3-n" class="headerlink" title="cat /etc/passwd | sort -t ‘:’ -k 3 -n"></a>cat /etc/passwd | sort -t ‘:’ -k 3 -n</h1><h1 id="这样才行啊！用那个-n-来告知-sort-以数字来排序啊！"><a href="#这样才行啊！用那个-n-来告知-sort-以数字来排序啊！" class="headerlink" title="这样才行啊！用那个 -n 来告知 sort 以数字来排序啊！"></a>这样才行啊！用那个 -n 来告知 sort 以数字来排序啊！</h1><p>  范例三：利用 last ，将输出的数据仅取账号，并加以排序<br>  [root@linux ~]# last | cut -d ‘ ‘ -f1 | sort<br>  cut的f1表示取出第一段</p><h1 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h1><p>如果我排序完成了，想要将重复的资料仅列出一个显示，可以怎么做呢？ </p><p>  [root@linux ~]# uniq [-ic]<br>  参数：<br>  -i  ：忽略大小写字符的不同；<br>  -c  ：进行计数<br>  范例： </p><p>  范例一：使用 last 将账号列出，仅取出账号栏，进行排序后仅取出一位；<br>  [root@linux ~]# last | cut -d ‘ ‘ -f1 | sort | uniq </p><p>  范例二：承上题，如果我还想要知道每个人的登入总次数呢？<br>  [root@linux ~]# last | cut -d ‘ ‘ -f1 | sort | uniq -c </p><p>  这个指令用来将『重复的行删除掉只显示一个』，举个例子来说， 你要知道这个月份登入你主机的使用者<br>  有谁，而不在乎他的登入次数，那么就使用上面的范例， (1)先将所有的数据列出；(2)再将人名独立出来；<br>  (3)经过排序；(4)只显示一个！ 由于这个指令是在将重复的东西减少，所以当然需要『配合排序过的档案』<br>  来处理啰！ </p><h1 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h1>]]></content>
+      <content type="html"><![CDATA[<h3 id="快速打开日志"><a href="#快速打开日志" class="headerlink" title="快速打开日志"></a>快速打开日志</h3><p>我们的日志是按照小时来写文件的，名字很长，比如</p><p>com.nizouba.log.2018-05-19-11<br>com.nizouba.log.2018-05-18-12<br>com.nizouba.log.2018-05-19-10</p><p>用通配符，比如vim <em>19</em>11</p><h1 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h1><p>tail -f 监听<br>-n 倒数多少行</p><h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><p>-o or的意思</p><p>-a and，默认是-a</p><p>比如find .git -name HEAD -o -name master</p><p>参考：<a href="http://man7.org/linux/man-pages/man1/find.1.html" target="_blank" rel="noopener">http://man7.org/linux/man-pages/man1/find.1.html</a></p><h1 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h1><h2 id="yum-install"><a href="#yum-install" class="headerlink" title="yum install"></a>yum install</h2><p>-y 对所有的提问都回答“yes”；</p><h1 id="系统资源查看"><a href="#系统资源查看" class="headerlink" title="系统资源查看"></a>系统资源查看</h1><h2 id="free"><a href="#free" class="headerlink" title="free"></a>free</h2><ul><li>mem物理内存</li><li>swap交换内存，放在硬盘上的，性能差，最好不要超过20%</li><li>shared 已使用中共享的内存 </li><li>buffer 已使用中缓冲量</li><li>cached 已使用中缓存量</li></ul><h2 id="top"><a href="#top" class="headerlink" title="top"></a>top</h2><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul><li>-d 更新频率-s，默认5s</li><li>-b 按照批次执行</li><li>-n 与-b配合，要执行几次top -b</li><li>-p 指定某个pid进行观察监测</li><li>-p  ：指定某些个 PID 来进行观察监测而已。 </li><li>在 top 执行过程当中可以使用的按键指令：<br>? ：显示在 top 当中可以输入的按键指令；<br>P ：以 CPU 的使用资源排序显示；<br>M ：以 Memory 的使用资源排序显示；<br>N ：以 PID 来排序喔！<br>T ：由该 Process 使用的 CPU 时间累积 (TIME+) 排序。<br>k ：给予某个 PID 一个讯号  (signal)<br>r ：给予某个 PID 重新制订一个 nice 值。 todo:这里不懂</li></ul><p>top 主要分为两个画面，上面的画面为整个系统的资源使用状态，基本上总共有六行， 显示的内容依序是：  </p><ul><li>第一行：显示系统已启动的时间、目前上线人数、系统整体的负载(load)。 比较需要注意的是系<br>统的负载，三个数据分别代表 1, 5, 10 分钟的平均负载。 一般来说，这个负载值应该不太可能<br>超过 1 才对，除非您的系统很忙碌。 如果持续高于 5 的话，那么…..仔细的看看到底是那个<br>程序在影响整体系统吧！ </li><li>第二行：显示的是目前的观察程序数量，比较需要注意的是最后的 zombie 那个数值，如果不是<br>0 ，嘿嘿！好好看看到底是那个 process 变成疆尸了吧？！ </li><li>第三行：显示的是 CPU 的整体负载，每个项目可使用 ? 查阅。需要观察的是 id (idle) 的数值，<br>一般来说，他应该要接近 100% 才好，表示系统很少资源被使用啊！ ^_^。 </li><li>第四行与第五行：表示目前的物理内存与虚拟内存 (Mem/Swap) 的使用情况。 </li><li>第六行：这个是当在 top 程序当中输入指令时，显示状态的地方。 比如输入k或者r<br>至于 top 底下的画面，则是每个 process 使用的资源情况。比较需要注意的是：  </li><li>PID ：每个 process 的 ID 啦！  </li><li>USER：该 process 所属的使用者；  </li><li>PR ：Priority 的简写，程序的优先执行顺序，越小越早被执行；  </li><li>NI ：Nice 的简写，与 Priority 有关，也是越小越早被执行；  </li><li>%CPU：CPU 的使用率；  </li><li>%MEM：内存的使用率；  </li><li>TIME+：CPU 使用时间的累加； </li></ul><h1 id="打印-1"><a href="#打印-1" class="headerlink" title="打印"></a>打印</h1><h2 id="nl（NL）"><a href="#nl（NL）" class="headerlink" title="nl（NL）"></a>nl（NL）</h2><p>添加行号打印</p><h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><ul><li>-b 空行是否列出行号</li><li>-n 行号在左边还是右边显示</li><li>-w 行号占用的位数</li></ul><h3 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h3><p>tac log.log |more </p><h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><h2 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h2><ul><li>n 安静模式，比如nl |sed, 不安静模式的话n1的打印也会输出</li><li>[n1,[n2]]function,function包括 a-新增 ，c-取代，d-删除，i-插入，p-打印，s-取代<h1 id="i-直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books"><a href="#i-直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books" class="headerlink" title="i 直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books"></a>i 直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books</h1></li></ul><h3 id="仅列出5-7行"><a href="#仅列出5-7行" class="headerlink" title="仅列出5-7行"></a>仅列出5-7行</h3><p> sed -n ‘5,7p’ </p><h2 id="输入与输出"><a href="#输入与输出" class="headerlink" title="输入与输出"></a>输入与输出</h2><p>stdin 0<br>stdout 1<br>stderr 2</p><p>#内容处理</p><h1 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h1><p>  [root@linux ~]# cut -d’分隔字符’ -f fields<br>  [root@linux ~]# cut -c 字符区间<br>  参数：<br>  -d  ：后面接分隔字符。与 -f 一起使用；<br>  -f  ：依据 -d 的分隔字符将一段讯息分割成为数段，用 -f 取出第几段的意思；<br>  -c  ：以字符 (characters) 的单位取出固定字符区间；<br>  范例： </p><p>  范例一：将 PATH 变量取出，我要找出第三个路径。<br>  [root@linux ~]# echo $PATH<br>  /bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/X11R6/bin:/usr/games:<br>  [root@linux ~]# echo $PATH | cut -d ‘:’ -f 5<br>  # 嘿嘿！如此一来，就会出现 /usr/local/bin 这个目录名称！<br>  # 因为我们是以 : 作为分隔符，第五个就是 /usr/local/bin 啊！<br>  # 那么如果想要列出第 3 与第 5 呢？，就是这样：<br>  [root@linux ~]# echo $PATH | cut -d ‘:’ -f 3,5 </p><p>  范例二：将 export 输出的讯息，取得第 12 字符以后的所有字符串<br>  [root@linux ~]# export<br>  declare -x HISTSIZE=”1000”<br>  declare -x INPUTRC=”/etc/inputrc”<br>  declare -x KDEDIR=”/usr”<br>  declare -x LANG=”zh_TW.big5”<br>  ……其它省略……<br>  [root@linux ~]# export | cut -c 12-<br>  HISTSIZE=”1000”<br>  INPUTRC=”/etc/inputrc”<br>  KDEDIR=”/usr”<br>  LANG=”zh_TW.big5”<br>  ……其它省略……<br>  # 知道怎么回事了吧？用 -c 可以处理比较具有格式的输出数据！<br>  # 我们还可以指定某个范围的值，例如第 12-20 的字符，就是 cut -c 12-20 等等！ </p><p>  范例三：用 last 将这个月登入者的信息中，仅留下使用者大名<br>  [root@linux ~]# last<br>  vbird  tty1  192.168.1.28   Mon Aug 15 11:55 - 17:48  (05:53)<br>  vbird  tty1  192.168.1.28   Mon Aug 15 10:17 - 11:54  (01:37)<br>  [root@linux ~]# last | cut -d ‘ ‘ -f 1<br>  # 用 last 可以取得最近一个月登入主机的使用者信息，<br>  # 而我们可以利用空格符的间隔，取出第一个信息，就是使用者账号啰！<br>  # 但是因为 vbird tty1 之间空格有好几个，并非仅有一个，所以，如果要找出<br>  # tty1 其实不能以 cut -d ‘ ‘ -f 1,2 喔！输出的结果会不是我们想要的。</p><p>不过， cut 在处理多空格相连的数据<br>时，可能会比较吃力一点～</p><h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><p>  root@linux ~]# grep [-acinv] ‘搜寻字符串’ filename<br>  参数：<br>  -a ：将 binary 档案以 text 档案的方式搜寻数据<br>  -c ：计算找到 ‘搜寻字符串’ 的次数<br>  -i ：忽略大小写的不同，所以大小写视为相同<br>  -n ：顺便输出行号<br>  -v ：反向选择，亦即显示出没有 ‘搜寻字符串’ 内容的那一行！<br>  范例： </p><p>  范例一：将 last 当中，有出现 root 的那一行就取出来；<br>  [root@linux ~]# last | grep ‘root’ </p><p>  范例二：与范例一相反，只要没有 root 的就取出！<br>  [root@linux ~]# last | grep -v ‘root’ </p><p>  范例三：在 last 的输出讯息中，只要有 root 就取出，并且仅取第一栏<br>  [root@linux ~]# last | grep ‘root’ |cut -d ‘ ‘ -f1<br>  # 在取出 root 之后，利用上个指令 cut 的处理，就能够仅取得第一栏啰！ </p><h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><p>sort 是很有趣的指令，他可以帮我们进行排序，而且可以依据不同的数据型态来排序喔！ 例如数字与文<br>字的排序就不一样。此外，排序的字符与语系的编码有关，因此， 如果您需要排序时，建议使用 LC_ALL=C<br>来让语系统一，数据排序比较好一些。 </p><p>  [root@linux ~]# sort [-fbMnrtuk] [file or stdin]<br>  参数：<br>  -f  ：忽略大小写的差异，例如 A 与 a 视为编码相同；<br>  -b  ：忽略最前面的空格符部分；<br>  -M  ：以月份的名字来排序，例如 JAN, DEC 等等的排序方法；<br>  -n  ：使用『纯数字』进行排序(预设是以文字型态来排序的)；<br>  -r  ：反向排序；<br>  -u  ：就是 uniq ，相同的数据中，仅出现一行代表；<br>  -t  ：分隔符，预设是 tab 键；<br>  -k  ：以那个区间 (field) 来进行排序的意思，<br>  范例： </p><p>  范例一：个人账号都记录在 /etc/passwd 下，请将账号进行排序。<br>  [root@linux ~]# cat /etc/passwd | sort<br>  adm:x:3:4:adm:/var/adm:/sbin/nologin<br>  apache:x:48:48:Apache:/var/www:/sbin/nologin<br>  bin:x:1:1:bin:/bin:/sbin/nologin<br>  daemon:x:2:2:daemon:/sbin:/sbin/nologin </p><h1 id="我省略很多的输出～由上面的数据看起来，-sort-是预设『以第一个』数据来排序，"><a href="#我省略很多的输出～由上面的数据看起来，-sort-是预设『以第一个』数据来排序，" class="headerlink" title="我省略很多的输出～由上面的数据看起来， sort 是预设『以第一个』数据来排序，"></a>我省略很多的输出～由上面的数据看起来， sort 是预设『以第一个』数据来排序，</h1><h1 id="而且预设是以『文字』型态来排序的喔！所以由-a-开始排到最后啰！"><a href="#而且预设是以『文字』型态来排序的喔！所以由-a-开始排到最后啰！" class="headerlink" title="而且预设是以『文字』型态来排序的喔！所以由 a 开始排到最后啰！"></a>而且预设是以『文字』型态来排序的喔！所以由 a 开始排到最后啰！</h1><p>  范例二：/etc/passwd 内容是以 : 来分隔的，我想以第三栏来排序，该如何？<br>  [root@linux ~]# cat /etc/passwd | sort -t ‘:’ -k 3<br>  root:x:0:0:root:/root:/bin/bash<br>  iiimd:x:100:101:IIIMF server:/usr/lib/iiim:/sbin/nologin<br>  uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin<br>  operator:x:11:0:operator:/root:/sbin/nologin<br>  bin:x:1:1:bin:/bin:/sbin/nologin<br>  games:x:12:100:games:/usr/games:/sbin/nologin </p><h1 id="看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～"><a href="#看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～" class="headerlink" title="看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～"></a>看到特殊字体的输出部分了吧？怎么会这样排列啊？呵呵！没错啦～</h1><h1 id="如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序："><a href="#如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序：" class="headerlink" title="如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序："></a>如果是以文字型态来排序的话，原本就会是这样，想要使用数字排序：</h1><h1 id="cat-etc-passwd-sort-t-‘-’-k-3-n"><a href="#cat-etc-passwd-sort-t-‘-’-k-3-n" class="headerlink" title="cat /etc/passwd | sort -t ‘:’ -k 3 -n"></a>cat /etc/passwd | sort -t ‘:’ -k 3 -n</h1><h1 id="这样才行啊！用那个-n-来告知-sort-以数字来排序啊！"><a href="#这样才行啊！用那个-n-来告知-sort-以数字来排序啊！" class="headerlink" title="这样才行啊！用那个 -n 来告知 sort 以数字来排序啊！"></a>这样才行啊！用那个 -n 来告知 sort 以数字来排序啊！</h1><p>  范例三：利用 last ，将输出的数据仅取账号，并加以排序<br>  [root@linux ~]# last | cut -d ‘ ‘ -f1 | sort<br>  cut的f1表示取出第一段</p><h1 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h1><p>如果我排序完成了，想要将重复的资料仅列出一个显示，可以怎么做呢？ </p><p>  [root@linux ~]# uniq [-ic]<br>  参数：<br>  -i  ：忽略大小写字符的不同；<br>  -c  ：进行计数<br>  范例： </p><p>  范例一：使用 last 将账号列出，仅取出账号栏，进行排序后仅取出一位；<br>  [root@linux ~]# last | cut -d ‘ ‘ -f1 | sort | uniq </p><p>  范例二：承上题，如果我还想要知道每个人的登入总次数呢？<br>  [root@linux ~]# last | cut -d ‘ ‘ -f1 | sort | uniq -c </p><p>  这个指令用来将『重复的行删除掉只显示一个』，举个例子来说， 你要知道这个月份登入你主机的使用者<br>  有谁，而不在乎他的登入次数，那么就使用上面的范例， (1)先将所有的数据列出；(2)再将人名独立出来；<br>  (3)经过排序；(4)只显示一个！ 由于这个指令是在将重复的东西减少，所以当然需要『配合排序过的档案』<br>  来处理啰！ </p><h1 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h1><p>  [root@linux ~]# wc [-lwm]<br>  参数：<br>  -l  ：仅列出行；<br>  -w  ：仅列出多少字(英文单字)；<br>  -m  ：多少字符；<br>  范例： </p><p>  范例一：那个 /etc/man.config 里面到底有多少相关字、行、字符数？<br>  [root@linux ~]# cat /etc/man.config | wc<br>      138     709    4506 </p><h1 id="输出的三个数字中，分别代表：-『行、字数、字符数』"><a href="#输出的三个数字中，分别代表：-『行、字数、字符数』" class="headerlink" title="输出的三个数字中，分别代表： 『行、字数、字符数』"></a>输出的三个数字中，分别代表： 『行、字数、字符数』</h1><p>  范例二：我知道使用 last 可以输出登入者，但是 last 最后两行并非账号内容，<br>          那么请问，我该如何以一行指令串取得这个月份登入系统的总人次？<br>  [root@linux ~]# last | grep [a-zA-Z] | grep -v ‘wtmp’ | wc -l  </p><h1 id="由于-last-会输出空白行与-wtmp-字样在最底下两行，因此，我利用"><a href="#由于-last-会输出空白行与-wtmp-字样在最底下两行，因此，我利用" class="headerlink" title="由于 last 会输出空白行与 wtmp 字样在最底下两行，因此，我利用"></a>由于 last 会输出空白行与 wtmp 字样在最底下两行，因此，我利用</h1><h1 id="grep-取出非空白行，以及去除-wtmp-那一行，在计算行数，就能够了解啰！"><a href="#grep-取出非空白行，以及去除-wtmp-那一行，在计算行数，就能够了解啰！" class="headerlink" title="grep 取出非空白行，以及去除 wtmp 那一行，在计算行数，就能够了解啰！"></a>grep 取出非空白行，以及去除 wtmp 那一行，在计算行数，就能够了解啰！</h1><h1 id="双向重导向：-tee"><a href="#双向重导向：-tee" class="headerlink" title="双向重导向： tee"></a>双向重导向： tee</h1><h1 id="sed-n-“11215p”-2018-09-15-1-log-grep-‘Id”"><a href="#sed-n-“11215p”-2018-09-15-1-log-grep-‘Id”" class="headerlink" title="sed  -n  “11215p”  2018-09-15-1.log | grep ‘Id”"></a>sed  -n  “11215p”  2018-09-15-1.log | grep ‘Id”</h1>]]></content>
       
       <categories>
           

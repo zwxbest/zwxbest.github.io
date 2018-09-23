@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nizouba.com/"/>
-  <updated>2018-08-22T05:17:56.901Z</updated>
+  <updated>2018-09-23T08:14:54.369Z</updated>
   <id>http://nizouba.com/</id>
   
   <author>
@@ -17,418 +17,322 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用vim保存没有编辑权限的文件</title>
-    <link href="http://nizouba.com/2018/08/22/%E4%BD%BF%E7%94%A8vim%E4%BF%9D%E5%AD%98%E6%B2%A1%E6%9C%89%E7%BC%96%E8%BE%91%E6%9D%83%E9%99%90%E7%9A%84%E6%96%87%E4%BB%B6/"/>
-    <id>http://nizouba.com/2018/08/22/使用vim保存没有编辑权限的文件/</id>
-    <published>2018-08-22T05:17:28.000Z</published>
-    <updated>2018-08-22T05:17:56.901Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用vim编辑文件非常方便，vim也是修改系统配置最常用的工具。但有时我们会顾着方便而忘了自己有没有权限编辑文件。 往往会在写完文件内容保存时才发现自己没有权限。怎么办？     将文件使用:w <newname>的方式另存为新文件，再用新文件替换就文件的虽然可行（还需要注意修改文件操作权限）,但还是麻烦了点。下面将使用一条命令保存没有权限的文件。</newname></p><p>先上命令：</p><p>:w !sudo tee % &gt; /dev/null</p><p>这里“：”表示在vim的命令行模式下。注意 w 和！之间隔着一个空格。</p><p>下面首先介绍:w  !<cmd>命令</cmd></p><p>:w !<cmd> 用于将当前缓冲区内容作为标准输入送给cmd命令。  比如 :w !sh  就是将缓冲区的每一行视为shell命令然后执行。为了便于理解，这里再介绍一个r命令。: r !<cmd>用于将<cmd>命令的执行结果读入到当前缓冲区。如:.r!date就是将当前时间写入到当前行(.)。 </cmd></cmd></cmd></p><p>接下来是tee命令</p><p>博主初学unix时，感觉ls、cp等命令很容易发现就是对应单词的缩写。但tee命令很难理解，也很少用得到。 tee是这样工作的，将前一个命名的标准输出（即输出到屏幕）作为标准输入，然后再输出到标准输出，同时保存为对应文件。将这个流程画出来，刚好就是字母T，这应该就是RMS等人将该命令命名为tee的原因。</p><p>举个例子：</p><p>ls |tee out.txt </p><p>ls 将输出当前目录列表，这个输出被管道送入tee命令，tee将该输入内容直接输出的同时，备份到out.txt文件。</p><p>最后一个是sudo，这个用过*nix的都应该知道，就是以superviser执行命令。</p><p>预备知识就这么多，接下来我们看看本文开头的那条命名是如何工作的。</p><p>首先w !sudo tee 这一部分将缓冲区内容送给tee命令。sudo 确保tee命令是以supervisor来执行的，这样就能保证有写入权限。</p><p>现在tee 已经获得了我们的文件内容，接下来就要将内容另存为其他文件了。这里我们将文件保存为它自己。 输入%以代表文件路径名（%是vim中保存当前文件路径名的专用寄存器，在命令行下会自动替换为完整路径）。 到了这里我们实际就能借助tee命令保存文件内容了，但tee命令还有标准输出，为了避免重复显示，我们将其丢到黑洞，即/dev/null。 </p><p>看完命令，我们实际执行以看效果。</p><p>执行vi /etc/hostname 。编辑之后执行:w!会弹出错误警告。这里我们使用开头的命令重新保存。 执行完命令后，vim会弹出内容已经改变的确认提示。注意这时，tee已经帮我们把文件内容写入原文件件了。 我们按O确认。然后像往常一样退出。这次我们在编辑文件时忘记了sudo，但确实成功修改了文件。 最后提醒一下，如果你不是真的想修改hostname，作完这个练习就把文件改回去吧。 </p>]]></content>
+    <title>自创面试题之设计模式</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之设计模式/</id>
+    <published>2018-09-23T08:10:37.000Z</published>
+    <updated>2018-09-23T08:14:54.369Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;使用vim编辑文件非常方便，vim也是修改系统配置最常用的工具。但有时我们会顾着方便而忘了自己有没有权限编辑文件。 往往会在写完文件内容保存时才发现自己没有权限。怎么办？     将文件使用:w &lt;newname&gt;的方式另存为新文件，再用新文件替换就文件的虽然可行（还需要注
-      
-    
     </summary>
     
-      <category term="Linux" scheme="http://nizouba.com/categories/Linux/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title> Phabricator命令行工具Arcanist的基本用法</title>
-    <link href="http://nizouba.com/2018/08/21/Phabricator%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7Arcanist%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
-    <id>http://nizouba.com/2018/08/21/Phabricator命令行工具Arcanist的基本用法/</id>
-    <published>2018-08-21T11:34:40.000Z</published>
-    <updated>2018-08-21T11:35:09.843Z</updated>
-    
-    <content type="html"><![CDATA[<p>Pharicator是FB的代码审查工具，现在我所在的团队也使用它来进行代码质量的控制。其提供了一个differential(code review)命令行工具Arcanist(arc)。</p><p>1安装：<br>1.1，安装PHP5<br>Pharicator需要php5.6，然而，Ubuntu16自带的是php7，解决方法如下：</p><p><a href="https://stackoverflow.com/questions/36788873/package-php5-have-no-installation-candidate-ubuntu-16-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/36788873/package-php5-have-no-installation-candidate-ubuntu-16-04</a></p><p>1.2，安装php-cli</p><p>sudo apt-get install php5-cli php5-curl php-pear</p><p>如果出现：</p><pre><code>   E: 软件包 php5-cli 没有可安装候选    E: 无法定位软件包 php5-curl</code></pre><p>如果出现上面提示 建议：</p><pre><code>    sudo add-apt-repository ppa:ondrej/php    sudo apt-get update    sudo apt-get install php5.6-curl</code></pre><p>1.3，创建phabricator软件存放目录<br>mkdir ~/phabricator</p><p>cd ~/phabricator</p><p>1.4，将Arcanist的源码拷贝到本地~/phabricator 下</p><p>~/phabricator $ git clone git://github.com/facebook/libphutil.git<br>~/phabricator $ git clone git://github.com/facebook/arcanist.git<br>1.5，将arc的路径加入到系统路径中<br>$ export PATH=$PATH:~/phabricator/arcanist/bin/<br>2 arc配置<br>2.1，arc的全局配置<br>配置arc的默认编辑器，我使用</p><p>vim $ arc set-config editor “vim” </p><p>配置默认的phabricator的uri，uri为团队的phabricator主页的url </p><p>$ arc set-config default <a href="http://phabricator.example.com" target="_blank" rel="noopener">http://phabricator.example.com</a> </p><p>2.2，在项目的根目录下建.arcconfig配置文件，文件中至少要填入以下内容<br>     {<br>        “project_id” : “your project name”,<br>         “conduit_uri” : “your phabricator url”<br>    }<br> 举个例子：</p><p><span style="font-size:12px;"> </span><span style="font-size:12px;">    </span><span style="font-size:14px;">{<br><span>        </span>“project_id” : “HelloWorld”,<br><span>        </span>“conduit_uri” : “<a href="http://phabricator.example.com&quot;" target="_blank" rel="noopener">http://phabricator.example.com&quot;</a><br><span>    </span>}</span><br>该配置文件还可以配置静态代码检测引擎(lint)和单元测试引擎。 </p><p>2.3，为项目安装证书，用于phabricator的认证。 </p><p><span style="font-size:12px;">    </span><span style="font-size:14px;">yourproject/ $ arc install-certificate</span><br>接着按照命令行提示操作就OK了。 </p><p>弄完这一步，才能真正在项目中使用arc。</p><p>3,在项目中使用arc<br>arc help [–full | [COMMAND]] 查看帮助文档，接参数–full查看所有命令的详细用法，接具体的命令[COMMAND]如arc help diff可以查看该命令的详细用法。<br>想phabricator提交review request(Differential).修改完代码后，使用arc diff <path></path>命令提交review request，该命令会产生一个包含如下内容的文件要求填写：</p><p>&lt;<enter revision="" title="">&gt;         </enter></p><p>Summary:</p><p>Test Plan:</p><p>Reviewers:</p><p>CC:</p><p>Maniphest Tasks:</p><h1 id="NEW-DIFFERENTIAL-REVISION"><a href="#NEW-DIFFERENTIAL-REVISION" class="headerlink" title="NEW DIFFERENTIAL REVISION"></a>NEW DIFFERENTIAL REVISION</h1><h1 id="Describe-the-changes-in-this-new-revision"><a href="#Describe-the-changes-in-this-new-revision" class="headerlink" title="Describe the changes in this new revision."></a>Describe the changes in this new revision.</h1><p>#</p><h1 id="arc-could-not-identify-any-existing-revision-in-your-working-copy"><a href="#arc-could-not-identify-any-existing-revision-in-your-working-copy" class="headerlink" title="arc could not identify any existing revision in your working copy."></a>arc could not identify any existing revision in your working copy.</h1><h1 id="If-you-intended-to-update-an-existing-revision-use"><a href="#If-you-intended-to-update-an-existing-revision-use" class="headerlink" title="If you intended to update an existing revision, use:"></a>If you intended to update an existing revision, use:</h1><p>#</p><h1 id="arc-diff-–update"><a href="#arc-diff-–update" class="headerlink" title="$ arc diff –update "></a>$ arc diff –update <revision></revision></h1><p>　　按照提示填写后，保存退出，arc就会自动提交request。Reviewers用逗号隔开，Maniphest Tasks填相关联的phabricator上的task_id，如T100。Test plan暂时没用过，官方文档：<a href="http://www.phabricator.com/docs/phabricator/article/Differential_User_Guide_Test_Plans.html" target="_blank" rel="noopener">http://www.phabricator.com/docs/phabricator/article/Differential_User_Guide_Test_Plans.html</a></p><p>　　提交完成后，会产生一个形如<a href="http://phabricator.example.com/D24的url，url中的D24是revision_id。" target="_blank" rel="noopener">http://phabricator.example.com/D24的url，url中的D24是revision_id。</a><br>arc diff –update &lt;revision_id&gt;更新对应的review request。该命令产生一个如下的文件，按提示填写保存退出，arc会提交更新。</p><h1 id="Updating-D27-hahahah"><a href="#Updating-D27-hahahah" class="headerlink" title="Updating D27: hahahah"></a>Updating D27: hahahah</h1><p>#</p><h1 id="Enter-a-brief-description-of-the-changes-included-in-this-update"><a href="#Enter-a-brief-description-of-the-changes-included-in-this-update" class="headerlink" title="Enter a brief description of the changes included in this update."></a>Enter a brief description of the changes included in this update.</h1><h1 id="The-first-line-is-used-as-subject-next-lines-as-comment"><a href="#The-first-line-is-used-as-subject-next-lines-as-comment" class="headerlink" title="The first line is used as subject, next lines as comment."></a>The first line is used as subject, next lines as comment.</h1><p>#</p><h1 id="If-you-intended-to-create-a-new-revision-use"><a href="#If-you-intended-to-create-a-new-revision-use" class="headerlink" title="If you intended to create a new revision, use:"></a>If you intended to create a new revision, use:</h1><h1 id="arc-diff-–create"><a href="#arc-diff-–create" class="headerlink" title="$ arc diff –create"></a>$ arc diff –create</h1><p>复制代码</p><p>arc commit –revision &lt;revision_id&gt;提交对应提交代码更改，这个命令把svn commit的工作也做掉了，直接提交到代码库。<br>arc todo <description> [option]可以快速给自己在phabricator上创建task，[option]用于把task CC给其他人.<br>arc tasks [options] 查看Maniphest的tasks。<br>arc amend –show 查看当前项目的differentials，arc amend –revision &lt;revision_id&gt; –show 查看指定revision_id的differential。</description></p><p>参考：<a href="http://udn.yyuap.com/thread-39791-1-1.html" target="_blank" rel="noopener">http://udn.yyuap.com/thread-39791-1-1.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Pharicator是FB的代码审查工具，现在我所在的团队也使用它来进行代码质量的控制。其提供了一个differential(code review)命令行工具Arcanist(arc)。&lt;/p&gt;
-&lt;p&gt;1安装：&lt;br&gt;1.1，安装PHP5&lt;br&gt;Pharicator需要p
-      
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://nizouba.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spring cloud的客户端负载均衡</title>
-    <link href="http://nizouba.com/2018/08/14/spring-cloud%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
-    <id>http://nizouba.com/2018/08/14/spring-cloud的客户端负载均衡/</id>
-    <published>2018-08-14T08:11:40.000Z</published>
-    <updated>2018-08-14T08:11:40.083Z</updated>
+    <title>自创面试题之软件工程与架构</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E6%9E%B6%E6%9E%84/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之软件工程与架构/</id>
+    <published>2018-09-23T08:10:31.000Z</published>
+    <updated>2018-09-23T08:14:52.277Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>ListenableFuture in Guava</title>
-    <link href="http://nizouba.com/2018/08/13/%C2%83%C2%96ListenableFuture-in-Guava/"/>
-    <id>http://nizouba.com/2018/08/13/ListenableFuture-in-Guava/</id>
-    <published>2018-08-13T15:00:27.000Z</published>
-    <updated>2018-08-13T15:15:59.783Z</updated>
+    <title>自创面试题之Git</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BGit/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之Git/</id>
+    <published>2018-09-23T08:10:04.000Z</published>
+    <updated>2018-09-23T08:14:52.276Z</updated>
     
     <summary type="html">
     
     </summary>
     
-    
-      <category term="并发" scheme="http://nizouba.com/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GoLang的Struct结构体的Tag</title>
-    <link href="http://nizouba.com/2018/08/13/GoLang%E7%9A%84Struct%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84Tag/"/>
-    <id>http://nizouba.com/2018/08/13/GoLang的Struct结构体的Tag/</id>
-    <published>2018-08-13T08:54:36.000Z</published>
-    <updated>2018-08-13T08:54:36.109Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>Linux Source命令</title>
-    <link href="http://nizouba.com/2018/08/13/Linux-Source%E5%91%BD%E4%BB%A4/"/>
-    <id>http://nizouba.com/2018/08/13/Linux-Source命令/</id>
-    <published>2018-08-13T07:51:30.000Z</published>
-    <updated>2018-08-13T07:51:54.098Z</updated>
-    
-    <content type="html"><![CDATA[<p>当我修改了/etc/profile文件，我想让它立刻生效，而不用重新登录；这时就想到用source命令，如:source /etc/profile<br>对source进行了学习，并且用它与sh 执行脚本进行了对比，现在总结一下。</p><p>source命令：<br>source命令也称为“点命令”，也就是一个点符号（.）,是bash的内部命令。<br>功能：使Shell读入指定的Shell程序文件并依次执行文件中的所有语句<br>source命令通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。<br>用法：<br>source filename 或 . filename<br>source命令(从 C Shell 而来)是bash shell的内置命令;点命令(.)，就是个点符号(从Bourne Shell而来)是source的另一名称。</p><p>source filename 与 sh filename 及./filename执行脚本的区别在那里呢？<br>1.当shell脚本具有可执行权限时，用sh filename与./filename执行脚本是没有区别得。./filename是因为当前目录没有在PATH中，所有”.”是用来表示当前目录的。<br>2.sh filename 重新建立一个子shell，在子shell中执行脚本里面的语句，该子shell继承父shell的环境变量，但子shell新建的、改变的变量不会被带回父shell，除非使用export。<br>3.source filename：这个命令其实只是简单地读取脚本里面的语句依次在当前shell里面执行，没有建立新的子shell。那么脚本里面所有新建、改变变量的语句都会保存在当前shell里面。</p><p>举例说明：<br>1.新建一个test.sh脚本，内容为:A=1<br>2.然后使其可执行chmod +x test.sh<br>3.运行sh test.sh后，echo $A，显示为空，因为A=1并未传回给当前shell<br>4.运行./test.sh后，也是一样的效果<br>5.运行source test.sh 或者 . test.sh，然后echo $A，则会显示1，说明A=1的变量在当前shell中</p><p>原文博客：<a href="http://blog.csdn.net/wangyangkobe/article/details/6595143" target="_blank" rel="noopener">http://blog.csdn.net/wangyangkobe/article/details/6595143</a></p>]]></content>
+    <title>自创面试题之ES</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BES/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之ES/</id>
+    <published>2018-09-23T08:09:44.000Z</published>
+    <updated>2018-09-23T08:14:54.527Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;当我修改了/etc/profile文件，我想让它立刻生效，而不用重新登录；这时就想到用source命令，如:source /etc/profile&lt;br&gt;对source进行了学习，并且用它与sh 执行脚本进行了对比，现在总结一下。&lt;/p&gt;
-&lt;p&gt;source命令：&lt;br&gt;s
-      
-    
     </summary>
     
-      <category term="Linux" scheme="http://nizouba.com/categories/Linux/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>Linux环境设置</title>
-    <link href="http://nizouba.com/2018/08/13/Linux%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/"/>
-    <id>http://nizouba.com/2018/08/13/Linux环境设置/</id>
-    <published>2018-08-13T07:31:40.000Z</published>
-    <updated>2018-08-13T08:08:12.562Z</updated>
-    
-    <content type="html"><![CDATA[<p>关于取得 bash 的环境变量等数据，其实可以有系统规划与各人喜好， 一般来说，建议使用者直接修改个<br>人设定值即可，不需要更动到系统啦～ 底下我们分别来谈一谈几个有趣的设定档喔！要注意的是，在指令<br>列输入的变量也好、命令别名也罢， 都是针对该次登入的设定而已，所以只要您一注销，那么上次的设定<br>值就会不见去！ 因此，我们需要有几个档案来帮助我们，每次登入的时候，就已经帮我们搞定了环境的设<br>定啰！ </p><h1 id="系统设定值"><a href="#系统设定值" class="headerlink" title="系统设定值"></a>系统设定值</h1><p>所谓的系统设定值，也就是说每个使用者进入到 bash shell 之后，会先读取的设定档案！ 预设的设定档<br>案有下列几个： </p><p>这个档案设定了几个重要的变量，例如：『PATH、USER、MAIL、 HOSTNAME、HISTSIZE、umask』等等，也<br>同时规划出 /etc/inputrc 这个针对键盘热建设定的档案的数据内容。你可以在这里设定总体的 PATH 等<br>等的信息！ 同时，这个档案也规划出 /etc/profile.d 及 /etc/inputrc 这两个目录与档案！ </p><p>总之，你可以了解到刚刚我们学会的变量设定方式，在这个档案中也可以设定呢！ 但是设定上需要特别小<br>心，因为所有的使用者皆会使用到这个档案的信息。通常我都喜欢将 /usr/local/bin 这个路径加成最前<br>面，这是因为通常自己安装的套件自己最喜欢， 所以当然是最先搜寻啰！ ^_^！此外，请注意一下，可以<br>将 HISTSIZE 的大小改变一下，改成 50 就可以啦！比较安全！( 注：这个档案不论在那个 Linux<br>distributions 当中均存在 /etc/profile 当中，所以，请特别留意此一档案即可！ )。 </p><h1 id="个人设定值"><a href="#个人设定值" class="headerlink" title="个人设定值"></a>个人设定值</h1><h2 id="bash-profile-bash-login-profile"><a href="#bash-profile-bash-login-profile" class="headerlink" title="~/.bash_profile, ~/.bash_login, ~/.profile"></a>~/.bash_profile, ~/.bash_login, ~/.profile</h2><p>这三个档案通常只要一个就够了，一般预设是以 ~/.bash_profile 的檔名存在。 会有这么多的档案，其<br>实是因应其它 shell 转换过来的使用者的习惯而已。 这个档案可以定义个人化的路径 (PATH) 与环境变<br>量等等。不过，还是有顺位上的差异， bash 启动时，会先去读取 ~/.bash_profile，找不到时，就去读<br>取 ~/.bash_login ，然后才是 ~/.profile。 </p><h2 id="bashrc"><a href="#bashrc" class="headerlink" title="~/.bashrc"></a>~/.bashrc</h2><p>这个档案在您每次执行 shell script 的时候都会被重新使用一遍，所以是最完整的。 而<br>上头的 ~/.bash_profile 则只有在登入的时候会被读取一次。 </p><h2 id="bash-history"><a href="#bash-history" class="headerlink" title="~/.bash_history"></a>~/.bash_history</h2><p>还记得我们在历史命令提到过这个档案吧？！呵呵！没错～预设的情况下， 我们的历史命令就记录在这里<br>啊！而这个档案能够记录几笔数据，则与 HISTSIZE 这个变数有关啊。每次登入 bash 后，bash 会先读取<br>这个档案，将所有的历史指令读入内存， 因此，当我们登入 bash 后就可以查知上次使用过哪些指令啰。<br>至于更多的历史指令， 请自行回去参考喔！ </p><h2 id="bash-logout"><a href="#bash-logout" class="headerlink" title="~/.bash_logout"></a>~/.bash_logout</h2><p>这个档案则记录了『当我注销 bash 后，系统再帮我做完什么动作后才离开』的意思。 你可以去读取一下<br>这个档案的内容，预设的情况下，注销时， bash 只是帮我们清掉屏幕的讯息而已。 不过，你也可以将一<br>些备份或者是其它你认为重要的工作写在这个档案中（例如清空暂存盘）， 那么当你离开 Linux 的时候，<br>就可以解决一些烦人的事情啰！ </p><h1 id="读取顺序"><a href="#读取顺序" class="headerlink" title="读取顺序"></a>读取顺序</h1><ol><li>先读取 /etc/profile ，再根据 /etc/profile 的内容去读取其它额外的设定档， 例如<br>/etc/profile.d 与 /etc/inputrc 等等设定档；  </li><li>根据不同的使用者，到使用者家目录去读取 ~/.bash_profile 或 ~/.bash_login 或 ~/.profile<br>等设定档；  </li><li>根据不同使用者，到他家目录去读取 ~/.bashrc 。 </li></ol><h1 id="source"><a href="#source" class="headerlink" title="source"></a>source</h1><p>利用 source 或小数点 (.) 都可以将设定档的内容读进来目前的 shell 环境中！ 举例来说，我修改了<br>~/.bashrc ，那么不需要注销，立即以 source ~/.bashrc 就可以将刚刚最新设定的内容读进来目前的环<br>境中！很不错吧！此外，什么时候会使用到不同的设定档呢？ 最常发生在一个人的工作环境分为多重的时<br>候了！举个例子来说，在我的大型主机中， 我常常需要负责两到三个不同的案子，每个案子所需要处理的<br>环境变量订定并不相同， 那么我就将这两三个案子分别编写属于该案子的环境变量设定档案，当我需要该<br>环境时，就直接『 source 变量文件 』，如此一来，环境变量的设定就变的更简便而灵活了！ </p>]]></content>
+    <title>自创面试题之ZK</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BZK/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之ZK/</id>
+    <published>2018-09-23T08:09:40.000Z</published>
+    <updated>2018-09-23T08:14:54.426Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;关于取得 bash 的环境变量等数据，其实可以有系统规划与各人喜好， 一般来说，建议使用者直接修改个&lt;br&gt;人设定值即可，不需要更动到系统啦～ 底下我们分别来谈一谈几个有趣的设定档喔！要注意的是，在指令&lt;br&gt;列输入的变量也好、命令别名也罢， 都是针对该次登入的设定而已，所
-      
-    
     </summary>
     
-      <category term="Linux" scheme="http://nizouba.com/categories/Linux/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>Linux /etc/profile文件详解</title>
-    <link href="http://nizouba.com/2018/08/13/%C2%96Linux-etc-profile%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://nizouba.com/2018/08/13/Linux-etc-profile文件详解/</id>
-    <published>2018-08-13T07:14:36.000Z</published>
-    <updated>2018-08-13T07:48:50.251Z</updated>
-    
-    <content type="html"><![CDATA[<p>linux /etc/profile文件的改变会涉及到系统的环境，也就是有关Linux环境变量的东西，学习Linux要了解Linux profile文件的相关原理，这里对则以文件进行具体分析。这里修改会对所有用户起作用。</p><p>Linux是一个多用户的操作系统。每个用户登录系统后，都会有一个专用的运行环境。通常每个用户默认的环境都是相同的，这个默认环境实际上就是一组环境变量的定义。用户可以对自己的运行环境进行定制，其方法就是修改相应的系统环境变量。</p><p>在/etc/profile文件中修改环境变量，在这里修改的内容是对所有用户起作用的。以下主要操作将在该文件中进行。</p><h2 id="如何添加环境变量。"><a href="#如何添加环境变量。" class="headerlink" title="如何添加环境变量。"></a>如何添加环境变量。</h2><p>例如添加”NAME=liheng“ 。在profile文件的最后添加如下内容export NAME=liheng，变量值liheng可以加引号也可以不加，效果一样。</p><p>在profile文件添加或修改的内容需要注销系统才能生效。</p><h2 id="重复定义变量怎样理解。"><a href="#重复定义变量怎样理解。" class="headerlink" title="重复定义变量怎样理解。"></a>重复定义变量怎样理解。</h2><p>经常出现的是对PATH变量的定义。</p><p>例如：在peofile文件默认对PATH变量都有设置PATH=￥￥￥￥￥￥￥（记不住了），在以后可能在对PATH设置，一般都加在profile 文件的最后PATH=······（打个比方）。而系统之中认定的PATH=·······￥￥￥￥￥￥￥￥￥，也就是说相同名字的环境变量，后写入的先起作用（通俗地讲）。大家一定要注意。</p><h2 id="特殊字符介绍。"><a href="#特殊字符介绍。" class="headerlink" title="特殊字符介绍。"></a>特殊字符介绍。</h2><p>例如在profile中有如下内容，通过以下内容说明特殊符号的用法。</p><p>export A=/q/jing:aaa/cc/ld</p><p>export B=.:/liheng/wang export A=/cd/cdr:$A</p><p>　　<br>: 表示并列含义，例如A变量值有多个，用：符号进行分离。</p><p>. 表示你操作的当前目录。</p><p>$ 表示该变量本次定义之前的值，</p>]]></content>
+    <title>自创面试题之SpringMVC</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringMVC/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之SpringMVC/</id>
+    <published>2018-09-23T08:09:32.000Z</published>
+    <updated>2018-09-23T08:14:54.419Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;linux /etc/profile文件的改变会涉及到系统的环境，也就是有关Linux环境变量的东西，学习Linux要了解Linux profile文件的相关原理，这里对则以文件进行具体分析。这里修改会对所有用户起作用。&lt;/p&gt;
-&lt;p&gt;Linux是一个多用户的操作系统。每个
-      
-    
     </summary>
     
-      <category term="Linx" scheme="http://nizouba.com/categories/Linx/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>Go语言学习-import</title>
-    <link href="http://nizouba.com/2018/08/13/Go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-import/"/>
-    <id>http://nizouba.com/2018/08/13/Go语言学习-import/</id>
-    <published>2018-08-13T06:58:45.000Z</published>
-    <updated>2018-08-13T07:00:38.033Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>相对路径<br>import “./model” //当前文件同一目录的model目录，但是不建议这种方式来import</li><li>绝对路径<br>import “shorturl/model” //加载gopath/src/shorturl/model模块</li><li>点操作<br>我们有时候会看到如下的方式导入包<br>import(<br>. “fmt”<br>)<br>这个点操作的含义就是这个包导入之后在你调用这个包的函数时，你可以省略前缀的包名，也就是前面你调<br>用的fmt.Println(“hello world”)可以省略的写成Println(“hello world”)</li><li>别名操作<br>别名操作顾名思义我们可以把包命名成另一个我们用起来容易记忆的名字<br>import(<br>f “fmt”<br>)<br>别名操作的话调用包函数时前缀变成了我们的前缀，即f.Println(“hello world”)</li><li>_操作<br>这个操作经常是让很多人费解的一个操作符，请看下面这个import<br>import (<br>“database/sql”<br>_ “github.com/ziutek/mymysql/godrv”<br>)<br>_操作其实是引入该包，而不直接使用包里面的函数，而是调用了该包里面的init函数。</li></ol>]]></content>
+    <title>自创面试题之Maven</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMaven/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之Maven/</id>
+    <published>2018-09-23T08:09:17.000Z</published>
+    <updated>2018-09-23T08:14:54.582Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;相对路径&lt;br&gt;import “./model” //当前文件同一目录的model目录，但是不建议这种方式来import&lt;/li&gt;
-&lt;li&gt;绝对路径&lt;br&gt;import “shorturl/model” //加载gopath/src/shorturl/model
-      
-    
     </summary>
     
-      <category term="Go" scheme="http://nizouba.com/categories/Go/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>Ubuntu的ppa源是什么</title>
-    <link href="http://nizouba.com/2018/08/13/Ubuntu%E7%9A%84ppa%E6%BA%90%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    <id>http://nizouba.com/2018/08/13/Ubuntu的ppa源是什么/</id>
-    <published>2018-08-13T03:34:06.000Z</published>
-    <updated>2018-08-13T03:34:06.742Z</updated>
+    <title>自创面试题之消息中间件</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之消息中间件/</id>
+    <published>2018-09-23T08:09:10.000Z</published>
+    <updated>2018-09-23T08:14:54.345Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>Spring事务传播行为实战详解</title>
-    <link href="http://nizouba.com/2018/08/12/Spring%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://nizouba.com/2018/08/12/Spring事务传播行为详解/</id>
-    <published>2018-08-12T03:37:36.000Z</published>
-    <updated>2018-08-12T03:53:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是事务传播行为？"><a href="#什么是事务传播行为？" class="headerlink" title="什么是事务传播行为？"></a>什么是事务传播行为？</h1><p>事务传播行为用来描述由某一个事务传播行为修饰的方法被嵌套进另一个方法的时事务如何传播。</p><pre><code>public void methodA(){    methodB();    //doSomething}@Transaction(Propagation=XXX)public void methodB(){    //doSomething}代码中methodA()方法嵌套调用了methodB()方法，methodB()的事务传播行为由@Transaction(Propagation=XXX)设置决定。这里需要注意的是methodA()并没有开启事务，外层方法的事务不是必须的。</code></pre><h1 id="Spring中七种事务传播行为"><a href="#Spring中七种事务传播行为" class="headerlink" title="Spring中七种事务传播行为"></a>Spring中七种事务传播行为</h1><h2 id="1-PROPAGATION-REQUIRED"><a href="#1-PROPAGATION-REQUIRED" class="headerlink" title="1.PROPAGATION_REQUIRED"></a>1.PROPAGATION_REQUIRED</h2><p>如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。</p><h3 id="User1Service方法："><a href="#User1Service方法：" class="headerlink" title="User1Service方法："></a>User1Service方法：</h3><pre><code>@Servicepublic class User1ServiceImpl implements User1Service {    //省略其他...    @Override    @Transactional(propagation = Propagation.REQUIRED)    public void addRequired(User1 user){        user1Mapper.insert(user);    }}</code></pre><h3 id="User2Service方法："><a href="#User2Service方法：" class="headerlink" title="User2Service方法："></a>User2Service方法：</h3><pre><code>@Servicepublic class User2ServiceImpl implements User2Service {    //省略其他...    @Override    @Transactional(propagation = Propagation.REQUIRED)    public void addRequired(User2 user){        user2Mapper.insert(user);    }    @Override    @Transactional(propagation = Propagation.REQUIRED)    public void addRequiredException(User2 user){        user2Mapper.insert(user);        throw new RuntimeException();    }}</code></pre><h3 id="1-1-场景一"><a href="#1-1-场景一" class="headerlink" title="1.1 场景一"></a>1.1 场景一</h3><h4 id="验证方法1"><a href="#验证方法1" class="headerlink" title="验证方法1"></a>验证方法1</h4><pre><code>@Override    public void notransaction_exception_required_required(){        User1 user1=new User1();        user1.setName(&quot;张三&quot;);        user1Service.addRequired(user1);        User2 user2=new User2();        user2.setName(&quot;李四&quot;);        user2Service.addRequired(user2);        throw new RuntimeException();    }</code></pre><h4 id="验证方法2："><a href="#验证方法2：" class="headerlink" title="验证方法2："></a>验证方法2：</h4><pre><code>@Overridepublic void notransaction_required_required_exception(){    User1 user1=new User1();    user1.setName(&quot;张三&quot;);    user1Service.addRequired(user1);    User2 user2=new User2();    user2.setName(&quot;李四&quot;);    user2Service.addRequiredException(user2);}</code></pre><h4 id="分别执行验证方法，结果："><a href="#分别执行验证方法，结果：" class="headerlink" title="分别执行验证方法，结果："></a>分别执行验证方法，结果：</h4><p>1    “张三”、“李四”均插入。    外围方法未开启事务，插入“张三”、“李四”方法在自己的事务中独立运行，外围方法异常不影响内部插入“张三”、“李四”方法独立的事务。</p><p>2    “张三”插入，“李四”未插入。    外围方法没有事务，插入“张三”、“李四”方法都在自己的事务中独立运行,所以插入“李四”方法抛出异常只会回滚插入“李四”方法，插入“张三”方法不受影响。</p><h2 id="2-PROPAGATION-REQUIRES-NEW"><a href="#2-PROPAGATION-REQUIRES-NEW" class="headerlink" title="2.PROPAGATION_REQUIRES_NEW"></a>2.PROPAGATION_REQUIRES_NEW</h2><p>支持当前事务，如果当前没有事务，就以非事务方式执行。</p><p>我们为User1Service和User2Service相应方法加上Propagation.REQUIRES_NEW属性。</p>]]></content>
+    <title>自创面试题之安全</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%AE%89%E5%85%A8/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之安全/</id>
+    <published>2018-09-23T08:08:42.000Z</published>
+    <updated>2018-09-23T08:14:54.386Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;什么是事务传播行为？&quot;&gt;&lt;a href=&quot;#什么是事务传播行为？&quot; class=&quot;headerlink&quot; title=&quot;什么是事务传播行为？&quot;&gt;&lt;/a&gt;什么是事务传播行为？&lt;/h1&gt;&lt;p&gt;事务传播行为用来描述由某一个事务传播行为修饰的方法被嵌套进另一个方法的时事务
-      
-    
     </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>阿里云，腾讯云，百度云，华为云，AWS，用户侧网络</title>
-    <link href="http://nizouba.com/2018/08/11/%E9%98%BF%E9%87%8C%E4%BA%91%EF%BC%8C%E8%85%BE%E8%AE%AF%E4%BA%91%EF%BC%8C%E7%99%BE%E5%BA%A6%E4%BA%91%EF%BC%8C%E5%8D%8E%E4%B8%BA%E4%BA%91%EF%BC%8CAWS%EF%BC%8C%E7%94%A8%E6%88%B7%E4%BE%A7%E7%BD%91%E7%BB%9C/"/>
-    <id>http://nizouba.com/2018/08/11/阿里云，腾讯云，百度云，华为云，AWS，用户侧网络/</id>
-    <published>2018-08-11T15:55:06.000Z</published>
-    <updated>2018-08-11T15:55:06.000Z</updated>
+    <title>自创面试题之类与接口</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之类与接口/</id>
+    <published>2018-09-23T08:08:09.000Z</published>
+    <updated>2018-09-23T08:14:54.419Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>go常用命令</title>
-    <link href="http://nizouba.com/2018/08/10/go%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://nizouba.com/2018/08/10/go常用命令/</id>
-    <published>2018-08-10T15:58:35.000Z</published>
-    <updated>2018-08-11T00:59:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>go get github.com/hyper-carrot/go_lib/logging</li></ol><p>可以根据要求和实际情况从互联网上下载或更新指定的代码包及其依赖包，并对它们进行编译和安装。在上面这个示例中，我们从著名的代码托管站点Github上下载了一个项目（或称代码包），并安装到了环境变量GOPATH中包含的第一个工作区中。</p><ol start="2"><li>gopm get -g -v </li></ol><p>gopm解决国内需要FQ的问题。-g是下载到gopath，-v是verbose，输出详细信息，-u是更新包。</p><ol start="3"><li><p>go install 安装在bin目录下</p></li><li><p>go build 在当前目录下生成一个exe</p></li><li>go run 直接运行</li></ol><h1 id="go结构"><a href="#go结构" class="headerlink" title="go结构"></a>go结构</h1><p>直接安装目录下带有main的文件，执行为exe</p>]]></content>
+    <title>自创面试题之异常</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%BC%82%E5%B8%B8/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之异常/</id>
+    <published>2018-09-23T08:07:30.000Z</published>
+    <updated>2018-09-23T08:14:54.352Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;go get github.com/hyper-carrot/go_lib/logging&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;可以根据要求和实际情况从互联网上下载或更新指定的代码包及其依赖包，并对它们进行编译和安装。在上面这个示例中，我们从著名的代码托管站点Githu
-      
-    
     </summary>
     
-      <category term="go" scheme="http://nizouba.com/categories/go/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>Git HEAD detached from XXX</title>
-    <link href="http://nizouba.com/2018/08/10/Git-HEAD-detached-from-XXX/"/>
-    <id>http://nizouba.com/2018/08/10/Git-HEAD-detached-from-XXX/</id>
-    <published>2018-08-10T07:20:09.000Z</published>
-    <updated>2018-08-10T07:25:44.168Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是-HEAD"><a href="#什么是-HEAD" class="headerlink" title="什么是 HEAD"></a>什么是 HEAD</h1><p>Git 中的 HEAD 可以理解为一个指针，我们可以在命令行中输入 cat .git/HEAD 查看当前 HEAD 指向哪儿，一般它指向当前工作目录所在分支的最新提交。</p><p>当使用 git checkout &lt; branch_name&gt; 切换分支时，HEAD 会移动到指定分支。</p><h1 id="游离状态"><a href="#游离状态" class="headerlink" title="游离状态"></a>游离状态</h1><p>但是如果使用的是 git checkout &lt; commit id&gt;，即切换到指定的某一次提交，HEAD 就会处于 detached 状态（游离状态）。</p><h1 id="HEAD-游离状态的利与弊"><a href="#HEAD-游离状态的利与弊" class="headerlink" title="HEAD 游离状态的利与弊"></a>HEAD 游离状态的利与弊</h1><h2 id="利"><a href="#利" class="headerlink" title="利"></a>利</h2><p>HEAD 处于游离状态时，我们可以很方便地在历史版本之间互相切换，比如需要回到某次提交，直接 checkout 对应的 commit id 或者 tag 名即可。</p><h1 id="弊"><a href="#弊" class="headerlink" title="弊"></a>弊</h1><p>它的弊端就是：在这个基础上的提交会新开一个匿名分支！<br>也就是说我们的提交是无法可见保存的，一旦切到别的分支，游离状态以后的提交就不可追溯了。</p><p>解决办法就是新建一个分支保存游离状态后的提交：</p><p>git checkout -b new-branch-name [start-branch|commit-id]</p><p>这个commit-id就是游离Head的指向</p>]]></content>
+    <title>自创面试题之泛型</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B3%9B%E5%9E%8B/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之泛型/</id>
+    <published>2018-09-23T08:07:23.000Z</published>
+    <updated>2018-09-23T08:14:54.345Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;什么是-HEAD&quot;&gt;&lt;a href=&quot;#什么是-HEAD&quot; class=&quot;headerlink&quot; title=&quot;什么是 HEAD&quot;&gt;&lt;/a&gt;什么是 HEAD&lt;/h1&gt;&lt;p&gt;Git 中的 HEAD 可以理解为一个指针，我们可以在命令行中输入 cat .git/HEA
-      
-    
     </summary>
     
-    
-      <category term="Git" scheme="http://nizouba.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cron表达式</title>
-    <link href="http://nizouba.com/2018/08/08/cron%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>http://nizouba.com/2018/08/08/cron表达式/</id>
-    <published>2018-08-08T02:05:25.000Z</published>
-    <updated>2018-08-08T06:49:11.837Z</updated>
-    
-    <content type="html"><![CDATA[<p>Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义，Cron有如下两种语法格式：</p><ol><li><p>Seconds Minutes Hours DayofMonth Month DayofWeek Year</p></li><li><p>Seconds Minutes Hours DayofMonth Month DayofWeek　　</p><h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1></li></ol><p>corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份</p><h1 id="各字段的含义"><a href="#各字段的含义" class="headerlink" title="各字段的含义"></a>各字段的含义</h1><p>字段    允许值    允许的特殊字符</p><ul><li>秒（Seconds）    0~59的整数    , - * /    四个字符</li><li>分（Minutes）    0~59的整数    , - * /    四个字符</li><li>小时（Hours）    0~23的整数    , - * /    四个字符</li><li>日期（DayofMonth）    1~31的整数（但是你需要考虑你月的天数）    ,- * ? / L W C     八个字符</li><li>月份（Month）    1~12的整数或者 JAN-DEC    , - * /    四个字符</li><li>星期（DayofWeek）    1~7的整数或者 SUN-SAT （1=SUN）    , - * ? / L C #     八个字符</li><li>年(可选，留空)（Year）    1970~2099    , - * /    四个字符</li></ul><h1 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h1><p>每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是：</p><ol><li><p><em>：表示匹配该域的任意值。假如在Minutes域使用</em>, 即表示每分钟都会触发事件。</p></li><li><p>?：只能用在DayofMonth和DayofWeek两个域。它也匹配域的任意值，但实际不会。因为DayofMonth和DayofWeek会相互影响。例如想在每月的20日触发调度，不管20日到底是星期几，则只能使用如下写法： 13 13 15 20 <em> ?, 其中最后一位只能用？，而不能使用</em>，如果使用*表示不管星期几都会触发，实际上并不是这样。</p></li><li><p>-：表示范围。例如在Minutes域使用5-20，表示从5分到20分钟每分钟触发一次 </p></li><li><p>/：表示起始时间开始触发，然后每隔固定时间触发一次。例如在Minutes域使用5/20,则意味着5分钟触发一次，而25，45等分别触发一次. </p></li><li><p>,：表示列出枚举值。例如：在Minutes域使用5,20，则意味着在5和20分每分钟触发一次。 </p></li><li><p>L：表示最后，只能出现在DayofWeek和DayofMonth域。如果在DayofWeek域使用5L,意味着在最后的一个星期四触发。 </p></li><li><p>W:表示有效工作日(周一到周五),只能出现在DayofMonth域，系统将在离指定日期的最近的有效工作日触发事件。例如：在 DayofMonth使用5W，如果5日是星期六，则将在最近的工作日：星期五，即4日触发。如果5日是星期天，则在6日(周一)触发；如果5日在星期一到星期五中的一天，则就在5日触发。另外一点，W的最近寻找不会跨过月份 。</p></li><li><p>LW:这两个字符可以连用，表示在某个月最后一个工作日，即最后一个星期五。 （todo：保留意见，最后一个工作日不一定是星期五）</p></li><li><p>#:用于确定每个月第几个星期几，只能出现在DayofMonth域。例如在4#2，表示某月的第二个星期三。</p></li></ol><h1 id="常用表达式例子"><a href="#常用表达式例子" class="headerlink" title="常用表达式例子"></a>常用表达式例子</h1><ul><li><p>0 0 2 1 <em> ? </em>   表示在每月的1日的凌晨2点执行任务</p></li><li><p>0 15 10 ? * MON-FRI   表示周一到周五每天上午10:15执行作业</p></li><li><p>0 15 10 ? 6L 2002-2006   表示2002-2006年的每个月的最后一个星期五上午10:15执行作</p></li><li><p>0 0 10,14,16 <em> </em> ?   每天上午10点，下午2点，4点 </p></li><li></li><li>0 0/30 9-17 <em> </em> ?   朝九晚五工作时间内每半小时 </li><li></li><li>0 0 12 ? * WED    表示每个星期三中午12点 </li><li></li><li>0 0 12 <em> </em> ?   每天中午12点触发 </li><li></li><li>0 15 10 ? <em> </em>    每天上午10:15触发 </li><li></li><li><p>0 15 10 <em> </em> ?     每天上午10:15触发 </p></li><li><p>0 15 10 <em> </em> ? *    每天上午10:15触发 </p></li><li></li><li>0 15 10 <em> </em> ? 2005    2005年的每天上午10:15触发 </li><li></li><li>0 <em> 14 </em> * ?     在每天下午2点到下午2:59期间的每1分钟触发 </li><li></li><li>0 0/5 14 <em> </em> ?    在每天下午2点到下午2:55期间的每5分钟触发 </li><li></li><li>0 0/5 14,18 <em> </em> ?     在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发 </li><li></li><li>0 0-5 14 <em> </em> ?    在每天下午2点到下午2:05期间的每1分钟触发 </li><li></li><li>0 10,44 14 ? 3 WED    每年三月的星期三的下午2:10和2:44触发 </li><li></li><li>0 15 10 ? * MON-FRI    周一至周五的上午10:15触发 </li><li></li><li>0 15 10 15 * ?    每月15日上午10:15触发 </li><li></li><li>0 15 10 L * ?    每月最后一日的上午10:15触发 </li><li></li><li>0 15 10 ? * 6L    每月的最后一个星期五上午10:15触发 </li><li></li><li>0 15 10 ? * 6L 2002-2005   2002年至2005年的每月的最后一个星期五上午10:15触发 </li><li></li><li>0 15 10 ? * 6#3   每月的第三个星期五上午10:15触发　　</li></ul><p>#注意</p><p>   有些子表达式能包含一些范围或列表</p><p>　　例如：子表达式（天（星期））可以为 “MON-FRI”，“MON，WED，FRI”，“MON-WED,SAT”</p><p>“*”字符代表所有可能的值</p><p>　　因此，“<em>”在子表达式（月）里表示每个月的含义，“</em>”在子表达式（天（星期））表示星期的每一天</p><p>　　“/”字符用来指定数值的增量<br>　　例如：在子表达式（分钟）里的“0/15”表示从第0分钟开始，每15分钟<br>在子表达式（分钟）里的“3/20”表示从第3分钟开始，每20分钟（它和“3，23，43”）的含义一样</p><p>　　“？”字符仅被用于天（月）和天（星期）两个子表达式，表示不指定值<br>　　当2个子表达式其中之一被指定了值以后，为了避免冲突，需要将另一个子表达式的值设为“？”</p><p>　　“L” 字符仅被用于天（月）和天（星期）两个子表达式，它是单词“last”的缩写<br>　　但是它在两个子表达式里的含义是不同的。<br>　　在天（月）子表达式中，“L”表示一个月的最后一天<br>　　在天（星期）自表达式中，“L”表示一个星期的最后一天，也就是SAT</p><p>　　如果在“L”前有具体的内容，它就具有其他的含义了</p><p>　　例如：“6L”表示这个月的倒数第６天，“FRIL”表示这个月的最一个星期五<br>　　注意：在使用“L”参数时，不要指定列表或范围，因为这会导致问题</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义，Cron有如下两种语法格式：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Seconds Minutes Hours DayofMonth Month DayofWeek Year&lt;/p&gt;
-&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="定时任务" scheme="http://nizouba.com/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL中的函数</title>
-    <link href="http://nizouba.com/2018/08/05/MySQL%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/"/>
-    <id>http://nizouba.com/2018/08/05/MySQL中的函数/</id>
-    <published>2018-08-05T13:32:21.000Z</published>
-    <updated>2018-08-05T13:35:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>谨慎使用，仅作学习之用</p><h1 id="group-concat"><a href="#group-concat" class="headerlink" title="group_concat"></a>group_concat</h1><p>GROUP_CONCAT函数返回一个字符串结果，该结果由分组中的字段连接组合而成。常和groupby连用</p><h1 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h1><p>CONCAT（）函数用于将多个字段连接成一个字段。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;谨慎使用，仅作学习之用&lt;/p&gt;
-&lt;h1 id=&quot;group-concat&quot;&gt;&lt;a href=&quot;#group-concat&quot; class=&quot;headerlink&quot; title=&quot;group_concat&quot;&gt;&lt;/a&gt;group_concat&lt;/h1&gt;&lt;p&gt;GROUP_CONCA
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="http://nizouba.com/categories/MySQL/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>MySQL中的数据类型</title>
-    <link href="http://nizouba.com/2018/08/05/MySQL%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://nizouba.com/2018/08/05/MySQL中的数据类型/</id>
-    <published>2018-08-05T09:12:02.000Z</published>
-    <updated>2018-08-05T09:12:29.000Z</updated>
+    <title>自创面试题之集合</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E9%9B%86%E5%90%88/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之集合/</id>
+    <published>2018-09-23T08:07:18.000Z</published>
+    <updated>2018-09-23T08:14:52.276Z</updated>
     
     <summary type="html">
     
     </summary>
     
-      <category term="MySQL" scheme="http://nizouba.com/categories/MySQL/"/>
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>堆相关</title>
-    <link href="http://nizouba.com/2018/08/05/%E5%A0%86%E7%9B%B8%E5%85%B3/"/>
-    <id>http://nizouba.com/2018/08/05/堆相关/</id>
-    <published>2018-08-05T04:21:37.000Z</published>
-    <updated>2018-08-05T04:29:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h1><p>子节点比父节点小，左右大小不考虑</p><p>是一颗完全二叉树    </p><p>叫做最大堆</p><p>因为是完全二叉树，用数组存储最好</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;二叉堆&quot;&gt;&lt;a href=&quot;#二叉堆&quot; class=&quot;headerlink&quot; title=&quot;二叉堆&quot;&gt;&lt;/a&gt;二叉堆&lt;/h1&gt;&lt;p&gt;子节点比父节点小，左右大小不考虑&lt;/p&gt;
-&lt;p&gt;是一颗完全二叉树    &lt;/p&gt;
-&lt;p&gt;叫做最大堆&lt;/p&gt;
-&lt;p&gt;因为是完全二叉树，
-      
-    
-    </summary>
-    
-    
-      <category term="堆" scheme="http://nizouba.com/tags/%E5%A0%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>upload</title>
-    <link href="http://nizouba.com/2018/08/05/upload/"/>
-    <id>http://nizouba.com/2018/08/05/upload/</id>
-    <published>2018-08-05T04:12:07.000Z</published>
-    <updated>2018-08-05T04:12:07.000Z</updated>
+    <title>自创面试题之SpringBoot</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringBoot/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之SpringBoot/</id>
+    <published>2018-09-23T08:06:29.000Z</published>
+    <updated>2018-09-23T08:14:54.468Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
   </entry>
   
   <entry>
-    <title>docker创建自己的javaweb镜像</title>
-    <link href="http://nizouba.com/2018/08/05/docker%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84javaweb%E9%95%9C%E5%83%8F/"/>
-    <id>http://nizouba.com/2018/08/05/docker创建自己的javaweb镜像/</id>
-    <published>2018-08-05T02:52:30.000Z</published>
-    <updated>2018-08-05T03:20:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>tomcat的webapp目录，也可以docker inspect查看</p><p>from tomcat<br>maintainer zwx<br>copy shop.war tomcat的webapp目录</p>]]></content>
+    <title>自创面试题之SpringCloud</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringCloud/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之SpringCloud/</id>
+    <published>2018-09-23T08:06:19.000Z</published>
+    <updated>2018-09-23T08:14:54.502Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;tomcat的webapp目录，也可以docker inspect查看&lt;/p&gt;
-&lt;p&gt;from tomcat&lt;br&gt;maintainer zwx&lt;br&gt;copy shop.war tomcat的webapp目录&lt;/p&gt;
-
-      
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之Spring</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpring/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之Spring/</id>
+    <published>2018-09-23T08:06:10.000Z</published>
+    <updated>2018-09-23T08:14:54.444Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
-      <category term="docker" scheme="http://nizouba.com/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之Linux</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BLinux/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之Linux/</id>
+    <published>2018-09-23T08:06:01.000Z</published>
+    <updated>2018-09-23T08:14:54.468Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之Netty</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BNetty/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之Netty/</id>
+    <published>2018-09-23T08:05:50.000Z</published>
+    <updated>2018-09-23T08:14:54.461Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之Mybatis</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMybatis/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之Mybatis/</id>
+    <published>2018-09-23T08:05:36.000Z</published>
+    <updated>2018-09-23T08:14:54.603Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之算法</title>
+    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%AE%97%E6%B3%95/"/>
+    <id>http://nizouba.com/2018/09/23/自创面试题之算法/</id>
+    <published>2018-09-23T08:05:11.000Z</published>
+    <updated>2018-09-23T08:14:54.386Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
     
   </entry>
   
