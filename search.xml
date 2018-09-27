@@ -3,6 +3,132 @@
   
     
     <entry>
+      <title>自创面试题之其他框架</title>
+      <link href="/2018/09/26/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6/"/>
+      <url>/2018/09/26/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6/</url>
+      <content type="html"><![CDATA[<h3 id="JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。"><a href="#JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。" class="headerlink" title="JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。"></a>JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。</h3><p>JobDetail接收Job实现类，实例化Job，并配置其他，比如Name等信息，是一对一的关系<br>Trigger和JobDetail是一对多的关系，通过Scheduler相关联。</p>]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之微信公众号与小程序</title>
+      <link href="/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <url>/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+      <content type="html"><![CDATA[<p>### </p>]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Web</title>
+      <link href="/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BWeb/"/>
+      <url>/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BWeb/</url>
+      <content type="html"><![CDATA[<h3 id="如下url会怎么跳转？"><a href="#如下url会怎么跳转？" class="headerlink" title="如下url会怎么跳转？"></a>如下url会怎么跳转？</h3><pre><code>&lt;img src=&quot;//static-private.gg.com/org-logo/ead33b19-4b39-424a-b517-aa.jpg&quot; alt=&quot;图标&quot;&gt;&lt;img src=&quot;static-private.gg.com/org-logo/ead33b19-4b39-424a-b517-aa.jpg&quot; alt=&quot;图标&quot;&gt;</code></pre><p>第一个会直接跳转到static-private.gg.com/org-logo/ead33b19-4b39-424a-b517-aa.jpg,等同于http:// 。 第二个会在当前域名后加，static-private.gg.com/org-logo/ead33b19-4b39-424a-b517-aa.jpg跳转。</p>]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之Java语法</title>
+      <link href="/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E8%AF%AD%E6%B3%95/"/>
+      <url>/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E8%AF%AD%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h3 id="什么是Blank-Final"><a href="#什么是Blank-Final" class="headerlink" title="什么是Blank Final"></a>什么是Blank Final</h3>]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之VIM</title>
+      <link href="/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BVIM/"/>
+      <url>/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BVIM/</url>
+      <content type="html"><![CDATA[<h3 id="Vim有四种模式？"><a href="#Vim有四种模式？" class="headerlink" title="Vim有四种模式？"></a>Vim有四种模式？</h3><p>4种。</p><ol><li>正常-normal</li><li>插入-insert</li><li>命令-command</li><li>可视-visual<h1 id="vim的外部命令怎么进入"><a href="#vim的外部命令怎么进入" class="headerlink" title="vim的外部命令怎么进入?"></a>vim的外部命令怎么进入?</h1>用:!,比如:!sort,:!dir<h1 id="如何对vim选中的文本查询"><a href="#如何对vim选中的文本查询" class="headerlink" title="如何对vim选中的文本查询?"></a>如何对vim选中的文本查询?</h1>用:%!，比如 :%! grep “redus”</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>自创面试题之TCP/IP</title>
+      <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BTCP-IP/"/>
+      <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BTCP-IP/</url>
+      <content type="html"><![CDATA[<h3 id="什么是keepalive定时器？"><a href="#什么是keepalive定时器？" class="headerlink" title="什么是keepalive定时器？"></a>什么是keepalive定时器？</h3><p>在一个空闲的（idle）TCP连接上，没有任何的数据流，许多TCP/IP的初学者都对此感到惊奇。也就是说，如果TCP连接两端没有任何一个进程在向对方发送数据，那么在这两个TCP模块之间没有任何的数据交换。你可能在其它的网络协议中发现有轮询（polling），但在TCP中它不存在。言外之意就是我们只要启动一个客户端进程，同服务器建立了TCP连接，不管你离开几小时，几天，几星期或是几个月，连接依旧存在。中间的路由器可能崩溃或者重启，电话线可能go down或者back up，只要连接两端的主机没有重启，连接依旧保持建立。这就可以认为不管是客户端的还是服务器端的应用程序都没有应用程序级（application-level）的定时器来探测连接的不活动状态（inactivity），从而引起任何一个应用程序的终止。然而有的时候，服务器需要知道客户端主机是否已崩溃并且关闭，或者崩溃但重启。许多实现提供了存活定时器来完成这个任务。</p><p>存活定时器是一个包含争议的特征。许多人认为，即使需要这个特征，这种对对方的轮询也应该由应用程序来完成，而不是由TCP中实现。此外，如果两个终端系统之间的某个中间网络上有连接的暂时中断，那么存活选项（option）就能够引起两个进程间一个良好连接的终止。例如，如果正好在某个中间路由器崩溃、重启的时候发送存活探测，TCP就将会认为客户端主机已经崩溃，但事实并非如此。</p><p>存活（keepalive）并不是TCP规范的一部分。在Host Requirements RFC罗列有不使用它的三个理由：（1）在短暂的故障期间，它们可能引起一个良好连接（good connection）被释放（dropped），（2）它们消费了不必要的宽带，（3）在以数据包计费的互联网上它们（额外）花费金钱。然而，在许多的实现中提供了存活定时器。<br>一些服务器应用程序可能代表客户端占用资源，它们需要知道客户端主机是否崩溃。存活定时器可以为这些应用程序提供探测服务。Telnet服务器和Rlogin服务器的许多版本都默认提供存活选项。</p><p>个人计算机用户使用TCP/IP协议通过Telnet登录一台主机，这是能够说明需要使用存活定时器的一个常用例子。如果某个用户在使用结束时只是关掉了电源，而没有注销（log off），那么他就留下了一个半打开（half-open）的连接。如果客户端消失，留给了服务器端半打开的连接，并且服务器又在等待客户端的数据，那么等待将永远持续下去。存活特征的目的就是在服务器端检测这种半打开连接。</p><h3 id="keepalive如何工作？"><a href="#keepalive如何工作？" class="headerlink" title="keepalive如何工作？"></a>keepalive如何工作？</h3><p>在此描述中，我们称使用存活选项的那一段为服务器，另一端为客户端。也可以在客户端设置该选项，且没有不允许这样做的理由，但通常设置在服务器。如果连接两端都需要探测对方是否消失，那么就可以在两端同时设置（比如NFS）。</p><p>若在一个给定连接上，两小时之内无任何活动，服务器便向客户端发送一个探测段。（我们将在下面的例子中看到探测段的样子。）客户端主机必须是下列四种状态之一：</p><p>1) 客户端主机依旧活跃（up）运行，并且从服务器可到达。从客户端TCP的正常响应，服务器知道对方仍然活跃。服务器的TCP为接下来的两小时复位存活定时器，如果在这两个小时到期之前，连接上发生应用程序的通信，则定时器重新为往下的两小时复位，并且接着交换数据。</p><p>2) 客户端已经崩溃，或者已经关闭（down），或者正在重启过程中。在这两种情况下，它的TCP都不会响应。服务器没有收到对其发出探测的响应，并且在75秒之后超时。服务器将总共发送10个这样的探测，每个探测75秒。如果没有收到一个响应，它就认为客户端主机已经关闭并终止连接。</p><p>3) 客户端曾经崩溃，但已经重启。这种情况下，服务器将会收到对其存活探测的响应，但该响应是一个复位，表明客户端的连接非正常关闭，从而引起服务器对连接的终止。</p><p>4) 客户端主机活跃运行，但从服务器不可到达。这与状态2类似，因为TCP无法区别它们两个。它所能表明的仅是未收到对其探测的回复。</p><p>服务器不必担心客户端主机被关闭然后重启的情况（这里指的是操作员执行的正常关闭，而不是主机的崩溃）。当系统被操作员关闭时，所有的应用程序进程（也就是客户端进程）都将被终止，客户端TCP会在连接上发送一个FIN。收到这个FIN后，服务器TCP向服务器进程报告一个文件结束，以允许服务器检测这种状态。</p><p>在第一种状态下，服务器应用程序不知道存活探测是否发生。凡事都是由TCP层处理的，存活探测对应用程序透明，直到后面2，3，4三种状态发生。在这三种状态下，通过服务器的TCP，返回给服务器应用程序错误信息。（通常服务器向网络发出一个读请求，等待客户端的数据。如果存活特征返回一个错误信息，则将该信息作为读操作的返回值返回给服务器。）在状态2，错误信息类似于“连接超时”。状态3则为“连接被对方复位”。第四种状态看起来像连接超时，或者根据是否收到与该连接相关的ICMP错误信息，而可能返回其它的错误信息。</p><h3 id="解释一下TCP-IP中的复位信号"><a href="#解释一下TCP-IP中的复位信号" class="headerlink" title="解释一下TCP-IP中的复位信号"></a>解释一下TCP-IP中的复位信号</h3><p>在TCP协议中RST表示复位，用来异常的关闭连接，在TCP的设计中它是不可或缺的。发送RST包关闭连接时，不必等缓冲区的包都发出去，直接就丢弃缓存区的包发送RST包。而接收端收到RST包后，也不必发送ACK包来确认。</p><h3 id="收到RST复位信号可能有哪些情况？"><a href="#收到RST复位信号可能有哪些情况？" class="headerlink" title="收到RST复位信号可能有哪些情况？"></a>收到RST复位信号可能有哪些情况？</h3><p>可能有4种情况：</p><h4 id="端口未打开"><a href="#端口未打开" class="headerlink" title="端口未打开"></a>端口未打开</h4><p>服务器程序端口未打开而客户端来连接。这种情况是最为常见和好理解的一种了。去telnet一个未打开的TCP的端口可能会出现这种错误。这个和操作系统的实现有关。在某些情况下，操作系统也会完全不理会这些发到未打开端口请求。如向一台WINDOWS7的主机发送一个连接不存在的端口的请求，这台主机就不会回应。</p><h4 id="请求超时"><a href="#请求超时" class="headerlink" title="请求超时"></a>请求超时</h4><p>曾经遇到过这样一个情况:一个客户端连接服务器，connect返回-1并且error=EINPROGRESS。 直接telnet发现网络连接没有问题。ping没有出现丢包。用抓包工具查看，客户端是在收到服务器发出的SYN之后就莫名其妙的发送了RST。<br>有89、27两台主机。主机89向主机27发送了一个SYN，表示希望连接8888端口，主机27回应了主机89一个SYN表示可以连接。但是主机27却很不友好，莫名其妙的发送了一个RST表示我不想连接你了。</p><p>后来经过排查发现，在主机89上的程序在建立了socket之后，用setsockopt的SO_RCVTIMEO选项设置了recv的超时时间为100ms。而我们看上面的抓包结果表示，从主机89发出SYN到接收SYN的时间多达110ms。（从15:01:27.799961到15:01:27.961886， 小数点之后的单位是微秒）。因此主机89上的程序认为接收超时，所以发送了RST拒绝进一步发送数据。</p><h4 id="提前关闭"><a href="#提前关闭" class="headerlink" title="提前关闭"></a>提前关闭</h4><p>关于TCP，我想我们在教科书里都读到过一句话，’TCP是一种可靠的连接’。 而这可靠有这样一种含义，那就是操作系统接收到的来自TCP连接中的每一个字节，我都会让应用程序接收到。如果应用程序不接收怎么办？你猜对了，RST。</p><h4 id="在一个已关闭的socket上收到数据"><a href="#在一个已关闭的socket上收到数据" class="headerlink" title="在一个已关闭的socket上收到数据"></a>在一个已关闭的socket上收到数据</h4><p>在一个已关闭的socket上收到数据</p>]]></content>
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>自创面试题之设计模式</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
@@ -126,7 +252,7 @@
       <title>自创面试题之安全</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%AE%89%E5%85%A8/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%AE%89%E5%85%A8/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h2 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP-IP"></a>TCP-IP</h2><h3 id="什么是RST攻击"><a href="#什么是RST攻击" class="headerlink" title="什么是RST攻击"></a>什么是RST攻击</h3><p>服务器A和服务器B之间建立了TCP连接，此时服务器C伪造了一个TCP包发给B，使B异常的断开了与A之间的TCP连接，这就是RST攻击。</p><p>那么伪造什么样的TCP包可以达成目的呢？</p><p>假定C伪装成A发过去的包，这个包如果是RST包的话，毫无疑问，B将会丢弃与A的缓冲区上所有数据，强制关掉连接；<br>如果发过去的包是SYN包，B会表示A已经发疯了（与OS的实现有关），正常连接时又来建新连接，B主动向A发个RST包，并在自己这端强制关掉连接；</p><p>这两种方式都能够达到复位攻击的效果。似乎挺恐怖，然而关键是C如何能伪造成A发给B的包呢？这里有两个关键因素，源端口和序列号。</p><p>一个TCP连接都是四元组，由源IP+源端口、目标IP+目标端口唯一确定一个连接。所以，如果C要伪造A发给B的包，要在上面提到的IP头和TCP头，把源IP、源端口、目标IP、目标端口都填对。这里B作为服务器，IP和端口是公开的，A是我们要下手的目标，IP当然知道，但A的源端口就不清楚了，因为这可能是A随机生成的。当然，如果能够对常见的OS如windows和linux找出生成source port规律的话，还是可以搞定的。</p><p>此外，伪造的TCP包里需要填序列号（SeqNum），如果序列号的值不在A之前向B发送时B的滑动窗口内，B是会主动丢弃的。所以我们要找到能落到当时的AB间滑动窗口的序列号。这个可以暴力解决，因为一个sequence长度是32位，取值范围0-4294967296，如果滑动窗口大小为65535的话，则最多只需要发65537（4294967296/65535=65537）个包就能有一个序列号落到滑动窗口内。RST包是很小的，IP头＋TCP头也才40字节，算算我们的带宽就知道这实在只需要几秒钟就能搞定。</p>]]></content>
       
       <categories>
           
@@ -231,7 +357,7 @@
       <title>自创面试题之Spring</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpring/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpring/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h3 id="Spring中的事务传播行为有几种？你用过哪几种？如何分类？"><a href="#Spring中的事务传播行为有几种？你用过哪几种？如何分类？" class="headerlink" title="Spring中的事务传播行为有几种？你用过哪几种？如何分类？"></a>Spring中的事务传播行为有几种？你用过哪几种？如何分类？</h3><p>有7中，用过REQUIRED</p><table><thead><tr><th>-</th><th style="text-align:center">外层无事务，新建事务</th><th style="text-align:right">外层无事务，非事务运行</th><th>外层无事务，抛异常</th></tr></thead><tbody><tr><td>外层有事务，加入</td><td style="text-align:center">REQUIRED</td><td style="text-align:right">SUPPORTS</td><td>MANADATORY</td></tr><tr><td>外层有事务，挂起外层</td><td style="text-align:center">REQUIRED_NEW</td><td style="text-align:right">NOT_SUPPORTED</td><td>-</td></tr><tr><td>外层有事务，抛异常</td><td style="text-align:center">-</td><td style="text-align:right">NEVER</td><td>-</td></tr><tr><td>外层有事务，嵌套事务运行</td><td style="text-align:center">NESTED</td><td style="text-align:right">-</td><td>-</td></tr></tbody></table><h3 id="下面是A方法和B方法的事务传播级别都是REQUIRED-请问是否会插入成功？如果不成功如何解决？"><a href="#下面是A方法和B方法的事务传播级别都是REQUIRED-请问是否会插入成功？如果不成功如何解决？" class="headerlink" title="下面是A方法和B方法的事务传播级别都是REQUIRED,请问是否会插入成功？如果不成功如何解决？"></a>下面是A方法和B方法的事务传播级别都是REQUIRED,请问是否会插入成功？如果不成功如何解决？</h3><pre><code>A(){    insert(new User())    try{        B();    }catch(Exception e){        //just suppress Exception    }}B(){    //暂时不考虑语法问题    throw new Exception(&quot;&quot;);}</code></pre><p>否，会报 org.springframework.transaction.UnexpectedRollbackException: Transaction rolled back because it has been marked as rollback-only<br>因为B抛出异常，被事务标记，A catch压制异常后commit，B已经标记未rollback，冲突。</p><h3 id="挂起是什么意思？"><a href="#挂起是什么意思？" class="headerlink" title="挂起是什么意思？"></a>挂起是什么意思？</h3><p>挂起的意识是外层rollback内层不rollback，内层1rollback,内层2不rollback，外层rollback。</p><pre><code>例如 方法A支持事务方法B不支持事务。方法A调用方法B。在方法A开始运行时，系统为它建立Transaction,方法A中对于数据库的处理操作，会在该Transaction的控制之下。这时，方法A调用方法B,方法A打开的 Transaction将挂起，方法B中任何数据库操作，都不在该Transaction的管理之下。当方法B返回，方法A继续运行，之前的Transaction回复，后面的数据库操作继续在该Transaction的控制之下 提交或回滚。</code></pre><h3 id="REQUIRED和REQUIRED-NEW的区别"><a href="#REQUIRED和REQUIRED-NEW的区别" class="headerlink" title="REQUIRED和REQUIRED_NEW的区别"></a>REQUIRED和REQUIRED_NEW的区别</h3><p>required_new在外层有事务时会挂起外层，required会加入。</p><h3 id="REQUIRED和NESTED的区别。"><a href="#REQUIRED和NESTED的区别。" class="headerlink" title="REQUIRED和NESTED的区别。"></a>REQUIRED和NESTED的区别。</h3><p>当required和nested中的exception被catch，nested只回滚嵌套子事务，而required因为是一个事务，即使被catch了也全部回滚。</p>]]></content>
       
       <categories>
           
@@ -246,7 +372,7 @@
       <title>自创面试题之Linux</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BLinux/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BLinux/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h3 id="Linux下如何十六进制查看文件？"><a href="#Linux下如何十六进制查看文件？" class="headerlink" title="Linux下如何十六进制查看文件？"></a>Linux下如何十六进制查看文件？</h3><p>xxd Application.class</p>]]></content>
       
       <categories>
           
@@ -261,7 +387,7 @@
       <title>自创面试题之Netty</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BNetty/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BNetty/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h3 id="Netty在原生Socket之上做了哪些抽象？"><a href="#Netty在原生Socket之上做了哪些抽象？" class="headerlink" title="Netty在原生Socket之上做了哪些抽象？"></a>Netty在原生Socket之上做了哪些抽象？</h3><ol><li>监听新连接和接收数据的动作抽象为NioEventLoop</li><li>新连接抽象为Channel</li><li>来自客户端的数据抽象为ByteBuffer</li><li>对来自客户端的数据进行处理的业务逻辑抽象为ChannelHandler</li><li>对发送给客户端的数据进行处理的业务逻辑抽象为ChannelHandler</li><li>4和5以及其他ChannelHandler共同抽象为Pipeine</li><li>发送给客户端的数据抽象为ByteBuffer<h3 id="Netty中ChannelOption中的SO-BACKLOG解释一下"><a href="#Netty中ChannelOption中的SO-BACKLOG解释一下" class="headerlink" title="Netty中ChannelOption中的SO_BACKLOG解释一下"></a>Netty中ChannelOption中的SO_BACKLOG解释一下</h3>服务器端TCP内核模块维护有2个队列，我们称之为A，B。客户端向服务端connect的时候，发送带有SYN标志的包（第一次握手），服务端收到客户端发来的SYN时，向客户端发送SYN ACK 确认(第二次握手)。此时TCP内核模块把客户端连接加入到A队列中，然后服务器收到客户端发来的ACK时（第三次握手），TCP内核模块把客户端连接从A队列移到B队列，连接完成，应用程序的accept会返回，也就是说accept从B队列中取出完成三次握手的连接。</li></ol><p>A队列和B队列的长度之和是backlog,当A，B队列的长之和大于backlog时，新连接将会被TCP内核拒绝。所以，如果backlog过小，可能会出现accept速度跟不上，A，B 队列满了，导致新客户端无法连接，</p><p>要注意的是，backlog对程序支持的连接数并无影响，backlog影响的只是还没有被accept取出的连接。</p><h3 id="ByteUnsafe和MessageUnsafe的区别"><a href="#ByteUnsafe和MessageUnsafe的区别" class="headerlink" title="ByteUnsafe和MessageUnsafe的区别"></a>ByteUnsafe和MessageUnsafe的区别</h3><p>ByteUnsafe处理接收到的数据，MessageUnsafe处理新连接</p><h3 id="Channel是如何包装新连接的？"><a href="#Channel是如何包装新连接的？" class="headerlink" title="Channel是如何包装新连接的？"></a>Channel是如何包装新连接的？</h3><img src="/puml\48a7885227022cc7f21070a0e5aea82481f0edac.png"><h3 id="pipeline的处理流程"><a href="#pipeline的处理流程" class="headerlink" title="pipeline的处理流程"></a>pipeline的处理流程</h3><img src="/puml\f9e2da4c926a4f20c76237ced7d8663dfa3a87f4.png"><h3 id="Handler和ChildHandler方法定义在哪里？什么区别？"><a href="#Handler和ChildHandler方法定义在哪里？什么区别？" class="headerlink" title="Handler和ChildHandler方法定义在哪里？什么区别？"></a>Handler和ChildHandler方法定义在哪里？什么区别？</h3><p>Handler方法是AbstractBootStrap的方法，在启动过程中进行事件触发。<br>ChildHandler是ServerBootStrap的方法，用来指定服务端的Handler</p><h3 id="服务端的Socket初始化过程"><a href="#服务端的Socket初始化过程" class="headerlink" title="服务端的Socket初始化过程"></a>服务端的Socket初始化过程</h3><h4 id="创建服务端Channel"><a href="#创建服务端Channel" class="headerlink" title="创建服务端Channel"></a>创建服务端Channel</h4><img src="/puml\4d9e3adad5f344c002f93d694a0245bb53e42234.png"><h4 id="初始化服务端Channel"><a href="#初始化服务端Channel" class="headerlink" title="初始化服务端Channel"></a>初始化服务端Channel</h4><img src="/puml\4d124b5012d377fb1365ffcca4c826e6fbc8a553.png"><h4 id="注册Selector"><a href="#注册Selector" class="headerlink" title="注册Selector"></a>注册Selector</h4><img src="/puml\62460b2bcd0aed61dcafd4e51c38a4318e6f55c5.png"><h4 id="端口绑定"><a href="#端口绑定" class="headerlink" title="端口绑定"></a>端口绑定</h4><img src="/puml\0cd7544071d8b620e2fa8039e4db9d1ff0a5890f.png"><h3 id="解释一下Netty添加事件中的与"><a href="#解释一下Netty添加事件中的与" class="headerlink" title="解释一下Netty添加事件中的与|"></a>解释一下Netty添加事件中的与|</h3><p>开始时默认传入ACCEPT,为1&lt;&lt;4,16，二进制是10000</p><p>interestOps &amp; readInterestOp == 0表示要添加的事件集合不包含ACCEPT事件<br>selectionKey.interestOps(interestOps | readInterestOp);表示增加事件</p><h3 id="NioEventLoop创建过程"><a href="#NioEventLoop创建过程" class="headerlink" title="NioEventLoop创建过程"></a>NioEventLoop创建过程</h3><img src="/puml\c0f04222d09d99aaf7ae578c0492a082909a973c.png"><h3 id="默认下，Netty起多少线程？何时启动？"><a href="#默认下，Netty起多少线程？何时启动？" class="headerlink" title="默认下，Netty起多少线程？何时启动？"></a>默认下，Netty起多少线程？何时启动？</h3><h3 id="Netty如何解决JDK空轮询bug？"><a href="#Netty如何解决JDK空轮询bug？" class="headerlink" title="Netty如何解决JDK空轮询bug？"></a>Netty如何解决JDK空轮询bug？</h3><h3 id="Netty如何保证异步串行无锁化？"><a href="#Netty如何保证异步串行无锁化？" class="headerlink" title="Netty如何保证异步串行无锁化？"></a>Netty如何保证异步串行无锁化？</h3><h3 id="服务端的Socket在哪里Accept连接"><a href="#服务端的Socket在哪里Accept连接" class="headerlink" title="服务端的Socket在哪里Accept连接"></a>服务端的Socket在哪里Accept连接</h3>]]></content>
       
       <categories>
           
@@ -270,13 +396,19 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
     </entry>
     
     <entry>
       <title>自创面试题之Mybatis</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMybatis/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMybatis/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h3 id="mybatis如何返回自增后的主键值？"><a href="#mybatis如何返回自增后的主键值？" class="headerlink" title="mybatis如何返回自增后的主键值？"></a>mybatis如何返回自增后的主键值？</h3><pre><code>useGeneratedKeys=&quot;true&quot; 和keyProperty=&quot;studId&quot;插入成功后用int studentId = student.getStudId(); 可取出插入的主键值</code></pre><h3 id="动态SQL中trim的用法"><a href="#动态SQL中trim的用法" class="headerlink" title="动态SQL中trim的用法"></a>动态SQL中trim的用法</h3><pre><code>&lt;trim prefix=&quot;WHERE&quot; prefixOverrides=&quot;AND | OR&quot;&gt; &lt;if test=&quot; tutorId != null &quot;&gt; TUTOR_ID= #{tutorId} &lt;/if&gt; &lt;if test=&quot;courseName != null&quot;&gt; AND name like #{courseName} &lt;/if&gt; &lt;/trim&gt; </code></pre><p>这里如果任意一个<if>条件为 true，<trim>元素会插入 WHERE,并且移除紧跟 WHERE 后面的 AND 或 OR </trim></if></p>]]></content>
       
       <categories>
           
@@ -306,7 +438,7 @@
       <title>自创面试题之MySQL</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMySQL/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMySQL/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h3 id="什么是一致性的非锁定读？"><a href="#什么是一致性的非锁定读？" class="headerlink" title="什么是一致性的非锁定读？"></a>什么是一致性的非锁定读？</h3><p>Innodb通过多版本控制的方式来读取数据。如果此时读取的行正在执行update和delete操作，读取操作不会等待行上锁的释放，会读取行的一个快照数据。<br>读取快照是通过undo来实现的。由此带来的并发控制，称为多版本并发控制（Multi Version Concurrency Control,MVCC）</p><h3 id="RC和RP事务隔离级别下对快照的定义有何不同？"><a href="#RC和RP事务隔离级别下对快照的定义有何不同？" class="headerlink" title="RC和RP事务隔离级别下对快照的定义有何不同？"></a>RC和RP事务隔离级别下对快照的定义有何不同？</h3><p>RC总是读取行的最新版本，可能是正在读取事务的时候其他事务更新了要读取的值，那读取的是其他事务更新后的值。<br>RP总是读取事务开始时的行数据，即可其他事务更新了这个值，也不会读取。<br>从数据库理论角度看，RC违反了隔离性。</p><h3 id="select-for-update有什么需要注意的？"><a href="#select-for-update有什么需要注意的？" class="headerlink" title="select for update有什么需要注意的？"></a>select for update有什么需要注意的？</h3><p>select for update和lock in share mode必须放在事务中。</p><h3 id="锁会带来哪些问题？"><a href="#锁会带来哪些问题？" class="headerlink" title="锁会带来哪些问题？"></a>锁会带来哪些问题？</h3><h4 id="丢失更新"><a href="#丢失更新" class="headerlink" title="丢失更新"></a>丢失更新</h4><ol><li>事务T1査询一行数据，放入本地内存，并显示给一个终端用户Userl。</li><li>事务T2也査询该行数据，并将取得的数据显示给终端用户User2。</li><li>Userl修改这行记录，更新数据库并提交。</li><li>User2修改这行记录，更新数据库并提交。</li></ol><p>一个用户账户中有10000元人民币，他用两个网上银行的<br>客户端转账，第一次转9000人民币，因为网络和数据的关系，这时需要等待。但是如果这<br>时用户可以操作另一个网上银行客户端，转账1元。如果最终两笔操作都成功了，用户的<br>账号余款是9999人民币，第一转的9000人民币并没有得到更新。</p><p>避免丢失更新，将这种情况变成串行操作，1加上X锁，2也加X锁，这样2就必须等待1和3完成，再执行4.</p><h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><p>事务执行过程读取到其他事务执行出来的数据，隔离级别设置为RU会产生脏读问题，如果update a=a+1，再脏读的基础上操作，就会造成问题。</p><h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><p>一个事务内两次读到的数据是不一样的。</p><h3 id="不可重复读和脏读的区别"><a href="#不可重复读和脏读的区别" class="headerlink" title="不可重复读和脏读的区别"></a>不可重复读和脏读的区别</h3><p>脏读读取的是未提交的数据，不可重复读读取的是已提交的数据。</p><h3 id="MySQL如何在RR隔离级别下解决不可重复读的问题？"><a href="#MySQL如何在RR隔离级别下解决不可重复读的问题？" class="headerlink" title="MySQL如何在RR隔离级别下解决不可重复读的问题？"></a>MySQL如何在RR隔离级别下解决不可重复读的问题？</h3><p>使用Next-Key Lock，结合了Record Lock和Gap Lock，是RR下默认的行锁定算法，必须要用lock in shared mode。<br>比如select <em> from t where a &lt;6 lock in share mode,锁定(-OO,6],插入6，或者5之类的必须等待。<br>但是select </em> from t where a =6 ,只用了record lock，可以插入5。</p><h3 id="脏数据和脏页的区别？"><a href="#脏数据和脏页的区别？" class="headerlink" title="脏数据和脏页的区别？"></a>脏数据和脏页的区别？</h3><p>脏页是缓冲池改了，未刷新到磁盘的数据。<br>脏数据是指未提交的数据。</p>]]></content>
       
       <categories>
           
@@ -314,6 +446,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -336,7 +474,7 @@
       <title>自创面试题之Java调优</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E8%B0%83%E4%BC%98/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E8%B0%83%E4%BC%98/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h3 id="Class类文件的魔数是什么？"><a href="#Class类文件的魔数是什么？" class="headerlink" title="Class类文件的魔数是什么？"></a>Class类文件的魔数是什么？</h3><p>CAFE BABE（咖啡宝贝）</p><h3 id="Class文件的版本号0034代表啥意思？"><a href="#Class文件的版本号0034代表啥意思？" class="headerlink" title="Class文件的版本号0034代表啥意思？"></a>Class文件的版本号0034代表啥意思？</h3><p>从52，JDK1.1为45，之后每次加1，到JDK1.8，加7为52</p><h3 id="javac的source和target的含义？"><a href="#javac的source和target的含义？" class="headerlink" title="javac的source和target的含义？"></a>javac的source和target的含义？</h3><ul><li>-source 指定用哪个版本的编译器对java源码进行编译</li><li><p>-target 指定生成的class文件将保证和哪个版本的虚拟机进行兼容。我们可以通过-target 1.2来保证生成的class文件能在1.2虚拟机上进行运行，但是1.1的虚拟机就不能保证了。<br>jdk8默认的source和target都是1.8，但是用了maven可能默认是1.5，需要在pom中做一下配置</p><h3 id="怎么看常量池中有多少个常量？"><a href="#怎么看常量池中有多少个常量？" class="headerlink" title="怎么看常量池中有多少个常量？"></a>怎么看常量池中有多少个常量？</h3><p>从偏移地址0X08开始的u2大小，即0809字节，随便打开一个是0032，那就是50，表示49个，从1开始，1-49.</p><h3 id="分析一下以下的十六进制Class文件内容"><a href="#分析一下以下的十六进制Class文件内容" class="headerlink" title="分析一下以下的十六进制Class文件内容"></a>分析一下以下的十六进制Class文件内容</h3><p>  0000000: cafe babe 0000 0034 0032 0a00 0800 1e07  …….4.2……<br>  0000010: 001f 0a00 2000 2109 0002 0022 0800 230b  …. .!….”..#.<br>  0000020: 0024 0025 0a00 2600 2707 0028 0100 036c  .$.%..&amp;.’..(…l<br>  0000030: 6f67 0100 214c 6f72 672f 6170 6163 6865  og..!Lorg/apache</p><p>  cafe babe是魔数<br>  0000 0034 次版本号0，主版本号52，代表JDK8<br>  0032 =50，表示常量池中有49个常量<br>  0a =10，methodref_info,类中方法的符号引用<br>  methodref_info的结构为<br>  tag—u1,index-u2-指向class—info,index-u2-指向nameAndType<br>  第一个index是0008,指向第8个常量<br>  第二个index是001e，指向第30个常量</p></li></ul>]]></content>
       
       <categories>
           
@@ -351,7 +489,7 @@
       <title>自创面试题之线程与并发</title>
       <link href="/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/"/>
       <url>/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<h3 id="什么是CAS算法？"><a href="#什么是CAS算法？" class="headerlink" title="什么是CAS算法？"></a>什么是CAS算法？</h3><p>CAS算法的过程是这样：它包含三个参数CAS（V，E，N）。V表示要更新的变量，E表示预期<br>值，N表示新值。仅当V值等于E值时，才会将V的值设为N,如果V值和E值不同，则说<br>明己经有其他线程做了更新，则当前线程什么都不做。最后，CAS返回当前V的真实值。CAS<br>操作是抱着乐观的态度进行的，它总是认为自己可以成功完成操作。当多个线程同时使用CAS<br>操作一个变量时，只有一个会胜出，并成功更新，其余均会失败。失败的线程不会被挂起，仅<br>是被告知失败，并且允许再次尝试，当然也允许失败的线程放弃操作。基于这样的原理，CAS<br>操作即使没有锁，也可以发现其他线程对当前线程的干扰，并进行恰当的处理。<br>简单地说，CAS需要你额外给出一个期望值，也就是你认为这个变量现在应该是什么样子<br>的。如果变量不是你想象的那样，那说明它己经被别人修改过了。你就重新读取，再次尝试修<br>改就好了。</p><h3 id="一条指令分哪几步？"><a href="#一条指令分哪几步？" class="headerlink" title="一条指令分哪几步？"></a>一条指令分哪几步？</h3><p>几乎所有的冯·诺伊曼型计算机的CPU，其工作都可以分为5个阶段：取指令、指令译码、执行指令、访存取数、结果写回。</p><h4 id="取指令阶段"><a href="#取指令阶段" class="headerlink" title="取指令阶段"></a>取指令阶段</h4><p>取指令（Instruction Fetch，IF）阶段是将一条指令从主存中取到指令寄存器的过程。</p><p>程序计数器PC中的数值，用来指示当前指令在主存中的位置。当一条指令被取出后，PC中的数值将根据指令字长度而自动递增：若为单字长指令，则(PC)+1àPC；若为双字长指令，则(PC)+2àPC，依此类推。</p><h4 id="指令译码阶段"><a href="#指令译码阶段" class="headerlink" title="指令译码阶段"></a>指令译码阶段</h4><p>取出指令后，计算机立即进入指令译码（Instruction Decode，ID）阶段。</p><p>在指令译码阶段，指令译码器按照预定的指令格式，对取回的指令进行拆分和解释，识别区分出不同的指令类别以及各种获取操作数的方法。</p><p>在组合逻辑控制的计算机中，指令译码器对不同的指令操作码产生不同的控制电位，以形成不同的微操作序列；在微程序控制的计算机中，指令译码器用指令操作码来找到执行该指令的微程序的入口，并从此入口开始执行。</p><p>在传统的设计里，CPU中负责指令译码的部分是无法改变的。不过，在众多运用微程序控制技术的新型CPU中，微程序有时是可重写的，可以通过修改成品CPU来改变CPU的译码方式。</p><h4 id="执行指令阶段"><a href="#执行指令阶段" class="headerlink" title="执行指令阶段"></a>执行指令阶段</h4><p>在取指令和指令译码阶段之后，接着进入执行指令（Execute，EX）阶段。</p><p>此阶段的任务是完成指令所规定的各种操作，具体实现指令的功能。为此，CPU的不同部分被连接起来，以执行所需的操作。</p><p>例如，如果要求完成一个加法运算，算术逻辑单元ALU将被连接到一组输入和一组输出，输入端提供需要相加的数值，输出端将含有最后的运算结果。</p><h4 id="访存取数阶段"><a href="#访存取数阶段" class="headerlink" title="访存取数阶段"></a>访存取数阶段</h4><p>根据指令需要，有可能要访问主存，读取操作数，这样就进入了访存取数（Memory，MEM）阶段。</p><p>此阶段的任务是：根据指令地址码，得到操作数在主存中的地址，并从主存中读取该操作数用于运算。</p><h4 id="结果写回阶段"><a href="#结果写回阶段" class="headerlink" title="结果写回阶段"></a>结果写回阶段</h4><p>作为最后一个阶段，结果写回（Writeback，WB）阶段把执行指令阶段的运行结果数据“写回”到某种存储形式：结果数据经常被写到CPU的内部寄存器中，以便被后续的指令快速地存取；在有些情况下，结果数据也可被写入相对较慢、但较廉价且容量较大的主存。许多指令还会改变程序状态字寄存器中标志位的状态，这些标志位标识着不同的操作结果，可被用来影响程序的动作。</p><p>在指令执行完毕、结果数据写回之后，若无意外事件（如结果溢出等）发生，计算机就接着从程序计数器PC中取得下一条指令地址，开始新一轮的循环，下一个指令周期将顺序取出下一条指令。</p><p>许多新型CPU可以同时取出、译码和执行多条指令，体现并行处理的特性。<br>我们的汇编指令也不是一步就可以执行完毕的，在CPU中实际工作时，它还是需要分为多<br>个步骤依次执行的。当然，每个步骤所涉及的硬件也可能不同。比如，取指时会用到PC寄存<br>器和存储器，译码时会用到指令寄存器组，执行时会使用ALU,写回时需要寄存器组。<br>注意：ALU指算术逻辑单元。它是CPU的执行单元，是CPU的核心组成部分，主要功能是进行二进制算术运算。</p><h3 id="为什么要指令重排？"><a href="#为什么要指令重排？" class="headerlink" title="为什么要指令重排？"></a>为什么要指令重排？</h3><p>看下面A+B操作的执行过程。</p><p>写在左边的指令就是汇编指令。LW表示load,其中LW R1,B,表示把B的值加载到R1寄存器中。ADD指令<br>就是加法，把Rl、R2的值相加，并存放到R3中。SW表示store,存储，就是将R3寄存器的值保存到变量A中。</p><table><thead><tr><th>指令</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>LW R1,B</td><td>IF</td><td>ID</td><td>EX</td><td>MEM</td><td>WB</td><td></td><td></td><td></td><td></td></tr><tr><td>LW R2,C</td><td></td><td>IF</td><td>ID</td><td>EX</td><td>MEM</td><td>WB</td><td></td><td></td><td></td></tr><tr><td>ADD R3,R1,R2</td><td></td><td></td><td>IF</td><td>ID</td><td>X</td><td>EX</td><td>MEM</td><td>WB</td><td></td></tr><tr><td>SW A,R3</td><td></td><td></td><td></td><td>IF</td><td>X</td><td>ID</td><td>EX</td><td>MEM</td><td>WB</td><td></td><td></td><td></td></tr></tbody></table><p>右边就是流水线的情况。注意 ，在 A D D 指令上，有一 个大叉，表示一个中断。也就是说<br>ADD在这里停顿了一下。为什么ADD会在这里停顿呢？原因很简单，R 2 中的数据还没有准备<br>好 ！所以 ，ADD操作必须进 行一次等待。 由于 A D D 的延迟，导致其后面所有的指令都要慢一<br>个节拍。</p><h3 id="哪些指令不能重排？"><a href="#哪些指令不能重排？" class="headerlink" title="哪些指令不能重排？"></a>哪些指令不能重排？</h3><ul><li>程序顺序原则：一个线程内保证语义的串行性</li><li>volatile规则：volatile变量的写，先发生于读，这保证了volatile变量的可见性</li><li>锁规则：解锁（unlock）必然发生在随后的加锁（lock）前</li><li>传递性：A先于B,B先于C，那么A必然先于C</li><li>线程的start()方法先于它的每一个动作</li><li>线程的所有操作先于线程的终结（Thread.join()）</li><li>线程的中断（interrupt（））先于被中断线程的代码</li><li>对象的构造函数执行、结束先于fmalize()方法</li></ul><p>以程序顺序原则为例，重排后的指令绝对不能改变原有的串行语义。比如：<br>a=l;b=a+l;<br>由于第2条语句依赖第一条的执行结果。如果冒然交换两条语句的执行顺序，那么程序的语义就会修改。因此这种情况是绝对不允许发生的。因此，这也是指令重排的一条基本原则。</p><p>此外，锁规则强调，unlock操作必然发生在后续的对同一个锁的lock之前。也就是说，如果对一个锁解锁后，再加锁，那么加锁的动作绝对不能重排到解锁动作之前。很显然，如果这么做，加锁行为是无法获得这把锁的。其他几条原则也是类似的，这些原则都是为了保证指令重排不会破坏原有的语义结构。</p><h3 id="volatile能否保证可见性，原子性，有序性？"><a href="#volatile能否保证可见性，原子性，有序性？" class="headerlink" title="volatile能否保证可见性，原子性，有序性？"></a>volatile能否保证可见性，原子性，有序性？</h3>]]></content>
       
       <categories>
           
@@ -363,10 +501,10 @@
     </entry>
     
     <entry>
-      <title></title>
+      <title>使用maven查找依赖类所在jar包的的定义</title>
       <link href="/2018/09/22/%E4%BD%BF%E7%94%A8maven%E6%9F%A5%E6%89%BE%E4%BE%9D%E8%B5%96%E7%B1%BB%E6%89%80%E5%9C%A8jar%E5%8C%85%E7%9A%84%E7%9A%84%E5%AE%9A%E4%B9%89/"/>
       <url>/2018/09/22/%E4%BD%BF%E7%94%A8maven%E6%9F%A5%E6%89%BE%E4%BE%9D%E8%B5%96%E7%B1%BB%E6%89%80%E5%9C%A8jar%E5%8C%85%E7%9A%84%E7%9A%84%E5%AE%9A%E4%B9%89/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<p>今天在看spring-cloud源码，EurekaDiscoveryClient作为适配器，实现了DiscoveryClient。</p><p>EurekaDiscoveryClient是spring-cloud-netflix-eureka-client下的类，DiscoveryClient接口是spring-cloud-commons下的类。就想看看在pom的哪里依赖了这个jar包。</p><p>尝试过程</p><ol><li>用idea在spring-cloud-netflix-eureka-client下的pom.xml中右键show dependency popup，打不开</li><li>在项目的pom.xml右键show dependency popup，太卡，依赖太多，放大和缩放都不方便。</li><li>看spring-cloud-netflix-eureka-client的jar包下的pom，并没有直接依赖commons，应该是间接。</li><li>用mvn dependency:tree 看，信息太多，不好找</li><li>用 grep –color=always -Pzo “spring-cloud-netflix-eureka-client[\s\S]*?cloud-commons”  tree.txt|more ，虽然最后没什么用，但学习到匹配多行内容的方法。-P –perl-regexp<br>Interpret the pattern as a Perl-compatible regular expression (PCRE). This is highly experimental, particularly when combined with the -z (–null-data) option, and ‘grep -P’ may warn of unimplemented features. See Other Options.<br>-l 列出匹配规则的文件名,可用于在多个文件中查找.<br>-o 列出匹配内容<br>–color=always 表示more也要带颜色</li><li>用mvn dependency:tree -Dverbose -Dincludes=:spring-cloud-netflix-eureka-client:: ，冒号表示隐式的.<em>,即groupId，type，version都是.</em></li><li>根据6，我在思考，什么时候停止展示下一层依赖，结论是当前依赖不依赖其他依赖或者依赖的已经和前面重复</li><li>最后把jar包中的pom.xml提取出来，用mvn dependency:tree,看到了commons是optional，可选依赖，再复习一下optional，适用于配置了多个互相排斥的依赖环境，比如mysql和pqsql的驱动包，此时需要在依赖spring-cloud-netflix-eureka-client的项目中显示依赖其中一个。而且optional是不会作为依赖传递，所以7中不会显示optional依赖的。</li></ol>]]></content>
       
       
     </entry>
