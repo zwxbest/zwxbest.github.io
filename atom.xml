@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nizouba.com/"/>
-  <updated>2018-09-26T06:43:51.168Z</updated>
+  <updated>2018-09-29T14:23:50.081Z</updated>
   <id>http://nizouba.com/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>根据自身工作经历，深入分析令程序员头疼的基于从浏览器到服务端的字符乱码问题</title>
+    <link href="http://nizouba.com/2018/09/29/%E6%A0%B9%E6%8D%AE%E8%87%AA%E8%BA%AB%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86%EF%BC%8C%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90%E4%BB%A4%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A4%B4%E7%96%BC%E7%9A%84%E5%9F%BA%E4%BA%8E%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%B0%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://nizouba.com/2018/09/29/根据自身工作经历，深入分析令程序员头疼的基于从浏览器到服务端的字符乱码问题/</id>
+    <published>2018-09-29T14:23:17.000Z</published>
+    <updated>2018-09-29T14:23:50.081Z</updated>
+    
+    <content type="html"><![CDATA[<p>概述</p><p>前段时间陆陆续续有一些同事跟我询问中文乱码问题，每个人的问题也都大同小异。而我最早之前也一直想写一篇这样的文章，无奈都腾不出富裕的时间，或者说拖延症比较严重(其实还是懒)，这次就索性对自己狠一把，对这个问题做一个总结。</p><p>我们知道http协议是请求-响应式的,平常出现的乱码问题也就都隐藏在这一问一答之中,如果能明白字符在这个期间所走的链路,以及在这个链路中都经历了怎样的字符转换,那么遇到任何烦人的乱码问题也能够迎刃而解。</p><p>下面我会根据自身工作中的经历，讲述基于http协议在开发过程中遇到的字符乱码问题。</p><p>响应(response)时遇到的乱码问题</p><p>两千多年前孔子看见颜回煮饭时先偷偷吃了一些,便用言语责怪了颜回。颜回解释并没有偷吃,是有脏东西掉进锅里了,他把有脏东西的饭捞出来吃掉了。后来孔子感慨,所信者目也，而目犹不可信。</p><p>当你在浏览器里看到响应内容是乱码时,你会认为一定是程序吐出的字符就是乱码，解决这个问题的办法就是修改程序。事实真的是这样的吗？为了说明这个问题，我写了一段简单的程序用来模拟web程序，这段程序的作用就是输出utf-8编码的“中国”两个字符。下面我们用火狐和chrome访问这个程序。</p><p>用火狐访问<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p><p>技术分享</p><p>用chrome访问<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p><p>技术分享</p><p>从上面可以看到，对于相同的输出,不同的浏览器展现了不同的结果。Firefox在浏览器正文显示的是乱码,而在下面的“响应”标签中显示了正确的字符。Chrome则跟Firefox相反,正文显示正确,标签”response”显示乱码。并且两个浏览器显示的乱码也是不一致的, firefox显示成了三个字符，chrome则显示成六个字符。</p><p>上面说过，我的这段web程序是将“中国”这两个字符按照utf-8编码输出的，</p><p>难道是在输出的过程中被转换成了别的编码？为了一探究竟我需要看到程序输出的原始字节码,原始字节码用firefox和chrome自带的工具是看不到的，这里我用wireshak分别对两个两个浏览器做了抓包。</p><p>“中国”这两个字符在utf-8编码中对应的编码为e4b8ad(中)、e59bbd(国),如果我们抓到的包中也看到的是这六个字节,那就说明程序的输出是没有问题。</p><p>对firefox的抓包:</p><p>技术分享</p><p>对chrome的抓包:</p><p>技术分享</p><p>通过wireshak可以看到两个浏览器的到的结果都是一样的，Data部分都是e4b8ade59bbd,和我们的预期一致。不同的是firefox发送请求用了404个字节，chrome用了494个字节，这个其实是两种浏览器在发送请求时,带的请求头不一样,比如用来说明浏览器身份的User-Agent请求头。</p><p>既然程序的输出没有问题，那就是浏览器为什么会展示成乱码呢? 我们都知道http程序在吐出内容时还会携带一些响应头,依次来对内容做一些说明,我们上面这段程序携带的响应头如下:</p><p>技术分享</p><p>可以看到只带了一个Content-Length头用来说明内容的字节长度,至于如何解释这六个字节浏览器是不知道的,所以浏览器此时只能“猜测”了。首先http协议本身就是字符型协议，既然响应头没有更多的说明，那默认就认为输出的内容也是字符内容了，剩下的问题就是“猜测”这六个字节是那种字符的编码了。从chrome的显示可以看到，chrome在浏览器窗口中显示了正确的utf-8编码，在”response”标签中且使用了错误的编码来解释这六个字节。Firefox则正好相反，“响应”标签中“猜”对了编码，但是浏览器窗口中却使用了错误的编码。</p><p>需要注意的是这里用“猜测”这个词其实是不准确的，实际上每个字符编码都有其特定的规则，如果对所有字符编码规则都很熟悉，给一段字节序，是可以推导出它的字符编码的。</p><p>知道了问题所在解决起来就很容易了,在http协议中有一个Content-Type头，用它可以指定内容的类型和内容的字符编码。现在我们为输出加上响应头Content-Type:text/plain; charset=utf-8，分别用两种浏览器访问<a href="http://localhost:8080,看到的响应头如下" target="_blank" rel="noopener">http://localhost:8080,看到的响应头如下</a>:</p><p>技术分享</p><p>此时firefox的浏览器窗口和chrome的“response”标签都显示了正确的字符。</p><p>截止到目前我们得到的结论应该是这样的，charset指定的编码需要和输出内容保持一致,这样在显示的时候才不会出现乱码。下面我们换一种方式来访问我们的资源,我们分别使用telnet和curl来访问<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p><p>通过Telnet来访问：</p><p>技术分享</p><p>因为我这段web程序并没有处理任何http的请求头，它的默认动作是只要建立好tcp连接后就直接输出内容，所以看到在telnet的时并没有发送任何http协议需要的请求头，且依然可以输出内容。</p><p>从图中可以看到，charset=utf-8没错，并且我对程序没有做任何的改动,也就是说程序输出的编码和Content-Type指定的编码是一致的,但我们并没有看到正确的字符。</p><p>通过curl来访问:</p><p>技术分享</p><p>可以看到响应头和内容显示，跟使用telnet访问时是一样的,内容都出现了乱码。</p><p>所以我们上面通过浏览器访问资源所得到的，关于输出编码和charset保持一致就不会出现乱码的结论是错误的吗？当然不是，不过前提是结论前必须加上“浏览器”这个限定词。实际上我们把http的响应分成数据获取和数据解释这两个步骤就会很容易理解这问题，首先在数据获取这个步骤中，浏览器、telnet、curl是没有区别的，都是和web程序先建立tcp连接，然后获取web程序返回的数据。不同的是在数据解释这个步骤中，浏览器是符合http规范的，http规范中说响应头Content-Type中的charset指定的编码，就是响应内容的实际编码，所以浏览器正确的显示了字符。我们用telnet和curl演示的例子只是负责获取数据这一个步骤，对于数据解释这个步骤是有发起命令的终端来负责的，而终端跟http协议没有半毛钱关系，终端只会只用预先设定的编码规则来显示内容。</p><p>下面是我把终端的编码设置为utf-8,然后用curl访问的结果：</p><p>技术分享</p><p>程序没有做任何改动，但是乱码消失了。</p><p>不在响应头中指定编码规则就真的不行吗？</p><p>将程序的响应头Content-Type设置为text/html,不设置charset,然后分别在两个浏览器中访问。</p><p>在firefox中访问：</p><p>技术分享</p><p>在chrome中访问:</p><p>技术分享</p><p>可以看到firefox中出现了乱码，chrome中没有。现在我们改动一下程序的输出内容，输出内容为:</p><html><head>&lt;metacharset=”utf-8”&gt;</head>中国</html><p>然后再用两个浏览器分别访问。</p><p>Firfox的访问:</p><p>技术分享</p><p>乱码消失了。</p><p>Chrom的访问：</p><p>技术分享</p><p>显示正确。</p><p>从上面的四张图可以看到，我们没有在响应头中指定内容的编码，但仍然没有出现乱码问题，原因就在Content-Type:text/html和响应内容中的<meta charset="”utf-8”">标签，这个标签对html内容本身做了一个自描述。想xml这种标签语言也可以像html这样进行自描述，也就是说对于响应是xml的内容，即使没有charset指定编码，xml也可以通过自描述对指定正确的编码。</p><p>最后需要注意的是，在处理不带charset的字符内容时，浏览器不同处理方式也不同，即使相同浏览器但版本不一样，处理方式也不一定一样。所以我这里介绍的乱码在你本地不一定会出现，但是为了确保所有浏览器不出问题，最好在响应头上加上charset并让其和内容的实际编码保持一致。如果提供的http资源并不是用在浏览器中直接访问的，而是用来提供接口供各个系统调用的，没有指定charset时就需要用其它方式来告知对方内容编码。</p><p>请求(Request)过程中出现的乱码问题</p><p>请求过程中出现乱码时主要出现在两个地方，一个是请求发送时所用的编码，另一个是web应用接收到请求后解码时所有的编码。请求发送时用什么编码，主要取决于发送请求所用的客户端,这里我们以浏览器和telnet为客户端来说明。Web应用层我们使用个tomcat来举例说明，所以如果你在工作中用的不是tomcat，那么在解码请求时会和这里介绍的解码行为不一致，但是原理是一样的，原理明白了也就可以触类旁通了。</p><p>开始之前先解释下URL的组成：</p><p>{<a href="http://localhost:8080[/app/servletpath]}?(name=xxx)" target="_blank" rel="noopener">http://localhost:8080[/app/servletpath]}?(name=xxx)</a></p><p>{}:代表URL</p><p>[]:代表URI</p><p>():代表查询参数</p><p>对tomcat使用默认设置，使用如下的代码来接收请求</p><p>@Override</p><p>public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</p><p>System.out.println(“name: “+req.getParameter(“name”));</p><p>System.out.println(“queryString: “+req.getQueryString());</p><p>System.out.println(“pathInfo: “+req.getPathInfo());</p><p>System.out.println(“requestURL:”+req.getRequestURL());</p><p>}</p><p>直接在chrome中输入<a href="http://localhost:8080/app/中国?name=中国得到的结果如下" target="_blank" rel="noopener">http://localhost:8080/app/中国?name=中国得到的结果如下</a>:</p><p>name: ??-??&frac12;</p><p>queryString:name=%E4%B8%AD%E5%9B%BD</p><p>pathInfo:/app/??-??&frac12;/</p><p>requestURL: <a href="http://localhost:8080/app/%E4%B8%AD%E5%9B%BD/" target="_blank" rel="noopener">http://localhost:8080/app/%E4%B8%AD%E5%9B%BD/</a></p><p>从打印的信息可以知道，queryString和请求URL在发送之前chrome先把中文按照utf-8进行了百分号编码，关于百分号编码可以看<a href="http://deyimsf.iteye.com/blog/2312462：" target="_blank" rel="noopener">http://deyimsf.iteye.com/blog/2312462：</a></p><p>从里这判断出请求发送的时候编码是正确的，但是在使用Request.getParameter()和Request.getPathInfo()的时候出现了解码错误。在tomcat文档中可以看到有URIEncoding一个参数，文档对它的解释如下:</p><p>This specifies the characterencoding used to decode the URI bytes, after %xx decoding the URL. If notspecified, ISO-8859-1 will be used.</p><p>大概意思是tomcat会使用URIEncoding指定的编码对URI部分进行百分解码，如果没有指定则使用ISO-8859-1对其进行解码。通过这段解释可以知道,出现乱码的原因是未用URIEncoding指定正确的编码。下面我们将URIEncoding设置为utf-8看会出现什么结果，在tomcat的server.xml文件中配置如下:</p><p>&lt;Connectorport=”8080” protocol=”HTTP/1.1”</p><p>connectionTimeout=”20000”</p><p>redirectPort=”8443”URIEncoding=”utf-8”/&gt;</p><p>直接在chrome中输入<a href="http://localhost:8080/app/中国?name=中国，结果如下" target="_blank" rel="noopener">http://localhost:8080/app/中国?name=中国，结果如下</a>:</p><p>name: 中国</p><p>queryString:name=%E4%B8%AD%E5%9B%BD</p><p>pathInfo: /app/中国/</p><p>requestURL:<a href="http://localhost:8080/app/%E4%B8%AD%E5%9B%BD/" target="_blank" rel="noopener">http://localhost:8080/app/%E4%B8%AD%E5%9B%BD/</a></p><p>可以看到乱码消失了，并且入参name的乱码也消失了，这说明URIEncoding对QueryString也是起作用的。</p><p>在上面的例子中我们可以看到chrome在发送请求之前，会把所有中文进行百分号编码再发送出去，并且字符编码使用的utf-8。实际上在生产过程中为了保证不出现乱码，对请求进行百分号编码(又叫URL编码)是必须的，至于为什么要进行百分号编码，可以看我早前写的一遍文章<a href="http://deyimsf.iteye.com/admin/blogs/1776082：" target="_blank" rel="noopener">http://deyimsf.iteye.com/admin/blogs/1776082：</a></p><p>这篇文章对为什么要百分号编码做了一个简单的解释。</p><p>由于http协议只规定请求发送时应该进行编码，并没有规定使用哪种编码，所以chrome的这种处理方式，并不能代表所有的浏览器。仅同一个请求中的URI部分和Query String部分，有些浏览器的编码方式也有可能是不一样的。比如我在工作中就遇到过URI 部分使用GBK编码(没有进行百分号编码)，而Query String使用的是utf-8进行百分号编码的浏览器。解决这个问题的办法就是我们在发送任何请求之前，一定要对有中文的地方使用某种字符编码(比如utf-8)对其进行百分号编码。</p><p>关于请求体中字符编码的问题</p><p>我们上面说的乱码问题都出现在URL和Query String中，还有一种容易出现乱码的问题是在http的请求体中。使用http中的post方法提交表单就可以将入参放入到请求体中。</p><p>服务端用于接收post请求的代码很简单，如下：</p><p>@Override</p><p>public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</p><p>System.out.println(“name:”+ req.getParameter(“name”));</p><p>}</p><p>非常简单，接收到入参之后直接在控制台输出。</p><p>Firefox中进行post访问：</p><p>技术分享</p><p>Chrome中进行post访问:</p><p>技术分享</p><p>然后在两个浏览器中分别点击提交按钮。</p><p>Firefox中提交后，后台获得结果如下：</p><p>name: ?D?1;ú</p><p>Chrome中提交后，后台后的结果如下：</p><p>name: 中国</p><p>两个浏览器再提交后都出现了乱码，并且出现了两种乱码，因为服务端的程序是一样的，所以从这个现象我们可以推测出，两个浏览器在发送请求时使用的编码肯定是不一样的，暂时还看不出是客户端问题还是服务端的问题。下面我们使用wireshark来看看两个浏览器在发送请求体时，使用的原始编码是什么。</p><p>Firefox发送请求的wireshark截图：</p><p>技术分享</p><p>Chrome发送请求的wireshark截图：</p><p>技术分享</p><p>分别看两张图的最下面蓝色区域，可以看到firefox部分是</p><p>name=%D6%D0%B9%FA</p><p>chrome的部分是</p><p>name=%26%2320013%3B%26%2322269%3B</p><p>相同的地方是两个浏览器都对入参name的值做了百分号编码，不同的是使用的字符编码不一样，两个浏览器发送请求时，分别使用了自己认为是“正确”的字符编码对入参做了百分号编码。有没有办法让不同的浏览器在发送post请求时使用同一的编码呢？一种简单粗暴的办法是，我们用js来控制post提交，并且在提交前将所有的入参都按照统一的字符编码(如utf-8编码)做百分号编码。</p><p>现在来看看另一种办法，上面我们在对请求提交之前为两个浏览器分别截了两张图，可以看到在firefox和chrome获取表单后的http响应头，这两张图的分别只有三个同样的响应头Server、Content-Length、Date，现在我们为这个http响应增加一个Content-Type:text/html; charset=utf-8，然后分别在两个浏览器中输入”中国”并按提交按钮。</p><p>此时可以看到，两个浏览器发送的请求提都变成了</p><p>name=%E4%B8%AD%E5%9B%BD</p><p>即urf-8形式的百分号编码。</p><p>两个浏览器提交后，后台获得的数据是</p><p>name:??-??&frac12;</p><p>还是乱码，只不过现在乱的一样了。</p><p>这里我们后台获取入参值的时候，使用了和前面获取Query String中的入参时一样的方法, Request.getParameter()，tomcat中的URIEncoding设置和前面是一致的，用的是utf-8编码。浏览器发送请求使用的是同样编码规则，后台接收参数也是使用的同样的方法，唯一不同的是http请求方法不一样，一个get，一个是post。所以到这里可以得出一个结论，URIEncoding对post方式不起作用。这里需要用到Request.setCharsetEncoding()方法，这个方法只对请求体起作用。</p><p>服务端代码变成如下形式：</p><p>@Override</p><p>public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</p><p>req.setCharacterEncoding(“utf-8”);</p><p>System.out.println(“name: “+req.getParameter(“name”));</p><p>}</p><p>注意Request.setCharsetEncoding()方法一定要放在所有Request.getParameter()等方法之前。</p><p>使用Content-Type请求头指定字符编码</p><p>前面我们一直使用Content-Type作为响应头，来明确响应内容的字符编码，其实这http协议头也可以用在请求中，可以用来指定请求体中的字符编码。</p><p>现在我们将服务端的中的Request.setCharacterEncoding()部分注释掉，我们使用telnet程序来模拟浏览器发送请求，模拟操作如下：</p><p>技术分享</p><p>可以看到为Content-Type头增加了charset=utf-8设置。</p><p>这时候在看后端打印出了正确的编码:</p><p>name:中国</p><p>最后的出的结论是，http使用post方式提交表单时，发送请求所使用的编码由响应头Content-Type中的charset决定，如果在获取表单的响应中没有设置charset，则浏览器根据自身“喜好”来决定。服务器端在解析请求体内容时，解码编码用Request.setCharsetEncoding()方法(j2ee)或者请求头Content-Type来指定。</p><p>关于ISO8859-1的问题</p><p>前面我们介绍了三种设置服务端解析字符的编码方式，以此来避免解码过程中出现的乱码问题，分别是URIEncoding、setCharsetEncoding()、Content-Type。如果不用这三种方式，那么对于tomcat来说，它会默认使用ISO8859-1对字符做解码。</p><p>服务端程序做如下改造：</p><p>@Override</p><p>public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</p><p>System.out.println(“name: “+newString(req.getParameter(“name”).getBytes(“iso8859-1”),”utf-8”));</p><p>}</p><p>@Override</p><p>public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</p><p>doGet(req, resp);</p><p>}</p><p>客户端我们使用chrome浏览器:</p><p>其它地方用默认值，这其中包括tomcat中不设置URIEncodng，代码中没有Reqeust.setCharsetEncodnig()，请求头Content-Type中没有charset。然后用我们前面提到的所有访问方式，比如多种浏览器的get请求、多种浏览器的post请求，前提是发送请求时一定要对中文做百分号编码。所有这些方式都试过一遍之后你会发现，不管哪种方式，只要入参name的值使用的是utf-8编码(后台的doGet方法里用的是utf-8，需要和这里保持一致)，后台都不会出现乱码。是不是感觉很神(诡)奇(异)。下面我们通过走进字符编码的最底层，来一起剖析这个神奇的现象。</p><p>如果一个字符从输入到输出出现了乱码，那么在这个输入输出的中间过程中一定发生过编码转换。对于我们当前的测试用例，发生了六次编码转换:</p><p>浏览器对字符做百分号编码</p><p>Tomcat解百分号编码</p><p>ISO8859-1编码转Java内码</p><p>Java内码转ISO8859-1编码</p><p>把字节数组当成utf-8编码转Java内码</p><p>Java内码转输出编码</p><p>开始解释这六次编码转换之前，先明确一些描述规则。</p><p>字符：直接用其字面意思来书写，比如字符”a”、”中”等</p><p>字节：用16进制加上前缀0x表示，比如ascii字符”a”字节表示就是0x61</p><p>String.getBytes(“utf-8”):把java内码转成utf-8编码</p><p>newString(bytes[],”utf-8”): 把字节数组当成utf-8编码-转成java内码</p><p>浏览器对字符做百分号编码</p><p>前面我们已经知道，对于”中国”这两个字符，他们的utf-8编码分别是0xE4B8AD、0xE59BBD，每个字符占用三个字节。经过百分号编码后变成了%E4%B8%AD、%E5%9B%BD，可以看到百分号编码对原始编码是无损的，它只是把原始字节变成了%+原始字节的16进制表示。比如字节0xE4，转成百分号编码为%E4，有一个字节变成了三个字节。</p><p>Tomcat解码百分号编码</p><p>解码百分号编码也很简单，其实就是去掉百分号，然后将百分号后的两个字节合并成一个字节，如百分号编码%E4，解码后变为字节0xE4。到这一步“中国”这两个字符就变成了0xE4B8AD、0xE59BBD。</p><p>详细的百分编码可以看<a href="http://deyimsf.iteye.com/blog/2312462：" target="_blank" rel="noopener">http://deyimsf.iteye.com/blog/2312462：</a></p><p>ISO8859-1转java内码</p><p>ISO8859-1可以简单理解为ascii的升级版本，我们知道ascii只用到了一个字节中的后7位，高位始终是0，所以它最多可以表示128个字符。ISO8859-1可ascii一样都是单字节字符集，不同的是它把最高位利用起来了，增加了一些西方字符(如±、÷等字符)，详细内容可以参考<a href="https://zh.wikipedia.org/wiki/ISO/IEC_8859-1：" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/ISO/IEC_8859-1：</a></p><p>我们这里说的java内码是java程序运行时，在内存中存储字符的编码，用的是unicode标准中定义的utf-16编码。在java中处理字符就是各种字符编码转java内码，java内码再转各种字符编码。举一个简单的例子，java处理字符类似翻译官翻译语言。比如一个母语是汉语，精通日语和英语的翻译官，他在将日语转成英语或英语转成日语时，一定会先别他们转成母语，然后再转成其它语言。看到这里你有可能会说，厉害的翻译官不需要转成母语，或者翻译官的母语也不是一种，有可能好多种。但是目前我们的大部分计算机语言就只有一种母语。</p><p>ISO8859-1和java内码(utf-16)介绍完了就可以说转换的问题了。utf-16是一个把Unicode码点值编码成16位(两个字节)整数的序列，它会把unicode字符编码成2字节或四字节。前面说了ISO8859-1是8位长的单字节字符编码，所以utf-16编码和ISO8859-1编码是不兼容的，但是utf-16包含ISO8859-1中的所有字符，所以他们的编码之间也是有对应关系的。</p><p>在unicode文档中翻看下面两篇文档</p><p><a href="http://www.unicode.org/charts/PDF/U0000.pdf" target="_blank" rel="noopener">http://www.unicode.org/charts/PDF/U0000.pdf</a></p><p><a href="http://www.unicode.org/charts/PDF/U0080.pdf" target="_blank" rel="noopener">http://www.unicode.org/charts/PDF/U0080.pdf</a></p><p>从中可以看到，ISO8859-1所表示的所有字符，在unicode字符集中都可以找到，并且他们对应的unicode的码点值就是在原有的编码前加上8位0，比如ISO8859-1中字符”a”表示为0x61, 在unicode字符集中字符”a”表示为0x0061。有了对应关系就可以进行编码转换了。</p><p>在上面第2步(Tomcat解码百分号编码)后，“中国”这两个字符在内存中是这样的0xE4B8ADE59BBD，正好六个字节。我们知道这其实是这两个字符的utf-8编码序列，但是由于我们并没有告诉tomcat这是什么字符编码序列，所以tomcat就认为这是一个ISO8859-1编码序列，并把它告诉了java程序，java程序要做的就是把这个字节序列按照ISO8859-1转换成utf-16，转换成功后的对应关系是这样的:</p><p>ISO8859-1</p><p>0xE4</p><p>0xB8</p><p>0xAD</p><p>0xE5</p><p>0x9B</p><p>0xBD</p><p>UTF-16</p><p>0x00E4</p><p>0x00B8</p><p>0x00AD</p><p>0x00E5</p><p>0x009B</p><p>0x00BD</p><p>可以看到原本的两个字符，在java中变成了六个字符;原本的六个字节，在java中变成了12个字节。</p><p>Java内码转换成ISO8859-1编码</p><p>这一步骤实际上是在执行我们例子程序中</p><p>System.out.println(“name: “+newString(req.getParameter(“name”).getBytes(“iso8859-1”),”utf-8”));</p><p>getBytes(“iso8859-1”)这个方法，也就是把utf-16转换成ISO8859-1。有第三步(ISO8859-1转java内码)中的对应表格可以看到，utf-16转ISO8859-1只需要把每个字符前面的8位0去掉就可以了，转换成功后俩个字符就又变成了0xE4B8ADE59BBD。虽然两次转换过程中，对字节的解释是错误的，但是并没有丢失原始字节信息。</p><p>把字节数组当成utf-8编码转java内码</p><p>这一步执行的是上面例子程序中的new String(0xE4B8ADE59BBD,”utf-8”)方法，因为我们的字节数组本来就是utf-8编码，所以按照utf-8来转码肯定是没问题的，转换成功后的对应关系是这一样的：</p><p>UTF-8</p><p>0xE4B8AD</p><p>0xE59BBD</p><p>UTF-16</p><p>0x4E2D</p><p>0x56FD</p><p>到这里“中国”这两个字符在java内部才得到了正确的表示。</p><p>Java内码转输出编码</p><p>这一步执行的是上面例子程序中的System.out.println(“中国”)方法，现在“中国”这两个字符在java内部用utf-16得到了正确的表示，剩下的最后一步就是对外输出，也就是对外翻译的过程，我们这里用的java自带的println方法，这个方法会根据当前平台的自身编码进行输出，比如你的平台环境是中文，那输出的可能就是GBK编码。如果你不想用平台编码，想自己决定输出编码，很简单</p><p>System.out.write(“中国”.getByte(“字符编码”));</p><p>这样就可以了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;概述&lt;/p&gt;
+&lt;p&gt;前段时间陆陆续续有一些同事跟我询问中文乱码问题，每个人的问题也都大同小异。而我最早之前也一直想写一篇这样的文章，无奈都腾不出富裕的时间，或者说拖延症比较严重(其实还是懒)，这次就索性对自己狠一把，对这个问题做一个总结。&lt;/p&gt;
+&lt;p&gt;我们知道http协议
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>http跨域时的options请求</title>
+    <link href="http://nizouba.com/2018/09/28/http%E8%B7%A8%E5%9F%9F%E6%97%B6%E7%9A%84options%E8%AF%B7%E6%B1%82/"/>
+    <id>http://nizouba.com/2018/09/28/http跨域时的options请求/</id>
+    <published>2018-09-28T13:43:39.000Z</published>
+    <updated>2018-09-28T13:50:14.531Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、简介<br>    出于安全考虑，并不是所有域名访问后端服务都可以。其实在正式跨域之前，浏览器会根据需要发起一次预检（也就是option请求），用来让服务端返回允许的方法（如get、post），被跨域访问的Origin（来源或者域），还有是否需要Credentials(认证信息)等。那么浏览器在什么情况下能预检呢？</p><p>二、两种请求方式<br>    浏览器将CORS请求分为两类：简单请求（simple request）和非简单请求（not-simple-request）,简单请求浏览器不会预检，而非简单请求会预检。这两种方式怎么区分？</p><p>同时满足下列三大条件，就属于简单请求，否则属于非简单请求</p><p>1.请求方式只能是：GET、POST、HEAD</p><p>2.HTTP请求头限制这几种字段：Accept、Accept-Language、Content-Language、Content-Type、Last-Event-ID <strong>不满足，我们的header有token等</strong> </p><p>3.Content-type只能取：application/x-www-form-urlencoded、multipart/form-data、text/plain <strong>不满足，我们的content-type是application/json</strong></p><p>对于简单请求，浏览器直接请求，会在请求头信息中，增加一个origin字段，来说明本次请求来自哪个源（协议+域名+端口）。服务器根据这个值，来决定是否同意该请求，服务器返回的响应会多几个头信息字段，如图所示：上面的头信息中，三个与CORS请求相关，都是以Access-Control-开头。</p><ol><li><p>Access-Control-Allow-Origin：该字段是必须的，* 表示接受任意域名的请求，还可以指定域名</p></li><li><p>Access-Control-Allow-Credentials：该字段可选，是个布尔值，表示是否可以携带cookie，（注意：如果Access-Control-Allow-Origin字段设置*，此字段设为true无效）</p></li><li><p>Access-Control-Allow-Headers：该字段可选，里面可以获取Cache-Control、Content-Type、Expires等，如果想要拿到其他字段，就可以在这个字段中指定。比如图中指定的GUAZISSO</p></li></ol><p>非简单请求是对那种对服务器有特殊要求的请求，比如请求方式是PUT或者DELETE，或者Content-Type字段类型是application/json。都会在正式通信之前，增加一次HTTP请求，称之为预检。浏览器会先询问服务器，当前网页所在域名是否在服务器的许可名单之中，服务器允许之后，浏览器会发出正式的XMLHttpRequest请求，否则会报错。（备注：之前碰到预检请求后端没有通过，就不会发正式请求，然后找了好久原因，原来后端给忘了设置…）Java后端实现拦截器，排除Options</p><p>JAVA代码片段<br>就Content-Type为application/json为例：对比两张图片，一次预检请求，一 次正式请求：</p><p>预检请求<br>正式请求<br>很明显，请求头中预检请求不会携带cookie，正式请求会携带cookie和参数。跟普通请求一样，响应头也会增加同样字段。</p><p>一旦服务器通过了“预检”请求，以后每次浏览器正常的CORS请求，就都跟简单请求一样。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一、简介&lt;br&gt;    出于安全考虑，并不是所有域名访问后端服务都可以。其实在正式跨域之前，浏览器会根据需要发起一次预检（也就是option请求），用来让服务端返回允许的方法（如get、post），被跨域访问的Origin（来源或者域），还有是否需要Credentials(
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之前后端交互</title>
+    <link href="http://nizouba.com/2018/09/28/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/"/>
+    <id>http://nizouba.com/2018/09/28/自创面试题之前后端交互/</id>
+    <published>2018-09-28T08:40:43.000Z</published>
+    <updated>2018-09-28T13:39:32.400Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是源？"><a href="#什么是源？" class="headerlink" title="什么是源？"></a>什么是源？</h3><p>源（origin）就是协议、域名和端口号。</p><h3 id="什么是同源策略？"><a href="#什么是同源策略？" class="headerlink" title="什么是同源策略？"></a>什么是同源策略？</h3><p>同源策略（SOP：Same Origin Policy）是浏览器的一个安全功能，不同源的客户端脚本在没有明确授权的情况下，不能读写对方资源。所以a.com下的js脚本采用ajax读取b.com里面的文件数据是会报错的。</p><h3 id="哪些地方不受同源策略限制？"><a href="#哪些地方不受同源策略限制？" class="headerlink" title="哪些地方不受同源策略限制？"></a>哪些地方不受同源策略限制？</h3><ol><li>页面中的链接，重定向以及表单提交是不会受到同源策略限制的。</li><li>跨域资源的引入是可以的。但是js不能读写加载的内容。如嵌入到页面中的<script src="..."></script>，<img>，<link>，<iframe>等。<h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3>受前面所讲的浏览器同源策略的影响，不是同源的脚本不能操作其他源下面的对象。想要操作另一个源下的对象是就需要跨域。<h3 id="你们是怎么处理跨域的？"><a href="#你们是怎么处理跨域的？" class="headerlink" title="你们是怎么处理跨域的？"></a>你们是怎么处理跨域的？</h3>跨域资源共享（Cross-Origin Resource Sharing）<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4>是一种跨域机制、规范、标准，怎么叫都一样，但是这套标准是针对服务端的，而浏览器端只要支持HTML5即可。<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4>可以让服务端决定哪些请求源可以进来拿数据，所以服务端起主导作用<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4>要实现CORS跨域其实非常简单，说白了就是在服务端设置一系列的HTTP头，主要分为请求头和响应头，在请求和响应时加上这些HTTP头即可轻松实现CORS<br>请求头和响应头信息都是在服务端设置好的，一般在Filter阶段设置，浏览器端不用关心，唯一要设置的地方就是：跨域时是否要携带cookie</iframe></li></ol><p>####</p><h3 id="HTTP请求中的OPTION的用途？"><a href="#HTTP请求中的OPTION的用途？" class="headerlink" title="HTTP请求中的OPTION的用途？"></a>HTTP请求中的OPTION的用途？</h3><h4 id="获取服务器支持的HTTP请求方法"><a href="#获取服务器支持的HTTP请求方法" class="headerlink" title="获取服务器支持的HTTP请求方法"></a>获取服务器支持的HTTP请求方法</h4><p>OPTIONS 方法对服务器发起请求，以检测服务器支持哪些 HTTP 方法：<br>    curl -X OPTIONS <a href="http://example.org" target="_blank" rel="noopener">http://example.org</a> -i<br>响应报文包含一个 Allow 首部字段，该字段的值表明了服务器支持的所有 HTTP 方法：<br>    HTTP/1.1 200 OK<br>    Allow: OPTIONS, GET, HEAD, POST<br>    Cache-Control: max-age=604800<br>    Date: Thu, 13 Oct 2016 11:45:00 GMT<br>    Expires: Thu, 20 Oct 2016 11:45:00 GMT<br>    Server: EOS (lax004/2813)<br>    x-ec-custom-error: 1<br>    Content-Length: 0</p><ol start="2"><li>用来检查服务器的性能。例如：AJAX进行跨域请求时的预检，需要向另外一个域名的资源发送一个HTTP OPTIONS请求头，用以判断实际发送的请求是否安全。</li><li></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;什么是源？&quot;&gt;&lt;a href=&quot;#什么是源？&quot; class=&quot;headerlink&quot; title=&quot;什么是源？&quot;&gt;&lt;/a&gt;什么是源？&lt;/h3&gt;&lt;p&gt;源（origin）就是协议、域名和端口号。&lt;/p&gt;
+&lt;h3 id=&quot;什么是同源策略？&quot;&gt;&lt;a href=&quot;#什么是同
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>自创面试题之其他框架</title>
@@ -97,15 +167,15 @@
     <link href="http://nizouba.com/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BJava%E8%AF%AD%E6%B3%95/"/>
     <id>http://nizouba.com/2018/09/25/自创面试题之Java语法/</id>
     <published>2018-09-25T08:02:20.000Z</published>
-    <updated>2018-09-25T08:02:49.662Z</updated>
+    <updated>2018-09-28T13:17:21.358Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="什么是Blank-Final"><a href="#什么是Blank-Final" class="headerlink" title="什么是Blank Final"></a>什么是Blank Final</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="什么是Blank-Final"><a href="#什么是Blank-Final" class="headerlink" title="什么是Blank Final"></a>什么是Blank Final</h3><p>不在字段声明时赋初始值，而是在构造函数中将字段初始化的形式在Java里叫作Blank Final</p><pre><code>private final Gate gate;private final String myname;private final String myaddress;public UserThread(Gate gate, String myname, String myaddress) {    this.gate = gate;    this.myname = myname;    this.myaddress = myaddress;}</code></pre>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;什么是Blank-Final&quot;&gt;&lt;a href=&quot;#什么是Blank-Final&quot; class=&quot;headerlink&quot; title=&quot;什么是Blank Final&quot;&gt;&lt;/a&gt;什么是Blank Final&lt;/h3&gt;
+        &lt;h3 id=&quot;什么是Blank-Final&quot;&gt;&lt;a href=&quot;#什么是Blank-Final&quot; class=&quot;headerlink&quot; title=&quot;什么是Blank Final&quot;&gt;&lt;/a&gt;什么是Blank Final&lt;/h3&gt;&lt;p&gt;不在字段声明时赋初始值，而是在构造函数中将字
       
     
     </summary>
@@ -175,14 +245,23 @@
     <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>http://nizouba.com/2018/09/23/自创面试题之设计模式/</id>
     <published>2018-09-23T08:10:37.000Z</published>
-    <updated>2018-09-23T10:41:08.091Z</updated>
+    <updated>2018-09-28T01:19:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Spring中用了哪些设计模式以及原则？举例"><a href="#Spring中用了哪些设计模式以及原则？举例" class="headerlink" title="Spring中用了哪些设计模式以及原则？举例"></a>Spring中用了哪些设计模式以及原则？举例</h3><h3 id="Netty中用了哪些设计模式以及原则？举例"><a href="#Netty中用了哪些设计模式以及原则？举例" class="headerlink" title="Netty中用了哪些设计模式以及原则？举例"></a>Netty中用了哪些设计模式以及原则？举例</h3><h3 id="设计模式六大原则"><a href="#设计模式六大原则" class="headerlink" title="设计模式六大原则"></a>设计模式六大原则</h3><h3 id="builder模式的优缺"><a href="#builder模式的优缺" class="headerlink" title="builder模式的优缺"></a>builder模式的优缺</h3>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Spring中用了哪些设计模式以及原则？举例&quot;&gt;&lt;a href=&quot;#Spring中用了哪些设计模式以及原则？举例&quot; class=&quot;headerlink&quot; title=&quot;Spring中用了哪些设计模式以及原则？举例&quot;&gt;&lt;/a&gt;Spring中用了哪些设计模式以及原则？
+      
     
     </summary>
     
       <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -191,14 +270,23 @@
     <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E6%9E%B6%E6%9E%84/"/>
     <id>http://nizouba.com/2018/09/23/自创面试题之软件工程与架构/</id>
     <published>2018-09-23T08:10:31.000Z</published>
-    <updated>2018-09-23T10:41:07.890Z</updated>
+    <updated>2018-09-28T04:58:31.767Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="分布式的CAP理论？"><a href="#分布式的CAP理论？" class="headerlink" title="分布式的CAP理论？"></a>分布式的CAP理论？</h3><p>任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance），最多只能同时满足两项。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;分布式的CAP理论？&quot;&gt;&lt;a href=&quot;#分布式的CAP理论？&quot; class=&quot;headerlink&quot; title=&quot;分布式的CAP理论？&quot;&gt;&lt;/a&gt;分布式的CAP理论？&lt;/h3&gt;&lt;p&gt;任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（A
+      
     
     </summary>
     
       <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -343,54 +431,6 @@
     <id>http://nizouba.com/2018/09/23/自创面试题之异常/</id>
     <published>2018-09-23T08:07:30.000Z</published>
     <updated>2018-09-23T10:41:07.925Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之泛型</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B3%9B%E5%9E%8B/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之泛型/</id>
-    <published>2018-09-23T08:07:23.000Z</published>
-    <updated>2018-09-23T10:41:07.883Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之集合</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E9%9B%86%E5%90%88/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之集合/</id>
-    <published>2018-09-23T08:07:18.000Z</published>
-    <updated>2018-09-23T10:41:08.045Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之SpringBoot</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BSpringBoot/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之SpringBoot/</id>
-    <published>2018-09-23T08:06:29.000Z</published>
-    <updated>2018-09-23T10:41:07.890Z</updated>
     
     <summary type="html">
     
