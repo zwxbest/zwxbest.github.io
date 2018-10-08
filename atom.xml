@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nizouba.com/"/>
-  <updated>2018-09-29T14:23:50.081Z</updated>
+  <updated>2018-10-07T13:17:42.000Z</updated>
   <id>http://nizouba.com/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自创面试题之Node.JS</title>
+    <link href="http://nizouba.com/2018/10/07/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BNode-JS/"/>
+    <id>http://nizouba.com/2018/10/07/自创面试题之Node-JS/</id>
+    <published>2018-10-07T12:41:05.000Z</published>
+    <updated>2018-10-07T13:17:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="npm-i-什么意思"><a href="#npm-i-什么意思" class="headerlink" title="npm i 什么意思?"></a>npm i 什么意思?</h3><p>等同于npm install，本地安装</p><ol><li>将安装包放在 ./node_modules 下（运行 npm 命令时所在的目录），如果没有 node_modules 目录，会在当前执行 npm 命令的目录下生成 node_modules 目录。</li><li>可以通过 require() 来引入本地安装的包。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;npm-i-什么意思&quot;&gt;&lt;a href=&quot;#npm-i-什么意思&quot; class=&quot;headerlink&quot; title=&quot;npm i 什么意思?&quot;&gt;&lt;/a&gt;npm i 什么意思?&lt;/h3&gt;&lt;p&gt;等同于npm install，本地安装&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将安装
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之正则表达式</title>
+    <link href="http://nizouba.com/2018/10/06/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>http://nizouba.com/2018/10/06/自创面试题之正则表达式/</id>
+    <published>2018-10-06T06:04:57.000Z</published>
+    <updated>2018-10-07T12:42:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="非怎么写"><a href="#非怎么写" class="headerlink" title="非怎么写"></a>非怎么写</h3><p>[^0-9]</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;非怎么写&quot;&gt;&lt;a href=&quot;#非怎么写&quot; class=&quot;headerlink&quot; title=&quot;非怎么写&quot;&gt;&lt;/a&gt;非怎么写&lt;/h3&gt;&lt;p&gt;[^0-9]&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之Go语法</title>
+    <link href="http://nizouba.com/2018/10/06/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BGo%E8%AF%AD%E6%B3%95/"/>
+    <id>http://nizouba.com/2018/10/06/自创面试题之Go语法/</id>
+    <published>2018-10-06T03:11:31.000Z</published>
+    <updated>2018-10-07T12:42:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="defer的作用是什么？"><a href="#defer的作用是什么？" class="headerlink" title="defer的作用是什么？"></a>defer的作用是什么？</h3><p>在return之前执行，panic相当于throw Exception，也会执行defer</p><p>defer有一个栈结构，FILO<br>    defer print 1<br>    defer print 2<br>打印2，1</p><p>另外在panic或者return之后的defer肯定是不能执行的。<br>    func testDeferPanicOrder()  {<br>        panic(“test Order”)<br>        defer  fmt.Println(“defer  —————“)<br>    }</p><h3 id="panic的作用是什么？"><a href="#panic的作用是什么？" class="headerlink" title="panic的作用是什么？"></a>panic的作用是什么？</h3><ol><li>停止当前函数的执行</li><li>一直向上返回，执行每一层的defer</li><li>如果没有遇见recover，程序退出</li></ol><h3 id="recover的作用是什么？"><a href="#recover的作用是什么？" class="headerlink" title="recover的作用是什么？"></a>recover的作用是什么？</h3><ol><li>仅在defer调用中使用</li><li>可以获取到panic的值</li><li>如果无法处理，可重新panic</li></ol><h3 id="r-error-是什么语法？"><a href="#r-error-是什么语法？" class="headerlink" title="r.(error)是什么语法？"></a>r.(error)是什么语法？</h3><p>类型动态转换/查询,将r转换成error类型。</p><h3 id="gopm的本地仓库有啥用？"><a href="#gopm的本地仓库有啥用？" class="headerlink" title="gopm的本地仓库有啥用？"></a>gopm的本地仓库有啥用？</h3><p>不知道 todo，没有src目录，即使设定为gopath也不行。</p><h3 id="Golang为什么会出现不能调用方法的情况？"><a href="#Golang为什么会出现不能调用方法的情况？" class="headerlink" title="Golang为什么会出现不能调用方法的情况？"></a>Golang为什么会出现不能调用方法的情况？</h3><p>方法必须大写才能被其他文件调用</p><h3 id="time-Tick的作用是什么？"><a href="#time-Tick的作用是什么？" class="headerlink" title="time.Tick的作用是什么？"></a>time.Tick的作用是什么？</h3><p>限速，<br>    var rateLimiter = time.Tick(10 * time.Millisecond)<br>    &lt;-rateLimiter</p><p>这样是每隔10毫秒才会继续执行<br>    for range time.Tick(30 * time.Millisecond) {<br>        repaint()<br>    }<br>因为time.Tick()返回的是一个channel,每隔指定的时间会有数据从channel中出来，for range不仅能遍历map,slice,array还能取出channel中数据，range前面可以不用变量接收，所以可以简写成上面的形式。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;defer的作用是什么？&quot;&gt;&lt;a href=&quot;#defer的作用是什么？&quot; class=&quot;headerlink&quot; title=&quot;defer的作用是什么？&quot;&gt;&lt;/a&gt;defer的作用是什么？&lt;/h3&gt;&lt;p&gt;在return之前执行，panic相当于throw Exce
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>根据自身工作经历，深入分析令程序员头疼的基于从浏览器到服务端的字符乱码问题</title>
@@ -65,9 +143,9 @@
     <link href="http://nizouba.com/2018/09/28/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/"/>
     <id>http://nizouba.com/2018/09/28/自创面试题之前后端交互/</id>
     <published>2018-09-28T08:40:43.000Z</published>
-    <updated>2018-09-28T13:39:32.400Z</updated>
+    <updated>2018-10-06T05:52:10.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="什么是源？"><a href="#什么是源？" class="headerlink" title="什么是源？"></a>什么是源？</h3><p>源（origin）就是协议、域名和端口号。</p><h3 id="什么是同源策略？"><a href="#什么是同源策略？" class="headerlink" title="什么是同源策略？"></a>什么是同源策略？</h3><p>同源策略（SOP：Same Origin Policy）是浏览器的一个安全功能，不同源的客户端脚本在没有明确授权的情况下，不能读写对方资源。所以a.com下的js脚本采用ajax读取b.com里面的文件数据是会报错的。</p><h3 id="哪些地方不受同源策略限制？"><a href="#哪些地方不受同源策略限制？" class="headerlink" title="哪些地方不受同源策略限制？"></a>哪些地方不受同源策略限制？</h3><ol><li>页面中的链接，重定向以及表单提交是不会受到同源策略限制的。</li><li>跨域资源的引入是可以的。但是js不能读写加载的内容。如嵌入到页面中的<script src="..."></script>，<img>，<link>，<iframe>等。<h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3>受前面所讲的浏览器同源策略的影响，不是同源的脚本不能操作其他源下面的对象。想要操作另一个源下的对象是就需要跨域。<h3 id="你们是怎么处理跨域的？"><a href="#你们是怎么处理跨域的？" class="headerlink" title="你们是怎么处理跨域的？"></a>你们是怎么处理跨域的？</h3>跨域资源共享（Cross-Origin Resource Sharing）<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4>是一种跨域机制、规范、标准，怎么叫都一样，但是这套标准是针对服务端的，而浏览器端只要支持HTML5即可。<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4>可以让服务端决定哪些请求源可以进来拿数据，所以服务端起主导作用<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4>要实现CORS跨域其实非常简单，说白了就是在服务端设置一系列的HTTP头，主要分为请求头和响应头，在请求和响应时加上这些HTTP头即可轻松实现CORS<br>请求头和响应头信息都是在服务端设置好的，一般在Filter阶段设置，浏览器端不用关心，唯一要设置的地方就是：跨域时是否要携带cookie</iframe></li></ol><p>####</p><h3 id="HTTP请求中的OPTION的用途？"><a href="#HTTP请求中的OPTION的用途？" class="headerlink" title="HTTP请求中的OPTION的用途？"></a>HTTP请求中的OPTION的用途？</h3><h4 id="获取服务器支持的HTTP请求方法"><a href="#获取服务器支持的HTTP请求方法" class="headerlink" title="获取服务器支持的HTTP请求方法"></a>获取服务器支持的HTTP请求方法</h4><p>OPTIONS 方法对服务器发起请求，以检测服务器支持哪些 HTTP 方法：<br>    curl -X OPTIONS <a href="http://example.org" target="_blank" rel="noopener">http://example.org</a> -i<br>响应报文包含一个 Allow 首部字段，该字段的值表明了服务器支持的所有 HTTP 方法：<br>    HTTP/1.1 200 OK<br>    Allow: OPTIONS, GET, HEAD, POST<br>    Cache-Control: max-age=604800<br>    Date: Thu, 13 Oct 2016 11:45:00 GMT<br>    Expires: Thu, 20 Oct 2016 11:45:00 GMT<br>    Server: EOS (lax004/2813)<br>    x-ec-custom-error: 1<br>    Content-Length: 0</p><ol start="2"><li>用来检查服务器的性能。例如：AJAX进行跨域请求时的预检，需要向另外一个域名的资源发送一个HTTP OPTIONS请求头，用以判断实际发送的请求是否安全。</li><li></li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="什么是源？"><a href="#什么是源？" class="headerlink" title="什么是源？"></a>什么是源？</h3><p>源（origin）就是协议、域名和端口号。</p><h3 id="什么是同源策略？"><a href="#什么是同源策略？" class="headerlink" title="什么是同源策略？"></a>什么是同源策略？</h3><p>同源策略（SOP：Same Origin Policy）是浏览器的一个安全功能，不同源的客户端脚本在没有明确授权的情况下，不能读写对方资源。所以a.com下的js脚本采用ajax读取b.com里面的文件数据是会报错的。</p><h3 id="哪些地方不受同源策略限制？"><a href="#哪些地方不受同源策略限制？" class="headerlink" title="哪些地方不受同源策略限制？"></a>哪些地方不受同源策略限制？</h3><ol><li>页面中的链接，重定向以及表单提交是不会受到同源策略限制的。</li><li>跨域资源的引入是可以的。但是js不能读写加载的内容。如嵌入到页面中的<script src="..."></script>，<img>，<link>，<iframe>等。<h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3>受前面所讲的浏览器同源策略的影响，不是同源的脚本不能操作其他源下面的对象。想要操作另一个源下的对象是就需要跨域。<h3 id="你们是怎么处理跨域的？"><a href="#你们是怎么处理跨域的？" class="headerlink" title="你们是怎么处理跨域的？"></a>你们是怎么处理跨域的？</h3>跨域资源共享（Cross-Origin Resource Sharing）<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4>是一种跨域机制、规范、标准，怎么叫都一样，但是这套标准是针对服务端的，而浏览器端只要支持HTML5即可。<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4>可以让服务端决定哪些请求源可以进来拿数据，所以服务端起主导作用<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4>要实现CORS跨域其实非常简单，说白了就是在服务端设置一系列的HTTP头，主要分为请求头和响应头，在请求和响应时加上这些HTTP头即可轻松实现CORS<br>请求头和响应头信息都是在服务端设置好的，一般在Filter阶段设置，浏览器端不用关心，唯一要设置的地方就是：跨域时是否要携带cookie</iframe></li></ol><p>####</p><h3 id="HTTP请求中的OPTION的用途？"><a href="#HTTP请求中的OPTION的用途？" class="headerlink" title="HTTP请求中的OPTION的用途？"></a>HTTP请求中的OPTION的用途？</h3><h4 id="获取服务器支持的HTTP请求方法"><a href="#获取服务器支持的HTTP请求方法" class="headerlink" title="获取服务器支持的HTTP请求方法"></a>获取服务器支持的HTTP请求方法</h4><p>OPTIONS 方法对服务器发起请求，以检测服务器支持哪些 HTTP 方法：<br>    curl -X OPTIONS <a href="http://example.org" target="_blank" rel="noopener">http://example.org</a> -i<br>响应报文包含一个 Allow 首部字段，该字段的值表明了服务器支持的所有 HTTP 方法：<br>    HTTP/1.1 200 OK<br>    Allow: OPTIONS, GET, HEAD, POST<br>    Cache-Control: max-age=604800<br>    Date: Thu, 13 Oct 2016 11:45:00 GMT<br>    Expires: Thu, 20 Oct 2016 11:45:00 GMT<br>    Server: EOS (lax004/2813)<br>    x-ec-custom-error: 1<br>    Content-Length: 0</p><ol start="2"><li>用来检查服务器的性能。例如：AJAX进行跨域请求时的预检，需要向另外一个域名的资源发送一个HTTP OPTIONS请求头，用以判断实际发送的请求是否安全。</li></ol><h3 id="怎么判定页面编码"><a href="#怎么判定页面编码" class="headerlink" title="怎么判定页面编码"></a>怎么判定页面编码</h3><p>根据 W3C规范 charset的声明必须在页面的 前1024字节 内，若放在其他位置，声明无效<br>取前1024个字节，抓取chaset标志</p>]]></content>
     
     <summary type="html">
     
@@ -91,9 +169,9 @@
     <link href="http://nizouba.com/2018/09/26/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6/"/>
     <id>http://nizouba.com/2018/09/26/自创面试题之其他框架/</id>
     <published>2018-09-26T06:36:59.000Z</published>
-    <updated>2018-09-26T06:43:51.168Z</updated>
+    <updated>2018-09-30T11:14:09.324Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。"><a href="#JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。" class="headerlink" title="JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。"></a>JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。</h3><p>JobDetail接收Job实现类，实例化Job，并配置其他，比如Name等信息，是一对一的关系<br>Trigger和JobDetail是一对多的关系，通过Scheduler相关联。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。"><a href="#JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。" class="headerlink" title="JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。"></a>JobDetail和Job的对应关系，Trigger和JobDetail的对应关系。</h3><p>JobDetail接收Job实现类，实例化Job，并配置其他，比如Name等信息，是一对一的关系<br>Trigger和JobDetail是一对多的关系，通过Scheduler相关联。</p><h3 id="Auth2-0为什么不直接返回AccessToken而是先返回Code-s"><a href="#Auth2-0为什么不直接返回AccessToken而是先返回Code-s" class="headerlink" title="Auth2.0为什么不直接返回AccessToken而是先返回Code?s"></a>Auth2.0为什么不直接返回AccessToken而是先返回Code?s</h3><img src="/puml\98f8146968112ec043ff82bfe0d87b7726f979a0.png">]]></content>
     
     <summary type="html">
     
@@ -116,16 +194,15 @@
     <link href="http://nizouba.com/2018/09/25/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>http://nizouba.com/2018/09/25/自创面试题之微信公众号与小程序/</id>
     <published>2018-09-25T11:25:03.000Z</published>
-    <updated>2018-09-25T11:26:52.649Z</updated>
+    <updated>2018-10-08T03:33:04.567Z</updated>
     
-    <content type="html"><![CDATA[<p>### </p>]]></content>
+    <content type="html"><![CDATA[<h3 id="微信Oauth2-0时序图"><a href="#微信Oauth2-0时序图" class="headerlink" title="微信Oauth2.0时序图"></a>微信Oauth2.0时序图</h3><img src="/puml\b6320693f75cbd09d5fc6d7725dbfe6894eb88d2.png"><h3 id="微信oauth2-0会经历几个302？"><a href="#微信oauth2-0会经历几个302？" class="headerlink" title="微信oauth2.0会经历几个302？"></a>微信oauth2.0会经历几个302？</h3><p>至少两个，我们是3个</p><ol><li>我们服务器302跳转到微信服务器</li><li>微信服务器302跳回我们的callback</li><li>我们的callback是proxy代理，让用户跳转到想跳的地址。</li></ol><h3 id="为什么oauth2不直接拿accessToken？"><a href="#为什么oauth2不直接拿accessToken？" class="headerlink" title="为什么oauth2不直接拿accessToken？"></a>为什么oauth2不直接拿accessToken？</h3><p>返回的信息是在浏览器的地址栏显示的，如果显示accessToken非常不安全。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;### &lt;/p&gt;
-
+        &lt;h3 id=&quot;微信Oauth2-0时序图&quot;&gt;&lt;a href=&quot;#微信Oauth2-0时序图&quot; class=&quot;headerlink&quot; title=&quot;微信Oauth2.0时序图&quot;&gt;&lt;/a&gt;微信Oauth2.0时序图&lt;/h3&gt;&lt;img src=&quot;/puml\b6320693f75cb
       
     
     </summary>
@@ -270,9 +347,9 @@
     <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%8E%E6%9E%B6%E6%9E%84/"/>
     <id>http://nizouba.com/2018/09/23/自创面试题之软件工程与架构/</id>
     <published>2018-09-23T08:10:31.000Z</published>
-    <updated>2018-09-28T04:58:31.767Z</updated>
+    <updated>2018-09-30T04:56:04.204Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="分布式的CAP理论？"><a href="#分布式的CAP理论？" class="headerlink" title="分布式的CAP理论？"></a>分布式的CAP理论？</h3><p>任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance），最多只能同时满足两项。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="分布式的CAP理论？"><a href="#分布式的CAP理论？" class="headerlink" title="分布式的CAP理论？"></a>分布式的CAP理论？</h3><p>任何一个分布式系统都无法同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance），最多只能同时满足两项。<br>数据库ACID中的A是指原子性（Atomicity)，C是一致性(Consistency)。</p><h4 id="一致性-todo"><a href="#一致性-todo" class="headerlink" title="一致性 todo"></a>一致性 todo</h4><p>一致性指“all nodes see the same data at the same time”，即更新操作成功并返回客户端完成后，所有节点在同一时间的数据完全一致，所以，一致性，说的就是数据一致性。分布式的一致性</p><p>对于一致性，可以分为从客户端和服务端两个不同的视角。从客户端来看，一致性主要指的是多并发访问时更新过的数据如何获取的问题。从服务端来看，则是更新如何复制分布到整个系统，以保证数据最终一致。</p><p>一致性是因为有并发读写才有的问题，因此在理解一致性的问题时，一定要注意结合考虑并发读写的场景。</p><p>从客户端角度，多进程并发访问时，更新过的数据在不同进程如何获取的不同策略，决定了不同的一致性。</p><h3 id="UML时序图最基本的符号以及含义？"><a href="#UML时序图最基本的符号以及含义？" class="headerlink" title="UML时序图最基本的符号以及含义？"></a>UML时序图最基本的符号以及含义？</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>表示系统的参与者或者任何有效的系统对象。比如下面的Alice和Bob<br><img src="/puml\4e1218a08c3115ec17a58676bf81a91265aeb251.png"></p><h4 id="生命线"><a href="#生命线" class="headerlink" title="生命线"></a>生命线</h4><p>相当于一个时间线，表示对象在一段时间内的存在时间，而且从时序图的顶部一直延伸至底部，长度取决于交互的时间。<br>相当于上图Alice的线</p><h4 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h4><p>是用来表示一个对象向其他一个或者多个对象发送信号，或者由一个对象调用另外一个对象的操作。</p><h4 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h4><p>激活：表示的是一个对象直接或者通过从属操作而完成操作的过程。在时序图中一般激活符号的顶端与激活时间对齐，低端与完成时间对齐，被执行的操作则用文字进行标识。<br><img src="/puml\3d7eaa2c9d3939a20e16624d663d153fd7e9d294.png"></p><h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>是用来对UML实体进行文字描述的。<br><img src="/puml\c1573ad88e3af27ea73f21d4b814ef7e8a054201.png"></p><h4 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h4><p>表示的是当为对象交互建模时，有时候必须满足一个条件，消息才会传递给对象。</p><h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><p>系统角色，可以是人、其他系统或者子系统。</p>]]></content>
     
     <summary type="html">
     
@@ -295,9 +372,16 @@
     <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BGit/"/>
     <id>http://nizouba.com/2018/09/23/自创面试题之Git/</id>
     <published>2018-09-23T08:10:04.000Z</published>
-    <updated>2018-09-23T10:41:07.999Z</updated>
+    <updated>2018-10-07T03:36:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="当前分支是dev1-执行git-merge-dev2后哪个分支会变化？"><a href="#当前分支是dev1-执行git-merge-dev2后哪个分支会变化？" class="headerlink" title="当前分支是dev1,执行git merge dev2后哪个分支会变化？"></a>当前分支是dev1,执行git merge dev2后哪个分支会变化？</h3><p>如果dev1和dev2不存在父子关系，dev1内容变化，dev2不变。<br>如果dev1和dev2存在父子关系，采用fast-forward策略</p><h3 id="git-merge，git-rebase和git-pull有何区别？"><a href="#git-merge，git-rebase和git-pull有何区别？" class="headerlink" title="git merge，git rebase和git pull有何区别？"></a>git merge，git rebase和git pull有何区别？</h3><ul><li>git pull可以合并远程分支到本地分支中</li><li>git merge</li><li>todo <h3 id="git-cherry-pick怎么用？"><a href="#git-cherry-pick怎么用？" class="headerlink" title="git cherry-pick怎么用？"></a>git cherry-pick怎么用？</h3>假设你在dev01分支开发了2个新功能(A,B)，对应2个commitA,commitB,但是上线前被告知只能上线功能A，此时可以：</li></ul><ol><li>新建1个分支dev02</li><li>将dev01上功能A对应代码cherry-pick到dev02上，dev02就有了功能A对应的代码<br>### </li></ol>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;当前分支是dev1-执行git-merge-dev2后哪个分支会变化？&quot;&gt;&lt;a href=&quot;#当前分支是dev1-执行git-merge-dev2后哪个分支会变化？&quot; class=&quot;headerlink&quot; title=&quot;当前分支是dev1,执行git merge 
+      
     
     </summary>
     
@@ -311,14 +395,23 @@
     <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BES/"/>
     <id>http://nizouba.com/2018/09/23/自创面试题之ES/</id>
     <published>2018-09-23T08:09:44.000Z</published>
-    <updated>2018-09-23T10:41:07.857Z</updated>
+    <updated>2018-10-07T14:18:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是动态映射"><a href="#什么是动态映射" class="headerlink" title="什么是动态映射"></a>什么是动态映射</h3><p>ES中有一个非常重要的特性——动态映射，即索引文档前不需要创建索引、类型等信息，在索引的同时会自动完成索引、类型、映射的创建。那么什么是映射呢？映射就是描述字段的类型、如何进行分析、如何进行索引等内容。</p><p>当ES在文档中碰到一个以前没见过的字段时，它会利用动态映射来决定该字段的类型，并自动地对该字段添加映射。</p><p>有时这正是需要的行为，但有时不是，需要留意。你或许不知道在以后你的文档中会添加哪些字段，但是你想要它们能够被自动地索引。或许你只是想要忽略它们。或者，尤其当你将ES当做主要的数据存储使用时，大概你会希望这些未知的字段会抛出异常来提醒你注意这一问题。</p><p>幸运的是，你可以通过dynamic设置来控制这一行为，它能够接受以下的选项：</p><p>true：默认值。动态添加字段<br>false：忽略新字段<br>strict：如果碰到陌生字段，抛出异常</p><h3 id="什么是类型"><a href="#什么是类型" class="headerlink" title="什么是类型"></a>什么是类型</h3><p>mappings的下一级,相当于表</p><h3 id="什么是字段"><a href="#什么是字段" class="headerlink" title="什么是字段"></a>什么是字段</h3><p>properties中定义的</p><h3 id="index可选值有哪些？"><a href="#index可选值有哪些？" class="headerlink" title="index可选值有哪些？"></a>index可选值有哪些？</h3><p>可设置值为analyzed和no。另外，对基于字符串的字段，也可以设置为<br>not_analyzed。如果设置为analyzed，该字段将被编入索引以供搜索。如果设置为no，<br>将无法搜索该字段。默认值为analyzed。在基于字符串的字段中，还有一个额外的选项<br>not_analyzed。此设置意味着字段将不经分析而编入索引，使用原始值被编入索引，在<br>搜索的过程中必须全部匹配。索引属性设置为no将使include_in_all属性失效。</p><h3 id="ES中的date-format？"><a href="#ES中的date-format？" class="headerlink" title="ES中的date format？"></a>ES中的date format？</h3><p>Most of the below formats have a strict companion format, which means that year, month and day parts of the week must use respectively 4, 2 and 2 digits exactly, potentially prepending zeros. For instance a date like 5/11/1 would be considered invalid and would need to be rewritten to 2005/11/01 to be accepted by the date parser. </p><p>To use them, you need to prepend strict_ to the name of the date format, for instance strict_date_optional_time instead of date_optional_time.</p><h4 id="epoch-millis-时间戳"><a href="#epoch-millis-时间戳" class="headerlink" title="epoch_millis 时间戳"></a>epoch_millis 时间戳</h4><p>A formatter for the number of milliseconds since the epoch. Note, that this timestamp is subject to the limits of a Java Long.MIN_VALUE and Long.MAX_VALUE.</p><h4 id="date-optional-time-or-strict-date-optional-time-日期必填，时间可选"><a href="#date-optional-time-or-strict-date-optional-time-日期必填，时间可选" class="headerlink" title="date_optional_time or strict_date_optional_time 日期必填，时间可选"></a>date_optional_time or strict_date_optional_time 日期必填，时间可选</h4><p>A generic ISO datetime parser where the date is mandatory and the time is optional. Full details here.</p><h3 id="索引你们是如何构建的？"><a href="#索引你们是如何构建的？" class="headerlink" title="索引你们是如何构建的？"></a>索引你们是如何构建的？</h3><p>异步构建以及更新索引。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;什么是动态映射&quot;&gt;&lt;a href=&quot;#什么是动态映射&quot; class=&quot;headerlink&quot; title=&quot;什么是动态映射&quot;&gt;&lt;/a&gt;什么是动态映射&lt;/h3&gt;&lt;p&gt;ES中有一个非常重要的特性——动态映射，即索引文档前不需要创建索引、类型等信息，在索引的同时会自动完
+      
     
     </summary>
     
       <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -359,14 +452,23 @@
     <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMaven/"/>
     <id>http://nizouba.com/2018/09/23/自创面试题之Maven/</id>
     <published>2018-09-23T08:09:17.000Z</published>
-    <updated>2018-09-23T10:41:08.099Z</updated>
+    <updated>2018-10-08T12:33:52.996Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="snapshot的意义？"><a href="#snapshot的意义？" class="headerlink" title="snapshot的意义？"></a>snapshot的意义？</h3><p>如果不snapshot，如果名字不变，本地有了不会从远程拉。如果每次更新都改名字，其他用的人也都改名字，太蛋疼了。</p><h3 id="latest、release、snapshot的区别？"><a href="#latest、release、snapshot的区别？" class="headerlink" title="latest、release、snapshot的区别？"></a>latest、release、snapshot的区别？</h3><h4 id="LEATEST"><a href="#LEATEST" class="headerlink" title="LEATEST"></a>LEATEST</h4><p>是指某个特定构件最新的发布版或者快照版(snapshot)，最近被部署到某个特定仓库的构件。</p><h4 id="RELEASE"><a href="#RELEASE" class="headerlink" title="RELEASE"></a>RELEASE</h4><p>是指仓库中最后的一个非快照版本。</p><h4 id="snapshot"><a href="#snapshot" class="headerlink" title="snapshot"></a>snapshot</h4><p>泛指</p><h3 id="maven版本规则"><a href="#maven版本规则" class="headerlink" title="maven版本规则"></a>maven版本规则</h3><p>Maven主要是这样定义版本规则的：</p><p>&lt;主版本&gt;.&lt;次版本&gt;.&lt;增量版本&gt;</p><p>比如说1.2.3，主版本是1，次版本是2，增量版本是3。</p><p>主版本一般来说代表了项目的重大的架构变更，比如说Maven 1和Maven 2，在架构上已经两样了，将来的Maven 3和Maven 2也会有很大的变化。次版本一般代表了一些功能的增加或变化，但没有架构的变化，比如说Nexus 1.3较之于Nexus 1.2来说，增加了一系列新的或者改进的功能（仓库镜像支持，改进的仓库管理界面等等），但从大的架构上来说，1.3和1.2没什么区别。至于增量版本，一般是一些小的bug fix，不会有重大的功能变化。</p><p>一般来说，在我们发布一次重要的版本之后，随之会开发新的版本，比如说，myapp-1.1发布之后，就着手开发myapp-1.2了。由于myapp-1.2有新的主要功能的添加和变化，在发布测试前，它会变得不稳定，而myapp-1.1是一个比较稳定的版本，现在的问题是，我们在myapp-1.1中发现了一些bug（当然在1.2中也存在），为了能够在一段时间内修复bug并仍然发布稳定的版本，我们就会用到分支（branch），我们基于1.1开启一个分支1.1.1，在这个分支中修复bug，并快速发布。这既保证了版本的稳定，也能够使bug得到快速修复，也不同停止1.2的开发。只是，每次修复分支1.1.1中的bug后，需要merge代码到1.2（主干）中。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;snapshot的意义？&quot;&gt;&lt;a href=&quot;#snapshot的意义？&quot; class=&quot;headerlink&quot; title=&quot;snapshot的意义？&quot;&gt;&lt;/a&gt;snapshot的意义？&lt;/h3&gt;&lt;p&gt;如果不snapshot，如果名字不变，本地有了不会从远程拉。
+      
     
     </summary>
     
       <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -376,61 +478,6 @@
     <id>http://nizouba.com/2018/09/23/自创面试题之消息中间件/</id>
     <published>2018-09-23T08:09:10.000Z</published>
     <updated>2018-09-23T10:41:07.932Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之安全</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%AE%89%E5%85%A8/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之安全/</id>
-    <published>2018-09-23T08:08:42.000Z</published>
-    <updated>2018-09-23T10:40:48.389Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP-IP"></a>TCP-IP</h2><h3 id="什么是RST攻击"><a href="#什么是RST攻击" class="headerlink" title="什么是RST攻击"></a>什么是RST攻击</h3><p>服务器A和服务器B之间建立了TCP连接，此时服务器C伪造了一个TCP包发给B，使B异常的断开了与A之间的TCP连接，这就是RST攻击。</p><p>那么伪造什么样的TCP包可以达成目的呢？</p><p>假定C伪装成A发过去的包，这个包如果是RST包的话，毫无疑问，B将会丢弃与A的缓冲区上所有数据，强制关掉连接；<br>如果发过去的包是SYN包，B会表示A已经发疯了（与OS的实现有关），正常连接时又来建新连接，B主动向A发个RST包，并在自己这端强制关掉连接；</p><p>这两种方式都能够达到复位攻击的效果。似乎挺恐怖，然而关键是C如何能伪造成A发给B的包呢？这里有两个关键因素，源端口和序列号。</p><p>一个TCP连接都是四元组，由源IP+源端口、目标IP+目标端口唯一确定一个连接。所以，如果C要伪造A发给B的包，要在上面提到的IP头和TCP头，把源IP、源端口、目标IP、目标端口都填对。这里B作为服务器，IP和端口是公开的，A是我们要下手的目标，IP当然知道，但A的源端口就不清楚了，因为这可能是A随机生成的。当然，如果能够对常见的OS如windows和linux找出生成source port规律的话，还是可以搞定的。</p><p>此外，伪造的TCP包里需要填序列号（SeqNum），如果序列号的值不在A之前向B发送时B的滑动窗口内，B是会主动丢弃的。所以我们要找到能落到当时的AB间滑动窗口的序列号。这个可以暴力解决，因为一个sequence长度是32位，取值范围0-4294967296，如果滑动窗口大小为65535的话，则最多只需要发65537（4294967296/65535=65537）个包就能有一个序列号落到滑动窗口内。RST包是很小的，IP头＋TCP头也才40字节，算算我们的带宽就知道这实在只需要几秒钟就能搞定。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;TCP-IP&quot;&gt;&lt;a href=&quot;#TCP-IP&quot; class=&quot;headerlink&quot; title=&quot;TCP-IP&quot;&gt;&lt;/a&gt;TCP-IP&lt;/h2&gt;&lt;h3 id=&quot;什么是RST攻击&quot;&gt;&lt;a href=&quot;#什么是RST攻击&quot; class=&quot;headerlink&quot; 
-      
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之类与接口</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之类与接口/</id>
-    <published>2018-09-23T08:08:09.000Z</published>
-    <updated>2018-09-23T10:41:07.984Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之异常</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E5%BC%82%E5%B8%B8/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之异常/</id>
-    <published>2018-09-23T08:07:30.000Z</published>
-    <updated>2018-09-23T10:41:07.925Z</updated>
     
     <summary type="html">
     
