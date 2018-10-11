@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nizouba.com/"/>
-  <updated>2018-10-07T13:17:42.000Z</updated>
+  <updated>2018-10-11T10:05:34.866Z</updated>
   <id>http://nizouba.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自创面试题之IOT</title>
+    <link href="http://nizouba.com/2018/10/09/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BIOT/"/>
+    <id>http://nizouba.com/2018/10/09/自创面试题之IOT/</id>
+    <published>2018-10-09T02:21:28.000Z</published>
+    <updated>2018-10-11T10:05:34.866Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what’s-IOT"><a href="#what’s-IOT" class="headerlink" title="what’s IOT?"></a>what’s IOT?</h3><p>internet of things，物联网</p><h3 id="what’s-MQTT"><a href="#what’s-MQTT" class="headerlink" title="what’s MQTT?"></a>what’s MQTT?</h3><p><a href="https://www.jianshu.com/p/5c42cb0ed1e9" target="_blank" rel="noopener">https://www.jianshu.com/p/5c42cb0ed1e9</a></p><p><a href="http://www.360doc.com/content/18/0116/05/163747_722273693.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/18/0116/05/163747_722273693.shtml</a></p><h3 id="MQTT是什么？"><a href="#MQTT是什么？" class="headerlink" title="MQTT是什么？"></a>MQTT是什么？</h3><p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议），是一种基于发布/订阅（publish/subscribe）模式的“轻量级”通讯协议，该协议构建于TCP/IP协议上，由IBM在1999年发布。MQTT最大优点在于，可以以极少的代码和有限的带宽，为连接远程设备提供实时可靠的消息服务。作为一种低开销、低带宽占用的即时通讯协议，使其在物联网、小型设备、移动应用等方面有较广泛的应用。</p><h4 id="MQTT的特点"><a href="#MQTT的特点" class="headerlink" title="MQTT的特点"></a>MQTT的特点</h4><ul><li>使用发布/订阅消息模式，提供一对多的消息发布，解除应用程序耦合。</li><li>使用TCP/IP提供网络连接。</li><li>有三种消息发布服务质量：</li><li>小型传输，开销很小（固定长度的头部是2字节），协议交换最小化，以降低网络流量。</li><li>使用Last Will和Testament特性通知有关各方客户端异常中断的机制。<h3 id="MQTT的三种消息发布服务质量？"><a href="#MQTT的三种消息发布服务质量？" class="headerlink" title="MQTT的三种消息发布服务质量？"></a>MQTT的三种消息发布服务质量？</h3>“至多一次”(QoS==0)，消息发布完全依赖底层 TCP/IP 网络。会发生消息丢失或重复。这一级别可用于如下情况，环境传感器数据，丢失一次读记录无所谓，因为不久后还会有第二次发送。这一种方式主要普通APP的推送，倘若你的智能设备在消息推送时未联网，推送过去没收到，再次联网也就收不到了。</li></ul><p>“至少一次”(QoS==1)，确保消息到达，但消息重复可能会发生。</p><p>“只有一次”(QoS==2)，确保消息到达一次。这一级别可用于如下情况，在计费系统中，消息重复或丢失会导致不正确的结果。小型传输，开销很小（固定长度的头部是 2 字节），协议交换最小化，以降低网络流量。这种最高质量的消息发布服务还可以用于即时通讯类的APP的推送，确保用户收到且只会收到一次。</p><h3 id="MQTT协议实现方式？"><a href="#MQTT协议实现方式？" class="headerlink" title="MQTT协议实现方式？"></a>MQTT协议实现方式？</h3><p>实现MQTT协议需要客户端和服务器端通讯完成，在通讯过程中，MQTT协议中有三种身份：发布者（Publish）、代理（Broker）（服务器）、订阅者（Subscribe）。其中，消息的发布者和订阅者都是客户端，消息代理是服务器，消息发布者可以同时是订阅者。</p><p>阿里云的IOT充当了代理的服务器。</p><p>MQTT传输的消息分为：主题（Topic）和负载（payload）两部分：</p><p>（1）Topic，可以理解为消息的类型，订阅者订阅（Subscribe）后，就会收到该主题的消息内容（payload）；</p><p>（2）payload，可以理解为消息的内容，是指订阅者具体要使用的内容。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;what’s-IOT&quot;&gt;&lt;a href=&quot;#what’s-IOT&quot; class=&quot;headerlink&quot; title=&quot;what’s IOT?&quot;&gt;&lt;/a&gt;what’s IOT?&lt;/h3&gt;&lt;p&gt;internet of things，物联网&lt;/p&gt;
+&lt;h3 id=&quot;w
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自创面试题之NIO</title>
+    <link href="http://nizouba.com/2018/10/08/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BNIO/"/>
+    <id>http://nizouba.com/2018/10/08/自创面试题之NIO/</id>
+    <published>2018-10-08T13:26:47.000Z</published>
+    <updated>2018-10-11T10:05:34.050Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Java-NIO中的通道解释？"><a href="#Java-NIO中的通道解释？" class="headerlink" title="Java NIO中的通道解释？"></a>Java NIO中的通道解释？</h3><p>Java NIO的通道类似流，但又有些不同：</p><p>既可以从通道中读取数据，又可以写数据到通道。但流的读写通常是单向的。<br>通道可以异步地读写。<br>通道中的数据总是要先读到一个Buffer，或者总是要从一个Buffer中写入。<br>正如上面所说，从通道读取数据到缓冲区，从缓冲区写入数据到通道。</p><h3 id="NIO有哪几种通道？"><a href="#NIO有哪几种通道？" class="headerlink" title="NIO有哪几种通道？"></a>NIO有哪几种通道？</h3><ul><li>FileChannel 从文件中读写数据。</li><li>DatagramChannel 能通过UDP读写网络中的数据。</li><li>SocketChannel 能通过TCP读写网络中的数据。</li><li>ServerSocketChannel 可以监听新进来的TCP连接，像Web服务器那样。对每一个新进来的连接都会创建一个SocketChannel。</li></ul><h3 id="NIO的核心部分"><a href="#NIO的核心部分" class="headerlink" title="NIO的核心部分"></a>NIO的核心部分</h3><p>Channels、Buffers 、Selectors</p><h3 id="如何使用buffer读写数据？"><a href="#如何使用buffer读写数据？" class="headerlink" title="如何使用buffer读写数据？"></a>如何使用buffer读写数据？</h3><ol><li>写入数据到Buffer</li><li>调用flip()方法</li><li>从Buffer中读取数据</li><li>调用clear()方法或者compact()方法</li></ol><p>当向buffer写入数据时，buffer会记录下写了多少数据。一旦要读取数据，需要通过flip()方法将Buffer从写模式切换到读模式。在读模式下，可以读取之前写入到buffer的所有数据。</p><p>一旦读完了所有的数据，就需要清空缓冲区，让它可以再次被写入。有两种方式能清空缓冲区：调用clear()或compact()方法。clear()方法会清空整个缓冲区。compact()方法只会清除已经读过的数据。任何未读的数据都被移到缓冲区的起始处，新写入的数据将放到缓冲区未读数据的后面。</p><h3 id="解释一下Buffer的capacity-position和limit"><a href="#解释一下Buffer的capacity-position和limit" class="headerlink" title="解释一下Buffer的capacity,position和limit"></a>解释一下Buffer的capacity,position和limit</h3><p>缓冲区本质上是一块可以写入数据，然后可以从中读取数据的内存。这块内存被包装成NIO Buffer对象，并提供了一组方法，用来方便的访问该块内存。</p><p>为了理解Buffer的工作原理，需要熟悉它的三个属性：<br>position和limit的含义取决于Buffer处在读模式还是写模式。不管Buffer处在什么模式，capacity的含义总是一样的。<br>capacity<br>作为一个内存块，Buffer有一个固定的大小值，也叫“capacity”.你只能往里写capacity个byte、long，char等类型。一旦Buffer满了，需要将其清空（通过读数据或者清除数据）才能继续写数据往里写数据。<br>position<br>当你写数据到Buffer中时，position表示当前的位置。初始的position值为0.当一个byte、long等数据写到Buffer后， position会向前移动到下一个可插入数据的Buffer单元。position最大可为capacity – 1.</p><p>当读取数据时，也是从某个特定位置读。当将Buffer从写模式切换到读模式，position会被重置为0. 当从Buffer的position处读取数据时，position向前移动到下一个可读的位置。<br>limit<br>在写模式下，Buffer的limit表示你最多能往Buffer里写多少数据。 写模式下，limit等于Buffer的capacity。</p><p>当切换Buffer到读模式时， limit表示你最多能读到多少数据。因此，当切换Buffer到读模式时，limit会被设置成写模式下的position值。换句话说，你能读到之前写入的所有数据（limit被设置成已写数据的数量，这个值在写模式下就是position）</p><h3 id="Buffer的类型"><a href="#Buffer的类型" class="headerlink" title="Buffer的类型"></a>Buffer的类型</h3><p>ByteBuffer、<br>MappedByteBuffer、<br>CharBuffer、<br>DoubleBuffer、<br>FloatBuffer、<br>IntBuffer、<br>LongBuffer、<br>ShortBuffer。<br>如你所见，这些Buffer类型代表了不同的数据类型。换句话说，就是可以通过char，short，int，long，float 或 double类型来操作缓冲区中的字节。</p><h3 id="Buffer的分配？"><a href="#Buffer的分配？" class="headerlink" title="Buffer的分配？"></a>Buffer的分配？</h3><p>要想获得一个Buffer对象首先要进行分配。 每一个Buffer类都有一个allocate方法。下面是一个分配48字节</p><h3 id="如何向Buffer中写数据？"><a href="#如何向Buffer中写数据？" class="headerlink" title="如何向Buffer中写数据？"></a>如何向Buffer中写数据？</h3><p>写数据到Buffer有两种方式：</p><h4 id="从Channel写到Buffer。"><a href="#从Channel写到Buffer。" class="headerlink" title="从Channel写到Buffer。"></a>从Channel写到Buffer。</h4><pre><code>int bytesRead = inChannel.read(buf); //read into buffer.</code></pre><h4 id="通过Buffer的put-方法写到Buffer里。"><a href="#通过Buffer的put-方法写到Buffer里。" class="headerlink" title="通过Buffer的put()方法写到Buffer里。"></a>通过Buffer的put()方法写到Buffer里。</h4><pre><code>buf.put(127);</code></pre><h3 id="如何从Buffer中读取数据"><a href="#如何从Buffer中读取数据" class="headerlink" title="如何从Buffer中读取数据?"></a>如何从Buffer中读取数据?</h3><p>从Buffer中读取数据有两种方式：</p><h4 id="从Buffer读取数据到Channel。"><a href="#从Buffer读取数据到Channel。" class="headerlink" title="从Buffer读取数据到Channel。"></a>从Buffer读取数据到Channel。</h4><h4 id="使用get-方法从Buffer中读取数据。"><a href="#使用get-方法从Buffer中读取数据。" class="headerlink" title="使用get()方法从Buffer中读取数据。"></a>使用get()方法从Buffer中读取数据。</h4><h3 id="Buffer有哪些方法？"><a href="#Buffer有哪些方法？" class="headerlink" title="Buffer有哪些方法？"></a>Buffer有哪些方法？</h3><h4 id="flip-方法"><a href="#flip-方法" class="headerlink" title="flip()方法"></a>flip()方法</h4><p>flip方法将Buffer从写模式切换到读模式。调用flip()方法会将position设回0，并将limit设置成之前position的值。<br>换句话说，position现在用于标记读的位置，limit表示之前写进了多少个byte、char等 —— 现在能读取多少个byte、char等。</p><h4 id="rewind-方法"><a href="#rewind-方法" class="headerlink" title="rewind()方法"></a>rewind()方法</h4><p>Buffer.rewind()将position设回0，所以你可以重读Buffer中的所有数据。limit保持不变，仍然表示能从Buffer中读取多少个元素（byte、char等）。</p><h4 id="clear-与compact-方法"><a href="#clear-与compact-方法" class="headerlink" title="clear()与compact()方法"></a>clear()与compact()方法</h4><p>一旦读完Buffer中的数据，需要让Buffer准备好再次被写入。可以通过clear()或compact()方法来完成。</p><p>如果调用的是clear()方法，position将被设回0，limit被设置成 capacity的值。换句话说，Buffer 被清空了。Buffer中的数据并未清除，只是这些标记告诉我们可以从哪里开始往Buffer里写数据。</p><p>如果Buffer中有一些未读的数据，调用clear()方法，数据将“被遗忘”，意味着不再有任何标记会告诉你哪些数据被读过，哪些还没有。</p><p>如果Buffer中仍有未读的数据，且后续还需要这些数据，但是此时想要先写些数据，那么使用compact()方法。</p><p>compact()方法将所有未读的数据拷贝到Buffer起始处。然后将position设到最后一个未读元素正后面。limit属性依然像clear()方法一样，设置成capacity。现在Buffer准备好写数据了，但是不会覆盖未读的数据。</p><h4 id="mark-与reset-方法"><a href="#mark-与reset-方法" class="headerlink" title="mark()与reset()方法"></a>mark()与reset()方法</h4><p>通过调用Buffer.mark()方法，可以标记Buffer中的一个特定position。之后可以通过调用Buffer.reset()方法恢复到这个position。例如：</p><pre><code>buffer.mark();//call buffer.get() a couple of times, e.g. during parsing.buffer.reset();  //set position back to mark.</code></pre><h4 id="equals-与compareTo-方法"><a href="#equals-与compareTo-方法" class="headerlink" title="equals()与compareTo()方法"></a>equals()与compareTo()方法</h4><h5 id="equals"><a href="#equals" class="headerlink" title="equals()"></a>equals()</h5><p>当满足下列条件时，表示两个Buffer相等：</p><p>有相同的类型（byte、char、int等）。<br>Buffer中剩余的byte、char等的个数相等。<br>Buffer中所有剩余的byte、char等都相同。<br>如你所见，equals只是比较Buffer的一部分，不是每一个在它里面的元素都比较。实际上，它只比较Buffer中的剩余元素。</p><h5 id="compareTo-方法"><a href="#compareTo-方法" class="headerlink" title="compareTo()方法"></a>compareTo()方法</h5><p>compareTo()方法比较两个Buffer的剩余元素(byte、char等)， 如果满足下列条件，则认为一个Buffer“小于”另一个Buffer：</p><p>第一个不相等的元素小于另一个Buffer中对应的元素 。<br>所有元素都相等，但第一个Buffer比另一个先耗尽(第一个Buffer的元素个数比另一个少)。<br>（译注：剩余元素是从 position到limit之间的元素）</p><h3 id="解释一下Scatter与Gatter"><a href="#解释一下Scatter与Gatter" class="headerlink" title="解释一下Scatter与Gatter"></a>解释一下Scatter与Gatter</h3><p>Java NIO开始支持scatter/gather，scatter/gather用于描述从Channel（译者注：Channel在中文经常翻译为通道）中读取或者写入到Channel的操作。</p><p>分散（scatter）从Channel中读取是指在读操作时将读取的数据写入多个buffer中。因此，Channel将从Channel中读取的数据“分散（scatter）”到多个Buffer中。</p><p>聚集（gather）写入Channel是指在写操作时将多个buffer的数据写入同一个Channel，因此，Channel 将多个Buffer中的数据“聚集（gather）”后发送到Channel。</p><p>scatter / gather经常用于需要将传输的数据分开处理的场合，例如传输一个由消息头和消息体组成的消息，你可能会将消息体和消息头分散到不同的buffer中，这样你可以方便的处理消息头和消息体。</p><h3 id="解释一下Selector？"><a href="#解释一下Selector？" class="headerlink" title="解释一下Selector？"></a>解释一下Selector？</h3><p>Selector（选择器）是Java NIO中能够检测一到多个NIO通道，并能够知晓通道是否为诸如读写事件做好准备的组件。这样，一个单独的线程可以管理多个channel，从而管理多个网络连接。</p><h3 id="为什么使用Selector"><a href="#为什么使用Selector" class="headerlink" title="为什么使用Selector?"></a>为什么使用Selector?</h3><p>仅用单个线程来处理多个Channels的好处是，只需要更少的线程来处理通道。事实上，可以只用一个线程处理所有的通道。对于操作系统来说，线程之间上下文切换的开销很大，而且每个线程都要占用系统的一些资源（如内存）。因此，使用的线程越少越好。</p><p>但是，需要记住，现代的操作系统和CPU在多任务方面表现的越来越好，所以多线程的开销随着时间的推移，变得越来越小了。实际上，如果一个CPU有多个内核，不使用多任务可能是在浪费CPU能力。不管怎么说，关于那种设计的讨论应该放在另一篇不同的文章中。在这里，只要知道使用Selector能够处理多个通道就足够了。</p><h3 id="过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件"><a href="#过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件" class="headerlink" title="过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件?"></a>过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件?</h3><ol><li>Connect 客户端是connect</li><li>Accept 服务端是accept</li><li>Read</li><li>Write<h3 id="SelectionKey的作用？"><a href="#SelectionKey的作用？" class="headerlink" title="SelectionKey的作用？"></a>SelectionKey的作用？</h3><h4 id="interest集合"><a href="#interest集合" class="headerlink" title="interest集合"></a>interest集合</h4> boolean isInterestedInAccept  = (interestSet &amp; SelectionKey.OP_ACCEPT) == SelectionKey.OP_ACCEPT；<br>用“位与”操作interest 集合和给定的SelectionKey常量，可以确定某个确定的事件是否在interest 集合中。<h4 id="ready集合"><a href="#ready集合" class="headerlink" title="ready集合"></a>ready集合</h4>ready集合是通道已经准备就绪的操作的集合。在一次选择(Selection)之后，你会首先访问这个ready set。Selection将在下一小节进行解释。可以这样访问ready集合：</li></ol><p>int readySet = selectionKey.readyOps();<br>可以用像检测interest集合那样的方法，来检测channel中什么事件或操作已经就绪。但是，也可以使用以下四个方法，它们都会返回一个布尔类型：<br>    selectionKey.isAcceptable();<br>    selectionKey.isConnectable();<br>    selectionKey.isReadable();<br>    selectionKey.isWritable();</p><h4 id="Channel、Selector"><a href="#Channel、Selector" class="headerlink" title="Channel、Selector"></a>Channel、Selector</h4><p>一个Channel对应1一个SelectoKey<br>多个SelectionKey对应一个Selector</p><h4 id="附加的对象（可选）"><a href="#附加的对象（可选）" class="headerlink" title="附加的对象（可选）"></a>附加的对象（可选）</h4><h3 id="如何通过Selector选择通道？"><a href="#如何通过Selector选择通道？" class="headerlink" title="如何通过Selector选择通道？"></a>如何通过Selector选择通道？</h3><p>一旦向Selector注册了一或多个通道，就可以调用几个重载的select()方法。这些方法返回你所感兴趣的事件（如连接、接受、读或写）已经准备就绪的那些通道。换句话说，如果你对“读就绪”的通道感兴趣，select()方法会返回读事件已经就绪的那些通道。</p><pre><code>int select() int select(long timeout)int selectNow()</code></pre><p>select()阻塞到至少有一个通道在你注册的事件上就绪了。</p><p>select(long timeout)和select()一样，除了最长会阻塞timeout毫秒(参数)。</p><p>selectNow()不会阻塞，不管什么通道就绪都立刻返回（译者注：此方法执行非阻塞的选择操作。如果自从前一次选择操作后，没有通道变成可选择的，则此方法直接返回零。）。</p><p>select()方法返回的int值表示有多少通道已经就绪。亦即，自上次调用select()方法后有多少通道变成就绪状态。如果调用select()方法，因为有一个通道变成就绪状态，返回了1，若再次调用select()方法，如果另一个通道就绪了，它会再次返回1。如果对第一个就绪的channel没有做任何操作，现在就有两个就绪的通道，但在每次select()方法调用之间，只有一个通道就绪了。</p><h3 id="访问已经就绪的通道？"><a href="#访问已经就绪的通道？" class="headerlink" title="访问已经就绪的通道？"></a>访问已经就绪的通道？</h3><p>一旦调用了select()方法，并且返回值表明有一个或更多个通道就绪了，然后可以通过调用selector的selectedKeys()方法，访问“已选择键集（selected key set）”中的就绪通道。如下所示：</p><p>1<br>Set selectedKeys = selector.selectedKeys();<br>当像Selector注册Channel时，Channel.register()方法会返回一个SelectionKey 对象。这个对象代表了注册到该Selector的通道。可以通过SelectionKey的selectedKeySet()方法访问这些对象。</p><p>可以遍历这个已选择的键集合来访问就绪的通道。如下：</p><pre><code>Set selectedKeys = selector.selectedKeys();Iterator keyIterator = selectedKeys.iterator();while(keyIterator.hasNext()) {    SelectionKey key = keyIterator.next();    if(key.isAcceptable()) {        // a connection was accepted by a ServerSocketChannel.    } else if (key.isConnectable()) {        // a connection was established with a remote server.    } else if (key.isReadable()) {        // a channel is ready for reading    } else if (key.isWritable()) {        // a channel is ready for writing    }    keyIterator.remove();}</code></pre><p>这个循环遍历已选择键集中的每个键，并检测各个键所对应的通道的就绪事件。</p><p>注意每次迭代末尾的keyIterator.remove()调用。Selector不会自己从已选择键集中移除SelectionKey实例。必须在处理完通道时自己移除。下次该通道变成就绪时，Selector会再次将其放入已选择键集中。</p><p>SelectionKey.channel()方法返回的通道需要转型成你要处理的类型，如ServerSocketChannel或SocketChannel等。</p><h3 id="wakeUp"><a href="#wakeUp" class="headerlink" title="wakeUp()"></a>wakeUp()</h3><p>某个线程调用select()方法后阻塞了，即使没有通道已经就绪，也有办法让其从select()方法返回。只要让其它线程在第一个线程调用select()方法的那个对象上调用Selector.wakeup()方法即可。阻塞在select()方法上的线程会立马返回。</p><p>如果有其它线程调用了wakeup()方法，但当前没有线程阻塞在select()方法上，下个调用select()方法的线程会立即“醒来（wake up）”。</p><h3 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h3><p>用完Selector后调用其close()方法会关闭该Selector，且使注册到该Selector上的所有SelectionKey实例无效。通道本身并不会关闭。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Java-NIO中的通道解释？&quot;&gt;&lt;a href=&quot;#Java-NIO中的通道解释？&quot; class=&quot;headerlink&quot; title=&quot;Java NIO中的通道解释？&quot;&gt;&lt;/a&gt;Java NIO中的通道解释？&lt;/h3&gt;&lt;p&gt;Java NIO的通道类似流，但又有
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>自创面试题之Node.JS</title>
@@ -74,9 +125,9 @@
     <link href="http://nizouba.com/2018/10/06/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BGo%E8%AF%AD%E6%B3%95/"/>
     <id>http://nizouba.com/2018/10/06/自创面试题之Go语法/</id>
     <published>2018-10-06T03:11:31.000Z</published>
-    <updated>2018-10-07T12:42:07.000Z</updated>
+    <updated>2018-10-10T03:12:40.074Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="defer的作用是什么？"><a href="#defer的作用是什么？" class="headerlink" title="defer的作用是什么？"></a>defer的作用是什么？</h3><p>在return之前执行，panic相当于throw Exception，也会执行defer</p><p>defer有一个栈结构，FILO<br>    defer print 1<br>    defer print 2<br>打印2，1</p><p>另外在panic或者return之后的defer肯定是不能执行的。<br>    func testDeferPanicOrder()  {<br>        panic(“test Order”)<br>        defer  fmt.Println(“defer  —————“)<br>    }</p><h3 id="panic的作用是什么？"><a href="#panic的作用是什么？" class="headerlink" title="panic的作用是什么？"></a>panic的作用是什么？</h3><ol><li>停止当前函数的执行</li><li>一直向上返回，执行每一层的defer</li><li>如果没有遇见recover，程序退出</li></ol><h3 id="recover的作用是什么？"><a href="#recover的作用是什么？" class="headerlink" title="recover的作用是什么？"></a>recover的作用是什么？</h3><ol><li>仅在defer调用中使用</li><li>可以获取到panic的值</li><li>如果无法处理，可重新panic</li></ol><h3 id="r-error-是什么语法？"><a href="#r-error-是什么语法？" class="headerlink" title="r.(error)是什么语法？"></a>r.(error)是什么语法？</h3><p>类型动态转换/查询,将r转换成error类型。</p><h3 id="gopm的本地仓库有啥用？"><a href="#gopm的本地仓库有啥用？" class="headerlink" title="gopm的本地仓库有啥用？"></a>gopm的本地仓库有啥用？</h3><p>不知道 todo，没有src目录，即使设定为gopath也不行。</p><h3 id="Golang为什么会出现不能调用方法的情况？"><a href="#Golang为什么会出现不能调用方法的情况？" class="headerlink" title="Golang为什么会出现不能调用方法的情况？"></a>Golang为什么会出现不能调用方法的情况？</h3><p>方法必须大写才能被其他文件调用</p><h3 id="time-Tick的作用是什么？"><a href="#time-Tick的作用是什么？" class="headerlink" title="time.Tick的作用是什么？"></a>time.Tick的作用是什么？</h3><p>限速，<br>    var rateLimiter = time.Tick(10 * time.Millisecond)<br>    &lt;-rateLimiter</p><p>这样是每隔10毫秒才会继续执行<br>    for range time.Tick(30 * time.Millisecond) {<br>        repaint()<br>    }<br>因为time.Tick()返回的是一个channel,每隔指定的时间会有数据从channel中出来，for range不仅能遍历map,slice,array还能取出channel中数据，range前面可以不用变量接收，所以可以简写成上面的形式。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="defer的作用是什么？"><a href="#defer的作用是什么？" class="headerlink" title="defer的作用是什么？"></a>defer的作用是什么？</h3><p>在return之前执行，panic相当于throw Exception，也会执行defer</p><p>defer有一个栈结构，FILO<br>    defer print 1<br>    defer print 2<br>打印2，1</p><p>另外在panic或者return之后的defer肯定是不能执行的。<br>    func testDeferPanicOrder()  {<br>        panic(“test Order”)<br>        defer  fmt.Println(“defer  —————“)<br>    }</p><h3 id="panic的作用是什么？"><a href="#panic的作用是什么？" class="headerlink" title="panic的作用是什么？"></a>panic的作用是什么？</h3><ol><li>停止当前函数的执行</li><li>一直向上返回，执行每一层的defer</li><li>如果没有遇见recover，程序退出</li></ol><h3 id="recover的作用是什么？"><a href="#recover的作用是什么？" class="headerlink" title="recover的作用是什么？"></a>recover的作用是什么？</h3><ol><li>仅在defer调用中使用</li><li>可以获取到panic的值</li><li>如果无法处理，可重新panic</li></ol><h3 id="r-error-是什么语法？"><a href="#r-error-是什么语法？" class="headerlink" title="r.(error)是什么语法？"></a>r.(error)是什么语法？</h3><p>类型动态转换/查询,将r转换成error类型。</p><h3 id="gopm的本地仓库有啥用？"><a href="#gopm的本地仓库有啥用？" class="headerlink" title="gopm的本地仓库有啥用？"></a>gopm的本地仓库有啥用？</h3><p>不知道 todo，没有src目录，即使设定为gopath也不行。</p><h3 id="Golang为什么会出现不能调用方法的情况？"><a href="#Golang为什么会出现不能调用方法的情况？" class="headerlink" title="Golang为什么会出现不能调用方法的情况？"></a>Golang为什么会出现不能调用方法的情况？</h3><p>方法必须大写才能被其他文件调用</p><h3 id="time-Tick的作用是什么？"><a href="#time-Tick的作用是什么？" class="headerlink" title="time.Tick的作用是什么？"></a>time.Tick的作用是什么？</h3><p>限速，<br>    var rateLimiter = time.Tick(10 * time.Millisecond)<br>    &lt;-rateLimiter</p><p>这样是每隔10毫秒才会继续执行<br>    for range time.Tick(30 * time.Millisecond) {<br>        repaint()<br>    }<br>因为time.Tick()返回的是一个channel,每隔指定的时间会有数据从channel中出来，for range不仅能遍历map,slice,array还能取出channel中数据，range前面可以不用变量接收，所以可以简写成上面的形式。</p><h3 id="go的包如何管理"><a href="#go的包如何管理" class="headerlink" title="go的包如何管理"></a>go的包如何管理</h3><p>cnpm-cnpm get -g xxx</p><h3 id="接口有3个方法，必须全部实现才算实现接口吗？"><a href="#接口有3个方法，必须全部实现才算实现接口吗？" class="headerlink" title="接口有3个方法，必须全部实现才算实现接口吗？"></a>接口有3个方法，必须全部实现才算实现接口吗？</h3><p>是的，少了1也也不算。</p><h3 id="golang文件夹下的package可以如何命名？"><a href="#golang文件夹下的package可以如何命名？" class="headerlink" title="golang文件夹下的package可以如何命名？"></a>golang文件夹下的package可以如何命名？</h3><p>文件夹下的所有文件的package命名必须相同？</p>]]></content>
     
     <summary type="html">
     
@@ -437,47 +488,6 @@
     <id>http://nizouba.com/2018/09/23/自创面试题之SpringMVC/</id>
     <published>2018-09-23T08:09:32.000Z</published>
     <updated>2018-09-23T10:41:07.999Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之Maven</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8BMaven/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之Maven/</id>
-    <published>2018-09-23T08:09:17.000Z</published>
-    <updated>2018-10-08T12:33:52.996Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="snapshot的意义？"><a href="#snapshot的意义？" class="headerlink" title="snapshot的意义？"></a>snapshot的意义？</h3><p>如果不snapshot，如果名字不变，本地有了不会从远程拉。如果每次更新都改名字，其他用的人也都改名字，太蛋疼了。</p><h3 id="latest、release、snapshot的区别？"><a href="#latest、release、snapshot的区别？" class="headerlink" title="latest、release、snapshot的区别？"></a>latest、release、snapshot的区别？</h3><h4 id="LEATEST"><a href="#LEATEST" class="headerlink" title="LEATEST"></a>LEATEST</h4><p>是指某个特定构件最新的发布版或者快照版(snapshot)，最近被部署到某个特定仓库的构件。</p><h4 id="RELEASE"><a href="#RELEASE" class="headerlink" title="RELEASE"></a>RELEASE</h4><p>是指仓库中最后的一个非快照版本。</p><h4 id="snapshot"><a href="#snapshot" class="headerlink" title="snapshot"></a>snapshot</h4><p>泛指</p><h3 id="maven版本规则"><a href="#maven版本规则" class="headerlink" title="maven版本规则"></a>maven版本规则</h3><p>Maven主要是这样定义版本规则的：</p><p>&lt;主版本&gt;.&lt;次版本&gt;.&lt;增量版本&gt;</p><p>比如说1.2.3，主版本是1，次版本是2，增量版本是3。</p><p>主版本一般来说代表了项目的重大的架构变更，比如说Maven 1和Maven 2，在架构上已经两样了，将来的Maven 3和Maven 2也会有很大的变化。次版本一般代表了一些功能的增加或变化，但没有架构的变化，比如说Nexus 1.3较之于Nexus 1.2来说，增加了一系列新的或者改进的功能（仓库镜像支持，改进的仓库管理界面等等），但从大的架构上来说，1.3和1.2没什么区别。至于增量版本，一般是一些小的bug fix，不会有重大的功能变化。</p><p>一般来说，在我们发布一次重要的版本之后，随之会开发新的版本，比如说，myapp-1.1发布之后，就着手开发myapp-1.2了。由于myapp-1.2有新的主要功能的添加和变化，在发布测试前，它会变得不稳定，而myapp-1.1是一个比较稳定的版本，现在的问题是，我们在myapp-1.1中发现了一些bug（当然在1.2中也存在），为了能够在一段时间内修复bug并仍然发布稳定的版本，我们就会用到分支（branch），我们基于1.1开启一个分支1.1.1，在这个分支中修复bug，并快速发布。这既保证了版本的稳定，也能够使bug得到快速修复，也不同停止1.2的开发。只是，每次修复分支1.1.1中的bug后，需要merge代码到1.2（主干）中。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;snapshot的意义？&quot;&gt;&lt;a href=&quot;#snapshot的意义？&quot; class=&quot;headerlink&quot; title=&quot;snapshot的意义？&quot;&gt;&lt;/a&gt;snapshot的意义？&lt;/h3&gt;&lt;p&gt;如果不snapshot，如果名字不变，本地有了不会从远程拉。
-      
-    
-    </summary>
-    
-      <category term="面试" scheme="http://nizouba.com/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="面试" scheme="http://nizouba.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自创面试题之消息中间件</title>
-    <link href="http://nizouba.com/2018/09/23/%E8%87%AA%E5%88%9B%E9%9D%A2%E8%AF%95%E9%A2%98%E4%B9%8B%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    <id>http://nizouba.com/2018/09/23/自创面试题之消息中间件/</id>
-    <published>2018-09-23T08:09:10.000Z</published>
-    <updated>2018-09-23T10:41:07.932Z</updated>
     
     <summary type="html">
     
